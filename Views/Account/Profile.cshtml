@@ -1,0 +1,20 @@
+﻿@model GestionLlaves.Models.Usuario
+@{
+    ViewData["Title"] = "Mi Perfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h3 class="text-center mb-3" style="color:#72103A;">Perfil del Usuario</h3>
+
+        <p><strong>Nombre:</strong> @Model.Persona?.Nombres @Model.Persona?.PrimerApellido</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Rol:</strong> @Model.Rol</p>
+        <p><strong>Última conexión:</strong> @Model.FechaUltimaConexion?.ToString("g")</p>
+
+        <div class="text-center mt-3">
+            <a href="/Account/Logout" class="btn btn-danger">Cerrar sesión</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model List<GestionLlaves.Models.ViewModels.ReservaNuevaVM.AulaOpcion>
+
+<div class="card mb-3">
+    <div class="card-header">Paso 2: Aulas disponibles</div>
+
+    <div class="list-group list-group-flush">
+        @if (!Model.Any())
+        {
+            <div class="list-group-item">No hay aulas disponibles en ese rango.</div>
+        }
+        else
+        {
+            foreach (var a in Model)
+            {
+                <label class="list-group-item d-flex align-items-center gap-3">
+                    <input type="radio" name="AulaId" value="@a.Id" required />
+                    <div>
+                        <div class="fw-bold">@a.Nombre</div>
+                        <div class="text-muted">
+                            @a.Edificio • Capacidad: @a.Capacidad
+                        </div>
+                    </div>
+                </label>
+            }
+        }
+    </div>
+</div>

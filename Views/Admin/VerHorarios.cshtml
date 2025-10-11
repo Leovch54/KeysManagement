@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Horarios del Docente";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-4">
+    <h2>Horarios de @ViewBag.Docente.NombreCompleto</h2>
+    <p><strong>Email:</strong> @ViewBag.Docente.Email</p>
+
+    <table class="table table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Días</th>
+                <th>Hora Inicio</th>
+                <th>Hora Fin</th>
+                <th>Aula</th>
+                <th>Materia</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var h in ViewBag.Horarios)
+            {
+                <tr>
+                    <td>
+                        @(h.Lunes ? "L " : "")
+                        @(h.Martes ? "M " : "")
+                        @(h.Miercoles ? "X " : "")
+                        @(h.Jueves ? "J " : "")
+                        @(h.Viernes ? "V " : "")
+                        @(h.Sabado ? "S" : "")
+                    </td>
+                    <td>@h.HoraInicio</td>
+                    <td>@h.HoraFin</td>
+                    <td>@h.Aula</td>
+                    <td>@h.Materia</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Registrar Usuario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-4">
+    <h2>Registrar Nuevo Usuario</h2>
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div class="alert alert-info">@ViewBag.Mensaje</div>
+    }
+
+    <form asp-action="RegistrarUsuario" asp-controller="Admin" method="post">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Nombres</label>
+                <input type="text" name="nombres" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Primer Apellido</label>
+                <input type="text" name="primerApellido" class="form-control" required />
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Segundo Apellido</label>
+                <input type="text" name="segundoApellido" class="form-control" />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Teléfono</label>
+                <input type="text" name="telefono" class="form-control" />
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Tipo</label>
+                <select name="tipo" class="form-select">
+                    <option value="DOCENTE">DOCENTE</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Rol</label>
+                <select name="rol" class="form-select">
+                    <option value="DOCENTE">DOCENTE</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required />
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn btn-success mt-3">Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>
