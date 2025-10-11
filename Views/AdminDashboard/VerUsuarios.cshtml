@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Usuarios Registrados";
+    var usuarios = ViewBag.Usuarios;
+}
+
+<h2>Usuarios Registrados</h2>
+
+<a asp-controller="AdminDashboard" asp-action="RegistrarUsuario" class="btn btn-primary mb-3">
+    Añadir Nuevo Usuario
+</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Correo</th>
+            <th>Rol</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in usuarios)
+        {
+            <tr>
+                <td>
+                    @(u.Persona != null
+                                    ? $"{u.Persona.Nombres} {u.Persona.PrimerApellido} {u.Persona.SegundoApellido}"
+                                    : "-")
+            </td>
+            <td>@u.Email</td>
+            <td>@u.Rol</td>
+            <td>
+                <form method="post" asp-action="EliminarUsuario" style="display:inline;">
+                    <input type="hidden" name="usuarioId" value="@u.UsuarioId" />
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar este usuario?');">
+                        Eliminar
+                    </button>
+                </form>
+            </td>
+        </tr>
+                }
+    </tbody>
+</table>

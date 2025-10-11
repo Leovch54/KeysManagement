@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="d-flex" style="min-height: 100vh;">
+
+    
+
+    <!-- Main content -->
+    <div class="flex-grow-1 p-4" style="background-color:#f3f3f3;">
+        <h2 class="fw-bold text-danger">Administrador</h2>
+
+        <!-- Estadísticas -->
+        <div class="row my-4">
+            <div class="col-md-3">
+                <div class="card text-center shadow" style="border-radius:20px; background-color:#80002a; color:white;">
+                    <div class="card-body">
+                        <i class="bi bi-key-fill" style="font-size:2rem; color:yellow;"></i>
+                        <h3>@(ViewBag.LlavesEnUso ?? 12)</h3>
+                        <p>Llaves en uso</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center shadow" style="border-radius:20px; background-color:#80002a; color:white;">
+                    <div class="card-body">
+                        <i class="bi bi-house-door-fill" style="font-size:2rem;"></i>
+                        <h3>@(ViewBag.AulasLibres ?? 8)</h3>
+                        <p>Aulas Libres</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de llaves pendientes -->
+        <h4 class="fw-bold">Llaves Pendientes:</h4>
+        <table class="table table-striped align-middle mt-3">
+            <thead>
+                <tr>
+                    <th>Docente</th>
+                    <th>Llave/Aula</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (ViewBag.LlavesPendientes != null)
+                {
+                    foreach (var item in ViewBag.LlavesPendientes)
+                    {
+                        <tr>
+                            <td>
+                                <img src="~/images/user.png" class="rounded-circle me-2" style="width:30px;height:30px;" />
+                                @item.Docente
+                            </td>
+                            <td>@item.Aula</td>
+                            <td>
+                                <div class="progress" style="height:20px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td><img src="~/images/user.png" class="rounded-circle me-2" style="width:30px;height:30px;" /> Karthi</td>
+                        <td>106</td>
+                        <td>
+                            <div class="progress" style="height:20px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 80%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/images/user.png" class="rounded-circle me-2" style="width:30px;height:30px;" /> Karthi</td>
+                        <td>110</td>
+                        <td>
+                            <div class="progress" style="height:20px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 60%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="~/images/user.png" class="rounded-circle me-2" style="width:30px;height:30px;" /> Karthi</td>
+                        <td>5</td>
+                        <td>
+                            <div class="progress" style="height:20px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 40%"></div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

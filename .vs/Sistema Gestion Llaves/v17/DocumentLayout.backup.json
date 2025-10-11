@@ -1,0 +1,469 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:controllers\\admindashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\docentedashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\docentedashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\admindashboard\\registrarusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\admindashboard\\registrarusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\admindashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\admindashboard\\verhorarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\admindashboard\\verhorarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\controllers\\docentedashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:controllers\\docentedashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\models\\horarioacademico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:models\\horarioacademico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\admindashboard\\verdocentes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\admindashboard\\verdocentes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\admindashboard\\verusuarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\admindashboard\\verusuarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\wwwroot\\css\\registrarusuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:wwwroot\\css\\registrarusuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\models\\aula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:models\\aula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\login\\cambiarpasswordprimeravez.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\login\\cambiarpasswordprimeravez.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\login\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\login\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\login\\recuperarpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\login\\recuperarpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\wwwroot\\css\\login.css||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:wwwroot\\css\\login.css||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\models\\sistemagestionllavescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:models\\sistemagestionllavescontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|c:\\users\\biytesmith\\desktop\\sistema gestion llaves\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50D2BAAB-C9D8-4F4D-B58C-79072050658D}|Sistema Gestion Llaves.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DocenteDashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Controllers\\DocenteDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocenteDashboardController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Controllers\\DocenteDashboardController.cs",
+              "RelativeToolTip": "Controllers\\DocenteDashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T17:14:42.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-21T16:26:50.978Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminDashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Controllers\\AdminDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminDashboardController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Controllers\\AdminDashboardController.cs",
+              "RelativeToolTip": "Controllers\\AdminDashboardController.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAuwMUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T17:14:20.75Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T17:15:11.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\DocenteDashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DocenteDashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\DocenteDashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\DocenteDashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T17:15:28.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegistrarUsuario.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\RegistrarUsuario.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\RegistrarUsuario.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\RegistrarUsuario.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\RegistrarUsuario.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T19:11:35.331Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T16:26:41.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "VerUsuarios.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\VerUsuarios.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\VerUsuarios.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\VerUsuarios.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\VerUsuarios.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T15:52:37.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VerHorarios.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\VerHorarios.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\VerHorarios.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\VerHorarios.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\VerHorarios.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAADgvxcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T17:11:37.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HorarioAcademico.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\HorarioAcademico.cs",
+              "RelativeDocumentMoniker": "Models\\HorarioAcademico.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\HorarioAcademico.cs",
+              "RelativeToolTip": "Models\\HorarioAcademico.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T17:10:05.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Aula.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\Aula.cs",
+              "RelativeDocumentMoniker": "Models\\Aula.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\Aula.cs",
+              "RelativeToolTip": "Models\\Aula.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T14:51:37.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wBQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T19:53:47.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VerDocentes.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\VerDocentes.cshtml",
+              "RelativeDocumentMoniker": "Views\\AdminDashboard\\VerDocentes.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\AdminDashboard\\VerDocentes.cshtml",
+              "RelativeToolTip": "Views\\AdminDashboard\\VerDocentes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-23T17:00:07.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CambiarPasswordPrimeraVez.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\CambiarPasswordPrimeraVez.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\CambiarPasswordPrimeraVez.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\CambiarPasswordPrimeraVez.cshtml",
+              "RelativeToolTip": "Views\\Login\\CambiarPasswordPrimeraVez.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T20:01:27.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-21T17:27:17.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T17:11:02.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\login.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "wwwroot\\css\\login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-23T15:51:06.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegistrarUsuario.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\RegistrarUsuario.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\RegistrarUsuario.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\RegistrarUsuario.css",
+              "RelativeToolTip": "wwwroot\\css\\RegistrarUsuario.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-23T15:57:22.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAcwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T16:29:57.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T03:16:26.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAwFIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T16:47:39.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T17:31:41.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\ResetPassword.cshtml",
+              "RelativeToolTip": "Views\\Login\\ResetPassword.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwB8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T18:50:23.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RecuperarPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\RecuperarPassword.cshtml",
+              "RelativeDocumentMoniker": "Views\\Login\\RecuperarPassword.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Login\\RecuperarPassword.cshtml",
+              "RelativeToolTip": "Views\\Login\\RecuperarPassword.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T18:18:26.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\login.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "wwwroot\\css\\login.css",
+              "ViewState": "AgIAAGABAAAAAAAAAAAswHYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-21T18:09:27.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-21T17:00:30.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SistemaGestionLlavesContext.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\SistemaGestionLlavesContext.cs",
+              "RelativeDocumentMoniker": "Models\\SistemaGestionLlavesContext.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Models\\SistemaGestionLlavesContext.cs",
+              "RelativeToolTip": "Models\\SistemaGestionLlavesContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAPQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T16:40:25.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Desktop\\Sistema Gestion Llaves\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T16:32:06.556Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

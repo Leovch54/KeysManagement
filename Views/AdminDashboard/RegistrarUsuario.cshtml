@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Registrar Usuario";
+}
+
+<h2>Registrar Nuevo Usuario</h2>
+
+<form method="post">
+    <h3>Datos de Persona</h3>
+    <div>
+        <label>Nombres:</label>
+        <input type="text" name="nombres" required class="form-control" />
+    </div>
+    <div>
+        <label>Primer Apellido:</label>
+        <input type="text" name="primerApellido" required class="form-control" />
+    </div>
+    <div>
+        <label>Segundo Apellido:</label>
+        <input type="text" name="segundoApellido" class="form-control" />
+    </div>
+    <div>
+        <label>Teléfono:</label>
+        <input type="text" name="telefono" class="form-control" />
+    </div>
+    <div>
+        <label>Tipo:</label>
+        <input type="text" name="tipo" class="form-control" />
+    </div>
+
+    <h3>Datos de Usuario</h3>
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" required class="form-control" />
+    </div>
+    <div>
+        <label>Rol:</label>
+        <select name="rol" required class="form-control">
+            <option value="admin">Admin</option>
+            <option value="docente">Docente</option>
+        </select>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-success">Registrar Usuario</button>
+</form>
+
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-info" style="margin-top:10px;">
+        @ViewBag.Mensaje
+    </div>
+}

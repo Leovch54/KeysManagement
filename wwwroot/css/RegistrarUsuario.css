@@ -1,0 +1,21 @@
+﻿
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: var(--color-primary-dark);
+        border-color: var(--color-primary-dark);
+    }
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(114, 16, 58, 0.25);
+}

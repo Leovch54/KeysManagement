@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Docentes";
+    var docentes = ViewBag.Docentes;
+}
+
+<h2>Docentes Registrados</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in docentes)
+        {
+            <tr>
+                <td>@($"{d.Nombres} {d.PrimerApellido} {d.SegundoApellido}")</td>
+                <td>@d.Email</td>
+                <td>@d.Telefono</td>
+                <td>
+                    <a asp-action="VerHorarios" asp-controller="AdminDashboard" asp-route-docenteId="@d.UsuarioId" class="btn btn-info btn-sm">
+                        Ver Horarios
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

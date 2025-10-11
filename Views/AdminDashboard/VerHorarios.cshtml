@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Sistema_Gestion_Llaves.Models.HorarioAcademico>
+
+@{
+    ViewBag.Title = "Lista de Horarios Académicos";
+}
+
+<h2 class="mb-4">📅 Lista de Horarios Académicos</h2>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Periodo Académico</th>
+            <th>Materia</th>
+            <th>Docente</th>
+            <th>Aula</th>
+            <th>Día</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Estado</th>
+            <th>Fecha Creación</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var horario in Model)
+            {
+                <tr>
+                    <td>@horario.Id</td>
+                    <td>@horario.PeriodoAcademico.Nombre</td>
+                    <td>@horario.Materia.Nombre</td>
+                 
+                    <td>@horario.Aula.Nombre</td>
+                    <td>@horario.Dia</td>
+                    <td>@horario.HoraInicio.ToString("HH:mm")</td>
+                    <td>@horario.HoraFin.ToString("HH:mm")</td>
+                    <td>@horario.Estado</td>
+                    <td>@horario.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="10" class="text-center text-muted">No hay horarios registrados</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="margin-top:20px;">
+    <a asp-controller="AdminDashboard" asp-action="Index" class="btn btn-primary">⬅ Volver al Dashboard</a>
+</div>
