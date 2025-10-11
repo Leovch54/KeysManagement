@@ -1,0 +1,29 @@
+:root {
+    --color-primary: rgba(114, 16, 58, 1) !important;
+    --color-primary-light: rgba(114, 16, 58, 0.3) !important;
+    --color-primary-dark: rgba(94, 13, 48, 1) !important;
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, 
+.btn:active:focus, 
+.btn-link.nav-link:focus, 
+.form-control:focus, 
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    margin-bottom: 60px;
+}
