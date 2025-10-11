@@ -1,0 +1,260 @@
+﻿:root {
+    --univalle-primary: rgba(114, 16, 58, 1);
+    --univalle-dark: rgba(80, 11, 41, 1);
+    --univalle-light: rgba(140, 20, 70, 1);
+    --univalle-gradient: linear-gradient(135deg, rgba(114, 16, 58, 1) 0%, rgba(140, 20, 70, 1) 100%);
+    --text-white: #ffffff;
+    --text-light: rgba(255, 255, 255, 0.9);
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.docente-layout {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--univalle-primary);
+    position: relative;
+    min-height: 100vh;
+}
+
+.docente-layout::before {
+    content: '';
+    position: fixed; /* Fixed para que se mantenga al hacer scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/background-pattern.jpg') repeat center / 50%;
+
+    opacity: 0.4; /* 40% opacidad de la imagen */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Asegurar que header, main y nav estén sobre el fondo */
+.docente-header,
+.docente-main,
+.bottom-nav {
+    position: relative;
+    z-index: 1;
+}
+
+.docente-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--univalle-gradient);
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    max-width: 100%;
+    position: relative;
+}
+
+.btn-back {
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-size: 20px;
+    padding: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-back:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.header-title {
+    font-family: 'Roboto';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--text-white);
+    letter-spacing: 1.5px;
+}
+
+.header-logo {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.header-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    background: var(--univalle-primary);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2), 0 0 0 6px rgba(255, 255, 255, 0.1), 0 3px 8px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.header-logo img:hover {
+    transform: scale(1.05);
+}
+
+.docente-main {
+    margin-top: 64px;
+    margin-bottom: 80px;
+    min-height: calc(100vh - 144px);
+    padding: 16px;
+    background-color: transparent;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 8px 0 12px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #6c757d;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    flex: 1; /* Todos ocupan el mismo espacio disponible */
+    max-width: 80px; /* Limita el ancho máximo */
+    position: relative;
+}
+
+.nav-item:not(.nav-item-center):hover {
+    color: var(--univalle-primary);
+    background: rgba(114, 16, 58, 0.05);
+}
+
+.nav-item:not(.nav-item-center).active {
+    color: var(--univalle-primary);
+}
+
+.nav-item i {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.nav-item span {
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 2px;
+    text-align: center; /* Centra el texto */
+    white-space: normal; /* Permite saltos de línea */
+    word-wrap: break-word; /* Rompe palabras largas si es necesario */
+    max-width: 100%; /* Asegura que use todo el ancho disponible */
+    line-height: 1.2; /* Ajusta el espacio entre líneas */
+}
+
+.nav-item-center {
+    margin-top: -60px;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+}
+
+.fab-button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--univalle-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.fab-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(114, 16, 58, 0.4);
+}
+
+.fab-button i {
+    color: var(--text-white);
+    font-size: 24px;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .docente-main {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bottom-nav {
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .docente-layout::after {
+        content: "Esta vista está optimizada para dispositivos móviles";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: var(--shadow-lg);
+        z-index: 9999;
+        text-align: center;
+        font-size: 18px;
+        color: var(--univalle-primary);
+    }
+}
+
+.text-univalle {
+    color: var(--univalle-primary);
+}
+
+.bg-univalle {
+    background: var(--univalle-primary);
+}
+
+.bg-univalle-gradient {
+    background: var(--univalle-gradient);
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+    .bottom-nav {
+        padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    }
+}
