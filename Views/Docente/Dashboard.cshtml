@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Panel Docente";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/dashboard-docente.css" asp-append-version="true" />
+
+<div class="text-center mt-4">
+    <img src="~/images/Logo.jpg" alt="UNIVALLE" class="logo-docente" />
+    <h2 class="titulo-univalle mt-3">UNIVALLE</h2>
+</div>
+
+<div class="menu-docente mt-4 p-3">
+    <div class="menu-container">
+        <div class="menu-line"></div>
+
+        <!-- SP2-01: Solicitar (nueva reserva) -->
+        <a href="/Docente/Solicitar" class="menu-item">
+            <div class="menu-left">
+                <i class="fas fa-key menu-icon"></i>
+                <span>Solicitar</span>
+            </div>
+            <i class="fas fa-chevron-right menu-arrow"></i>
+        </a>
+
+        <!-- SP2-01: Mis reservas -->
+        <a href="/Docente/MisReservas" class="menu-item">
+            <div class="menu-left">
+                <i class="fas fa-plus menu-icon"></i>
+                <span>Reserva</span>
+            </div>
+            <i class="fas fa-chevron-right menu-arrow"></i>
+        </a>
+
+        <!-- SP2-02: Horario de hoy -->
+        <a href="/Docente/Horario" class="menu-item">
+            <div class="menu-left">
+                <i class="fas fa-calendar-alt menu-icon"></i>
+                <span>Agenda</span>
+            </div>
+            <i class="fas fa-chevron-right menu-arrow"></i>
+        </a>
+
+        <!-- SP2-03: Estado general -->
+        <a href="/Estado/MiEstado" class="menu-item">
+            <div class="menu-left">
+                <i class="fas fa-info-circle menu-icon"></i>
+                <span>Mi Estado</span>
+            </div>
+            <i class="fas fa-chevron-right menu-arrow"></i>
+        </a>
+
+        <!-- Próximos módulos (placeholders) -->
+        <a href="/Docente/Avisos" class="menu-item">
+            <div class="menu-left">
+                <i class="fas fa-bullhorn menu-icon"></i>
+                <span>Avisos</span>
+            </div>
+            <i class="fas fa-chevron-right menu-arrow"></i>
+        </a>
+
+        <a href="/Docente/Ajustes" class="menu-item">
+            <div class="menu-left">
+                <i class="fas fa-cog menu-icon"></i>
+                <span>Ajustes</span>
+            </div>
+            <i class="fas fa-chevron-right menu-arrow"></i>
+        </a>
+    </div>
+</div>

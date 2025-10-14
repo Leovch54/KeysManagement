@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Solicitar Llave";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/solicitar-llave.css" asp-append-version="true" />
+<div class="solicitar-wrapper container mt-3">
+
+    <h4 class="text-center text-univalle mb-3">Solicitar Llave</h4>
+
+    @if (Model.ReservaActiva != null)
+    {
+        <div class="card-uv alert-destacada mb-4">
+            <div class="hdr">
+                <div class="hdr-left">
+                    <div class="icon-circ">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <h5 class="hdr-title">@Model.ReservaActiva.Aula</h5>
+                        <p class="hdr-sub">
+                            @Model.ReservaActiva.Inicio.ToString("dd/MM/yyyy") <br />
+                            @Model.ReservaActiva.Inicio.ToString("HH:mm") - @Model.ReservaActiva.Fin.ToString("HH:mm")
+                        </p>
+                    </div>
+                </div>
+                <span class="estado-chip chip-aprobada">@Model.ReservaActiva.Estado</span>
+            </div>
+
+            <div class="body">
+                <p>
+                    <i class="fas fa-clock"></i>
+                    Vence en @((Model.ReservaActiva.Fin - DateTime.Now).TotalMinutes.ToString("F0")) min
+                </p>
+
+            </div>
+
+            <div class="ftr">
+                <button class="btn-solicitar-llave">[Solicitar Llave]</button>
+            </div>
+        </div>
+    }
+
+    <h5 class="text-univalle mt-4 mb-2">Llaves actualmente en posesión</h5>
+
+    @if (Model.Prestamos != null && Model.Prestamos.Count > 0)
+    {
+        <div class="grid-llaves">
+            @foreach (var p in Model.Prestamos)
+            {
+                <div class="card-uv">
+                    <div class="hdr">
+                        <div class="hdr-left">
+                            <div class="icon-circ"><i class="fas fa-door-open"></i></div>
+                            <div>
+                                <h5 class="hdr-title">@p.Aula</h5>
+                                <p class="hdr-sub">@p.Inicio.ToString("HH:mm") - @p.Fin.ToString("HH:mm")</p>
+                            </div>
+                        </div>
+                        <span class="estado-chip chip-activo">EN USO</span>
+                    </div>
+                    <div class="ftr">
+                        <button class="btn-cancelar-uv">Devolver</button>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="empty-soft mt-3">
+            <i class="fas fa-info-circle"></i> No tienes llaves en uso actualmente.
+        </div>
+    }
+</div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        async function solicitarLlave(aula) {
+            const confirmar = await Swal.fire({
+                title: "¿Solicitar llave?",
+                text: `¿Deseas solicitar la llave de ${aula}?`,
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#72103A",
+                cancelButtonColor: "#6c757d",
+                confirmButtonText: "Sí, solicitar",
+                cancelButtonText: "No"
+            });
+
+            if (!confirmar.isConfirmed) return;
+
+            try {
+                const resp = await fetch(`/Docente/SolicitarLlave`, { method: "POST" });
+                const data = await resp.json();
+
+                if (data.ok) {
+                    Swal.fire("Listo ✅", "Llave registrada correctamente.", "success")
+                        .then(() => window.location.reload());
+                } else {
+                    Swal.fire("Error", data.error || "No se pudo registrar la llave.", "error");
+                }
+            } catch (err) {
+                Swal.fire("Error", "No se pudo conectar con el servidor.", "error");
+            }
+        }
+    </script>
+}

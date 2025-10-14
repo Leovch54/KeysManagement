@@ -1,0 +1,139 @@
+﻿<pre>@System.Text.Json.JsonSerializer.Serialize(ViewBag.Horarios)</pre>
+
+@{
+    ViewData["Title"] = "Ver Horario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var docente = ViewBag.Docente;
+    var horarios = ViewBag.Horarios as IEnumerable<dynamic> ?? new List<dynamic>();
+    var dias = new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+}
+
+<style>
+    .horario-container {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .horario-title {
+        color: #72103A;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .horario-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 14px;
+    }
+
+        .horario-table th {
+            background-color: #72103A;
+            color: white;
+            padding: 8px;
+        }
+
+        .horario-table td {
+            border: 1px solid #ddd;
+            height: 60px;
+            vertical-align: middle;
+        }
+
+    .celda-clase {
+        background-color: #f2e6eb;
+        color: #4a0e29;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 2px;
+    }
+</style>
+
+<div class="horario-container mt-3">
+    <h3 class="horario-title">Horario de @docente.NombreCompleto</h3>
+    <p><strong>Email:</strong> @docente.Email</p>
+
+    <table class="horario-table">
+        <thead>
+            <tr>
+                <th>Hora</th>
+                @foreach (var dia in dias)
+                {
+                    <th>@dia</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var horas = new[]
+                {
+                        "07:35 - 08:25",
+                        "08:35 - 09:25",
+                        "09:25 - 10:15",
+                        "10:25 - 11:15",
+                        "11:15 - 12:05",
+                        "12:15 - 13:05",
+                        "13:05 - 13:55",
+                        "14:05 - 14:55",
+                        "14:55 - 15:45",
+                        "15:55 - 16:45",
+                        "16:45 - 17:35"
+                        };
+
+                foreach (var hora in horas)
+                {
+                    var partes = hora.Split('-');
+                    var horaInicioStr = partes[0].Trim();
+                    var horaFinStr = partes[1].Trim();
+                    var horaInicioSpan = TimeSpan.Parse(horaInicioStr);
+                    var horaFinSpan = TimeSpan.Parse(horaFinStr);
+
+                    <tr>
+                        <td style="font-weight:500;">@hora</td>
+
+                        @foreach (var dia in dias)
+                        {
+                            var clase = horarios.FirstOrDefault(h =>
+                            {
+                                bool diaActivo =
+                                    (dia == "Lunes" && (bool)h.Lunes) ||
+                                    (dia == "Martes" && (bool)h.Martes) ||
+                                    (dia == "Miércoles" && (bool)h.Miercoles) ||
+                                    (dia == "Jueves" && (bool)h.Jueves) ||
+                                    (dia == "Viernes" && (bool)h.Viernes) ||
+                                    (dia == "Sábado" && (bool)h.Sabado);
+
+                                // Manejar ambos tipos: string o TimeSpan
+                                TimeSpan horaInicioClase = h.HoraInicio is string
+                                    ? TimeSpan.Parse((string)h.HoraInicio)
+                                    : (TimeSpan)h.HoraInicio;
+
+                                TimeSpan horaFinClase = h.HoraFin is string
+                                    ? TimeSpan.Parse((string)h.HoraFin)
+                                    : (TimeSpan)h.HoraFin;
+
+                                return diaActivo &&
+                                    horaInicioClase < horaFinSpan &&
+                                    horaFinClase > horaInicioSpan;
+                            });
+
+                            if (clase != null)
+                            {
+                                <td class="celda-clase">
+                                    <div>@clase.Materia</div>
+                                    <small>(@clase.Aula)</small>
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

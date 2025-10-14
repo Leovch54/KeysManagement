@@ -1,0 +1,63 @@
+﻿@model GestionLlaves.Models.ViewModels.EstadoVM
+@{
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+    ViewData["Title"] = "Mi Estado";
+}
+
+<div class="container my-3">
+    @if (Model.TienePrestamoActivo)
+    {
+        <div class="card border-success mb-3">
+            <div class="card-header">Préstamo activo</div>
+            <div class="card-body">
+                <div class="fw-bold">@Model.AulaActual</div>
+                <div>Fin programado: @Model.FinProgramado?.ToString("dd/MM HH:mm")</div>
+                <div>Tiempo restante: @Model.TiempoRestante?.ToString(@"hh\:mm\:ss")</div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-secondary">No tienes un préstamo activo.</div>
+    }
+
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="h5">Préstamos</div>
+                    <div class="display-6">@Model.TotalPrestamos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="h5">A tiempo</div>
+                    <div class="display-6">@Model.PorcentajeATiempo.ToString("0")%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <div class="h5">Racha</div>
+                    <div class="display-6">@Model.RachaATiempo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="mt-4">Historial reciente</h4>
+    @foreach (var h in Model.Historial)
+    {
+        <div class="d-flex justify-content-between border-bottom py-2">
+            <span>@h.Fecha.ToString("dd/MM HH:mm") • @h.Aula</span>
+            <span class="badge @(h.ATiempo ? "bg-success" : "bg-warning")">
+                @(h.ATiempo ? "A tiempo" : "Tarde")
+            </span>
+        </div>
+    }
+</div>

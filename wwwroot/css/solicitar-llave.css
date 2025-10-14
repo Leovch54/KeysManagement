@@ -1,0 +1,237 @@
+﻿/* ====== Solicitar Llave (UNIVALLE) ====== */
+/* Archivo: wwwroot/css/solicitar-llave.css */
+
+:root {
+    --uv-primary: #72103A;
+    --uv-primary-2: #8C1446;
+    --uv-grad: linear-gradient(135deg,#72103A 0%,#8C1446 100%);
+    --uv-ok: #2e7d32;
+    --uv-warn: #a67c00;
+    --uv-info: #1565c0;
+    --uv-danger: #b71c1c;
+    --uv-soft: #f7f7f9;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+    --shadow-md: 0 6px 18px rgba(0,0,0,.12);
+}
+
+.solicitar-wrapper {
+    margin-top: 8px;
+}
+
+/* --------- Tarjetas base --------- */
+.card-uv {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid #eee;
+    box-shadow: var(--shadow-sm);
+    transition: .25s ease;
+}
+
+    .card-uv:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .card-uv .hdr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .card-uv .hdr-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+    }
+
+.icon-circ {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--uv-grad);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 10px rgba(114,16,58,.25);
+    flex-shrink: 0;
+}
+
+.hdr-title {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--uv-primary);
+}
+
+.hdr-sub {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* --------- Chips / badges --------- */
+.estado-chip {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 6px 12px;
+    white-space: nowrap;
+}
+
+.chip-aprobada {
+    background: #dff0d8;
+    color: #2e7d32;
+}
+
+.chip-pendiente {
+    background: #fff5d6;
+    color: #a67c00;
+}
+
+.chip-rechazada {
+    background: #fde2e0;
+    color: #b71c1c;
+}
+
+.chip-activo {
+    background: #e9f5ff;
+    color: #1565c0;
+}
+
+/* --------- Cuerpo de tarjeta --------- */
+.card-uv .body {
+    border-top: 1px solid #eee;
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #374151;
+}
+
+.body p {
+    margin: 6px 0;
+}
+
+.body i {
+    color: var(--uv-primary);
+    margin-right: 6px;
+}
+
+/* --------- Pie / acciones --------- */
+.card-uv .ftr {
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+    padding-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+/* --------- Botones --------- */
+.btn-solicitar-llave {
+    background: var(--uv-grad);
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 10px 14px;
+    box-shadow: 0 8px 16px rgba(114,16,58,.25);
+    transition: .2s ease;
+}
+
+    .btn-solicitar-llave:hover {
+        filter: brightness(.95);
+        transform: translateY(-1px);
+    }
+
+.btn-cancelar-uv {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    color: #111827;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+    .btn-cancelar-uv:hover {
+        background: #e9ecef;
+    }
+
+/* --------- Bloque “Reserva destacada” (estilo azul del figma) --------- */
+.alert-destacada {
+    background: linear-gradient(180deg,#eef6ff 0%, #ffffff 60%);
+    border: 1px solid #cfe3ff;
+}
+
+    .alert-destacada .hdr-title {
+        color: #0f3e7a;
+    }
+
+    .alert-destacada .estado-chip {
+        background: #e9f5ff;
+        color: #0f3e7a;
+    }
+
+/* --------- Lista de llaves en posesión --------- */
+.grid-llaves {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (min-width:768px) {
+    .grid-llaves {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+        .grid-llaves .card-uv {
+            width: 48%;
+        }
+}
+
+@media (min-width:992px) {
+    .grid-llaves .card-uv {
+        width: 31.5%;
+    }
+}
+
+/* --------- Utilidades --------- */
+.text-uv {
+    color: var(--uv-primary);
+}
+
+.muted {
+    color: #6b7280;
+}
+
+.kpi {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #f9fafb;
+    border: 1px solid #eef2f7;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-size: 13px;
+    color: #374151;
+}
+
+/* --------- Estados vacíos / loaders --------- */
+.empty-soft {
+    background: var(--uv-soft);
+    border: 1px dashed #e5e7eb;
+    color: #6b7280;
+    padding: 14px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* --------- Evitar que el fondo “mosaico” opaque las tarjetas --------- */
+.solicitar-wrapper .card-uv {
+    backdrop-filter: blur(0);
+}

@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema de Gestión de Llaves</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/docente.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="docente-layout">
+    <header class="docente-header">
+        <div class="header-content">
+            <button class="btn-back" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="header-title">UNIVALLE</h1>
+            <div class="header-logo">
+                <img src="~/images/Logo.jpg" alt="UNIVALLE Logo" />
+            </div>
+        </div>
+    </header>
+
+    <main class="docente-main">
+        @RenderBody()
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="/Docente/Index" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="/Docente/Agenda" class="nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Agenda</span>
+        </a>
+        <a href="/Docente/Dashboard" class="nav-item nav-item-center">
+            <div class="fab-button">
+                <i class="fas fa-plus"></i>
+            </div>
+        </a>
+        <a href="/Docente/Prestamos" class="nav-item">
+            <i class="fas fa-key"></i>
+            <span>Mis Llaves</span>
+        </a>
+        <a href="/Docente/Perfil" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
