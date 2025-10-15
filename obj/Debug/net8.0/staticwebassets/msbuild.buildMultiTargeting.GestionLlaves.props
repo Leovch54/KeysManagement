@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GestionLlaves.props" />
+</Project>

@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Mi Estado";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+}
+<link rel="stylesheet" href="~/css/estado.css" asp-append-version="true" />
+
+<div class="estado-wrapper d-flex justify-content-center align-items-center min-vh-100">
+    <div class="estado-card shadow-lg text-center p-4">
+        <h2 class="fw-bold mb-3" style="color:#7A0026;">Estado Actual del Préstamo</h2>
+
+        <div class="icon-container mb-3">
+            <i class="bi bi-clock-history icon-glow"></i>
+        </div>
+
+        <div class="info-section text-start mb-3">
+            <p><strong>📘 Materia:</strong> <span>@Model.MateriaNombre</span></p>
+            <p><strong>🕒 Inicio:</strong> <span>@Model.HoraInicio.ToString("HH:mm")</span></p>
+            <p><strong>🕕 Fin:</strong> <span>@Model.HoraFin.ToString("HH:mm")</span></p>
+        </div>
+
+        <div class="progress-container mb-3">
+            <div class="progress" style="height: 22px; border-radius:12px;">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-gradient"
+                     role="progressbar"
+                     style="width:@Model.PorcentajeTranscurrido%">
+                    @Model.PorcentajeTranscurrido.ToString("0")%
+                </div>
+            </div>
+        </div>
+
+        <h5 class="fw-semibold mt-3 mb-1">Tiempo restante</h5>
+        <div id="contador" class="contador fs-4 fw-bold text-dark">
+            @Model.TiempoRestante.ToString(@"hh\:mm\:ss")
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="bi bi-calendar-check"></i>
+                <p>Total préstamos</p>
+                <span>@Model.TotalPrestamos</span>
+            </div>
+            <div class="stat-item">
+                <i class="bi bi-clock"></i>
+                <p>Devoluciones a tiempo</p>
+                <span>@Model.DevolucionesATiempo</span>
+            </div>
+            <div class="stat-item">
+                <i class="bi bi-lightning-charge"></i>
+                <p>Racha de días</p>
+                <span>@Model.RachaDias</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Tiempo inicial en segundos
+        let tiempoRestante = Math.floor(@Model.TiempoRestante.TotalSeconds);
+        const contador = document.getElementById('contador');
+        const progressBar = document.querySelector('.progress-bar');
+        const totalInicial = tiempoRestante;
+
+        function actualizarTemporizador() {
+            if (tiempoRestante > 0) {
+                tiempoRestante--;
+
+                const horas = Math.floor(tiempoRestante / 3600);
+                const minutos = Math.floor((tiempoRestante % 3600) / 60);
+                const segundos = Math.floor(tiempoRestante % 60);
+
+                // Actualizar el contador visual
+                contador.textContent =
+                    `${horas.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+
+                // Calcular el porcentaje de barra
+                const porcentaje = (tiempoRestante / totalInicial) * 100;
+                progressBar.style.width = porcentaje + "%";
+
+                // Cambiar color de la barra según el tiempo restante
+                progressBar.classList.remove('bg-success', 'bg-warning', 'bg-danger');
+                if (porcentaje > 60) progressBar.classList.add('bg-success');
+                else if (porcentaje > 30) progressBar.classList.add('bg-warning');
+                else progressBar.classList.add('bg-danger');
+            }
+            else {
+                // Cuando el tiempo llega a 0
+                contador.textContent = "00:00:00";
+                progressBar.style.width = "0%";
+                progressBar.classList.remove('bg-success', 'bg-warning');
+                progressBar.classList.add('bg-danger');
+
+                // 🔹 Mostrar alerta al finalizar
+                alert(" Tiempo finalizado. Por favor devuelva la llave.");
+
+                clearInterval(intervalo); // Detener contador
+            }
+        }
+
+        // Ejecutar cada segundo
+        const intervalo = setInterval(actualizarTemporizador, 1000);
+    </script>
+}
+
+}
+

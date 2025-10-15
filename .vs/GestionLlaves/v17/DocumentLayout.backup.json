@@ -1,0 +1,613 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\controllers\\estadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\estadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\controllers\\docentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\docentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\estado\\miestado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\estado\\miestado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\estado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\estado.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\prestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\solicitar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\solicitar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\viewmodels\\estadoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\estadoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\viewmodels\\docenteviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\docenteviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\viewmodels\\solicitar\\solicitarllaveviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\solicitar\\solicitarllaveviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\viewmodels\\solicitar\\solicitarllaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\solicitar\\solicitarllaverequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\viewmodels\\solicitar\\proximaclaseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\solicitar\\proximaclaseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\viewmodels\\solicitar\\itemsolicitarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\solicitar\\itemsolicitarviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\solicitar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\solicitar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\shared\\_layoutdocente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\shared\\_layoutdocente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\agenda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\agenda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\estado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\estado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\docente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\docente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\admin\\registrarusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\registrarusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\admin\\verdocentes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\verdocentes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\controllers\\connectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\connectioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\nuevareserva.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\nuevareserva.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\misreservas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\misreservas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\mis-reservas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\mis-reservas.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\docente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\menu-docente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\menu-docente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\dashboard-docente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\dashboard-docente.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\wwwroot\\css\\aulas-disponibles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\aulas-disponibles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\views\\admin\\verhorarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\verhorarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\sistemas\\gestionllaves\\gestionllaves\\gestionllaves\\models\\horarioacademico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\horarioacademico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 230,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Estado.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Estado.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Estado.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Estado.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Estado.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-14T19:17:44.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MiEstado.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Estado\\MiEstado.cshtml",
+              "RelativeDocumentMoniker": "Views\\Estado\\MiEstado.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Estado\\MiEstado.cshtml",
+              "RelativeToolTip": "Views\\Estado\\MiEstado.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-14T15:04:35.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DocenteController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\DocenteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocenteController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\DocenteController.cs",
+              "RelativeToolTip": "Controllers\\DocenteController.cs",
+              "ViewState": "AgIAADwBAAAAAAAAAAAAwD0BAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:05:37.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EstadoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\EstadoViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\EstadoViewModel.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\EstadoViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\EstadoViewModel.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:58:53.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DocenteViewModels.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\DocenteViewModels.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\DocenteViewModels.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\DocenteViewModels.cs",
+              "RelativeToolTip": "Models\\ViewModels\\DocenteViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-13T00:51:34.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EstadoController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\EstadoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EstadoController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\EstadoController.cs",
+              "RelativeToolTip": "Controllers\\EstadoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:56:53.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Prestamo.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\Prestamo.cs",
+              "RelativeDocumentMoniker": "Models\\Prestamo.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\Prestamo.cs",
+              "RelativeToolTip": "Models\\Prestamo.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T18:03:56.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SolicitarLlaveRequest.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\SolicitarLlaveRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\Solicitar\\SolicitarLlaveRequest.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\SolicitarLlaveRequest.cs",
+              "RelativeToolTip": "Models\\ViewModels\\Solicitar\\SolicitarLlaveRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:52:58.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Solicitar.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Solicitar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Solicitar.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Solicitar.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Solicitar.cshtml",
+              "ViewState": "AgIAALYAAAAAAAAAAAAIwMEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T00:09:12.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProximaClaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\ProximaClaseViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\Solicitar\\ProximaClaseViewModel.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\ProximaClaseViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\Solicitar\\ProximaClaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T18:05:49.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SolicitarLlaveViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\SolicitarLlaveViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\Solicitar\\SolicitarLlaveViewModel.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\SolicitarLlaveViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\Solicitar\\SolicitarLlaveViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T18:05:55.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAN8AAAAAAAAAAADwvxgBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:05:35.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:05:36.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ItemSolicitarViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\ItemSolicitarViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\Solicitar\\ItemSolicitarViewModel.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\ViewModels\\Solicitar\\ItemSolicitarViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\Solicitar\\ItemSolicitarViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T14:53:03.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-14T14:44:12.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Dashboard.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T21:02:54.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Agenda.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Agenda.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Agenda.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Agenda.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Agenda.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T00:09:04.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "docente.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\docente.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\docente.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\docente.css",
+              "RelativeToolTip": "wwwroot\\css\\docente.css",
+              "ViewState": "AgIAAMkAAAAAAAAAAAAUwAQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-12T20:59:01.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T17:49:41.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "solicitar.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\solicitar.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\solicitar.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\solicitar.css",
+              "RelativeToolTip": "wwwroot\\css\\solicitar.css",
+              "ViewState": "AgIAAP4BAAAAAAAAAAAmwBICAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-13T00:45:36.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_LayoutDocente.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Shared\\_LayoutDocente.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutDocente.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Shared\\_LayoutDocente.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutDocente.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwEMAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T20:58:44.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "estado.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\estado.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\estado.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\estado.css",
+              "RelativeToolTip": "wwwroot\\css\\estado.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-14T15:00:24.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "NuevaReserva.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\NuevaReserva.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\NuevaReserva.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\NuevaReserva.cshtml",
+              "RelativeToolTip": "Views\\Docente\\NuevaReserva.cshtml",
+              "ViewState": "AgIAALEAAAAAAAAAAAAuwM8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T21:10:15.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "aulas-disponibles.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\aulas-disponibles.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\aulas-disponibles.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\aulas-disponibles.css",
+              "RelativeToolTip": "wwwroot\\css\\aulas-disponibles.css",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAUwKAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-12T22:05:11.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "dashboard-docente.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\dashboard-docente.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\dashboard-docente.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\dashboard-docente.css",
+              "RelativeToolTip": "wwwroot\\css\\dashboard-docente.css",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAUwHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-12T21:04:21.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "mis-reservas.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\mis-reservas.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\mis-reservas.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\mis-reservas.css",
+              "RelativeToolTip": "wwwroot\\css\\mis-reservas.css",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAUwKAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-12T22:12:14.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MisReservas.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\MisReservas.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\MisReservas.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\MisReservas.cshtml",
+              "RelativeToolTip": "Views\\Docente\\MisReservas.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T22:12:24.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "menu-docente.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\menu-docente.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\menu-docente.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\wwwroot\\css\\menu-docente.css",
+              "RelativeToolTip": "wwwroot\\css\\menu-docente.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-12T20:59:12.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "RegistrarUsuario.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Admin\\RegistrarUsuario.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\RegistrarUsuario.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Admin\\RegistrarUsuario.cshtml",
+              "RelativeToolTip": "Views\\Admin\\RegistrarUsuario.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T20:15:41.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Docente\\Index.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T00:42:04.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "HorarioAcademico.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\HorarioAcademico.cs",
+              "RelativeDocumentMoniker": "Models\\HorarioAcademico.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Models\\HorarioAcademico.cs",
+              "RelativeToolTip": "Models\\HorarioAcademico.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAmwEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:31:10.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:25:29.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "VerHorarios.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Admin\\VerHorarios.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\VerHorarios.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Admin\\VerHorarios.cshtml",
+              "RelativeToolTip": "Views\\Admin\\VerHorarios.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T20:18:52.048Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "VerDocentes.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Admin\\VerDocentes.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\VerDocentes.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Admin\\VerDocentes.cshtml",
+              "RelativeToolTip": "Views\\Admin\\VerDocentes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T20:16:06.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T20:15:24.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ConnectionController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\ConnectionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ConnectionController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\Sistemas\\GestionLlaves\\GestionLlaves\\GestionLlaves\\Controllers\\ConnectionController.cs",
+              "RelativeToolTip": "Controllers\\ConnectionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T20:05:36.599Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

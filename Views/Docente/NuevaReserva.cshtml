@@ -1,0 +1,235 @@
+﻿@model GestionLlaves.Models.ViewModels.ReservaNuevaVM
+@{
+    ViewData["Title"] = "Nueva Reserva";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/aulas-disponibles.css" asp-append-version="true" />
+
+<div class="container mt-3">
+    <h4 class="text-center text-univalle mb-3">Nueva Reserva</h4>
+
+    <form id="formReserva" onsubmit="return false;">
+        <!-- Selección de fecha y hora -->
+        <div class="mb-3">
+            <label class="form-label">Fecha</label>
+            <input type="date" name="Fecha" class="form-control" required />
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label class="form-label">Hora Inicio</label>
+                <select name="HoraInicio" class="form-select" required>
+                    <option value="">-- Selecciona --</option>
+                    <option>07:35</option>
+                    <option>08:35</option>
+                    <option>09:25</option>
+                    <option>10:25</option>
+                    <option>11:15</option>
+                    <option>12:15</option>
+                    <option>13:05</option>
+                    <option>14:05</option>
+                    <option>14:55</option>
+                    <option>15:55</option>
+                    <option>16:45</option>
+                </select>
+            </div>
+
+            <div class="col-6">
+                <label class="form-label">Hora Fin</label>
+                <select name="HoraFin" class="form-select" required>
+                    <option value="">-- Selecciona --</option>
+                    <option>08:25</option>
+                    <option>09:25</option>
+                    <option>10:15</option>
+                    <option>11:15</option>
+                    <option>12:05</option>
+                    <option>13:05</option>
+                    <option>13:55</option>
+                    <option>14:55</option>
+                    <option>15:45</option>
+                    <option>16:45</option>
+                    <option>17:35</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mt-4" id="aulasContainer">
+            <p class="text-center text-muted">Selecciona fecha y horario para ver las aulas disponibles.</p>
+        </div>
+
+        <div class="mt-4">
+            <label class="form-label">Propósito</label>
+            <input type="text" name="Proposito" class="form-control" placeholder="Ej: Clase extra, práctica..." />
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Justificación</label>
+            <textarea name="Justificacion" class="form-control" placeholder="Explica brevemente el motivo"></textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="button" id="btnMandar" class="btn btn-primary bg-univalle px-4 py-2" disabled>
+                Mandar solicitud
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fechaInput = document.querySelector('[name="Fecha"]');
+            const inicioInput = document.querySelector('[name="HoraInicio"]');
+            const finInput = document.querySelector('[name="HoraFin"]');
+            const aulasContainer = document.getElementById('aulasContainer');
+            const btnMandar = document.getElementById('btnMandar');
+            let aulaSeleccionada = null;
+            let aulasOriginales = [];
+            let procesando = false;
+
+            // === Cargar aulas ===
+            async function cargarAulas() {
+                const fecha = fechaInput.value;
+                const inicio = inicioInput.value;
+                const fin = finInput.value;
+
+                if (!fecha || !inicio || !fin) {
+                    aulasContainer.innerHTML = `<p class="text-center text-muted mt-3">Selecciona fecha, hora inicio y fin.</p>`;
+                    btnMandar.disabled = true;
+                    return;
+                }
+
+                aulasContainer.innerHTML = `<p class="loading text-center">Cargando aulas disponibles...</p>`;
+
+                try {
+                    const res = await fetch(`/Docente/AulasDisponibles?fecha=${fecha}&horaInicio=${inicio}&horaFin=${fin}`);
+                    if (!res.ok) throw new Error('Error al cargar aulas');
+                    const aulas = await res.json();
+                    aulasOriginales = aulas;
+                    renderAulas(aulas);
+                } catch (error) {
+                    console.error('Error:', error);
+                    aulasContainer.innerHTML = `<div class="alert alert-danger text-center">Error al cargar aulas.</div>`;
+                }
+            }
+
+            // === Renderizar aulas ===
+            function renderAulas(aulas) {
+                if (!aulas.length) {
+                    aulasContainer.innerHTML = `<div class="alert alert-warning text-center">No hay aulas disponibles.</div>`;
+                    btnMandar.disabled = true;
+                    return;
+                }
+
+                const html = aulas.map(a => `
+                    <div class="aula-card" data-id="${a.id}" data-nombre="${a.nombre}">
+                        <div class="aula-header">
+                            <i class="fas fa-door-open icon-aula"></i>
+                            <div class="aula-info">
+                                <h5>${a.nombre}</h5>
+                                <small>${a.edificio}</small>
+                            </div>
+                            <span class="badge-disponible">Disponible</span>
+                        </div>
+                        <p><i class="fas fa-users"></i> Capacidad: ${a.capacidad}</p>
+                        <button type="button" class="btn-seleccionar">Seleccionar</button>
+                    </div>`).join('');
+
+                aulasContainer.innerHTML = `<div class="aulas-grid">${html}</div>`;
+
+                // Asignar eventos nuevamente cada vez que se renderiza
+                document.querySelectorAll('.btn-seleccionar').forEach(btn =>
+                    btn.addEventListener('click', () => seleccionarAula(btn))
+                );
+            }
+
+            // === Seleccionar aula ===
+            function seleccionarAula(btn) {
+                const card = btn.closest('.aula-card');
+                const id = card.dataset.id;
+                const nombre = card.dataset.nombre;
+
+                if (aulaSeleccionada && aulaSeleccionada.id === id) {
+                    // 🔹 Si presiona "Cancelar selección"
+                    aulaSeleccionada = null;
+                    renderAulas(aulasOriginales);
+                    btnMandar.disabled = true;
+                    return;
+                }
+
+                aulaSeleccionada = { id: parseInt(id), nombre };
+
+                // 🔹 Ocultar las demás aulas
+                document.querySelectorAll('.aula-card').forEach(c => {
+                    if (c !== card) {
+                        c.style.transition = 'all 0.3s ease';
+                        c.style.opacity = '0';
+                        setTimeout(() => c.remove(), 200);
+                    }
+                });
+
+                // 🔹 Marcar seleccionada
+                card.classList.add('selected');
+                btn.textContent = "Cancelar selección";
+                btn.classList.add('btn-cancelar-seleccion');
+                btnMandar.disabled = false;
+
+                // 🔹 Volver a mostrar todas si presiona de nuevo
+                btn.addEventListener('click', () => {
+                    aulaSeleccionada = null;
+                    renderAulas(aulasOriginales);
+                    btnMandar.disabled = true;
+                }, { once: true });
+            }
+
+            // === Enviar reserva ===
+            btnMandar.addEventListener('click', async () => {
+                if (!aulaSeleccionada || procesando) return;
+
+                const confirmar = confirm(`¿Confirmar reserva de ${aulaSeleccionada.nombre}?\n\nFecha: ${fechaInput.value}\nHora: ${inicioInput.value} - ${finInput.value}`);
+                if (!confirmar) return;
+
+                procesando = true;
+                btnMandar.disabled = true;
+                btnMandar.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando...';
+
+                try {
+                    const datos = {
+                        AulaId: parseInt(aulaSeleccionada.id),
+                        Fecha: fechaInput.value,
+                        HoraInicio: inicioInput.value,
+                        HoraFin: finInput.value,
+                        Proposito: document.querySelector('[name="Proposito"]').value || 'Sin propósito',
+                        Justificacion: document.querySelector('[name="Justificacion"]').value || 'Sin justificación'
+                    };
+
+                    const resp = await fetch('/Docente/NuevaReserva', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(datos)
+                    });
+
+                    const result = await resp.json();
+
+                    if (result.ok) {
+                        window.location.href = result.redirect || '/Docente/MisReservas';
+                    } else {
+                        alert(`❌ ${result.error}`);
+                        btnMandar.disabled = false;
+                        btnMandar.innerHTML = 'Mandar solicitud';
+                        procesando = false;
+                    }
+                } catch (error) {
+                    alert('❌ Error de conexión');
+                    btnMandar.disabled = false;
+                    btnMandar.innerHTML = 'Mandar solicitud';
+                    procesando = false;
+                }
+            });
+
+            // === Cargar aulas cuando cambian campos ===
+            [fechaInput, inicioInput, finInput].forEach(i => i.addEventListener('change', cargarAulas));
+        });
+    </script>
+}

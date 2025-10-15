@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Panel de Administración";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-5 text-center">
+    <h2>Panel de Administración</h2>
+    <p>Bienvenido, @ViewBag.Email</p>
+
+    <a href="/Admin/VerDocentes" class="btn btn-primary m-2">Ver Docentes</a>
+    <a href="/Admin/VerUsuarios" class="btn btn-secondary m-2">Ver Usuarios</a>
+    <a href="/Admin/RegistrarUsuario" class="btn btn-success m-2">Registrar Usuario</a>
+</div>
