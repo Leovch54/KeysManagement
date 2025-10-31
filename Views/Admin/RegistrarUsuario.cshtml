@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Registrar Usuario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-3">
+    <h2 class="admin-header">Gestionar Usuarios</h2>
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div id="alertaMensaje" class="alert alert-info text-center">@ViewBag.Mensaje</div>
+    }
+
+    <form id="formRegistro" asp-action="RegistrarUsuario" asp-controller="Admin" method="post" class="shadow-sm p-4 rounded" style="background-color:#fff;">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Nombres</label>
+                <input type="text" name="nombres" class="form-control" value="@ViewBag.Nombres" placeholder="Nombre completo" required />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Apellido Paterno</label>
+                <input type="text" name="primerApellido" class="form-control" value="@ViewBag.PrimerApellido" placeholder="Apellido paterno" required />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Apellido Materno</label>
+                <input type="text" name="segundoApellido" class="form-control" value="@ViewBag.SegundoApellido" placeholder="Apellido materno (opcional)" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Teléfono</label>
+                <input type="text" name="telefono" class="form-control" value="@ViewBag.Telefono" placeholder="Número de contacto" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Correo Electrónico</label>
+                <input type="email" name="email" class="form-control" value="@ViewBag.Email" placeholder="ejemplo@univalle.edu" required />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Tipo</label>
+                <select name="tipo" class="form-select">
+                    <option value="DOCENTE">Docente</option>
+                    <option value="ADMIN">Administrador</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Rol</label>
+                <select name="rol" class="form-select">
+                    <option value="DOCENTE">Docente</option>
+                    <option value="ADMIN">Administrador</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn-admin px-4 py-2">Registrar</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        // === Formatear automáticamente los nombres/apellidos ===
+        document.querySelectorAll('input[name="nombres"], input[name="primerApellido"], input[name="segundoApellido"]').forEach(input => {
+            input.addEventListener('blur', () => {
+                let texto = input.value.trim().replace(/\s+/g, ' ');
+                input.value = texto.split(' ').map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+            });
+        });
+
+        // === Quitar espacios extra del correo y teléfono ===
+        document.querySelectorAll('input[name="email"], input[name="telefono"]').forEach(input => {
+            input.addEventListener('blur', () => input.value = input.value.trim());
+        });
+
+        // === Limpiar el formulario si se creó el usuario ===
+        const limpiar = '@(ViewBag.Limpiar ?? false)'.toLowerCase() === 'true';
+        if (limpiar) {
+            document.getElementById('formRegistro').reset();
+            setTimeout(() => {
+                const alerta = document.getElementById('alertaMensaje');
+                if (alerta) alerta.remove();
+            }, 5000); // borra el mensaje después de 5 segundos
+        }
+    </script>
+}

@@ -1,0 +1,475 @@
+/* ============================================
+   CONTENEDOR PRINCIPAL DE EDICIÓN
+   ============================================ */
+
+.perfil-editar-container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* ============================================
+   SECCIONES DE EDICIÓN
+   ============================================ */
+
+.edit-section {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.edit-section:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Header de Sección */
+.edit-section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.edit-section-header i {
+    font-size: 1.25rem;
+}
+
+.edit-section-header h2 {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+    color: white;
+}
+
+/* Body de Sección */
+.edit-section-body {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+/* ============================================
+   SECCIÓN DE SOLO LECTURA
+   ============================================ */
+
+.readonly-section {
+    background: var(--gray-50);
+}
+
+.readonly-header {
+    background: linear-gradient(135deg, var(--gray-600) 0%, var(--gray-700) 100%);
+}
+
+.readonly-group {
+    opacity: 0.85;
+}
+
+.readonly-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    background: var(--gray-100);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    color: var(--gray-700);
+    font-size: 0.9375rem;
+    gap: var(--space-3);
+}
+
+.readonly-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    background: var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--gray-700);
+    white-space: nowrap;
+}
+
+.readonly-badge i {
+    font-size: 0.75rem;
+}
+
+/* ============================================
+   SECCIÓN DE SEGURIDAD
+   ============================================ */
+
+.security-section {
+    border: 2px solid var(--color-warning);
+}
+
+.security-header {
+    background: linear-gradient(135deg, var(--color-warning) 0%, #d97706 100%);
+}
+
+.security-info {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: #FEF3C7;
+    border-left: 4px solid var(--color-warning);
+    border-radius: var(--radius-md);
+}
+
+.security-info i {
+    font-size: 1.25rem;
+    color: #92400E;
+    flex-shrink: 0;
+}
+
+.security-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #92400E;
+    line-height: 1.5;
+}
+
+/* ============================================
+   GRUPOS DE FORMULARIO
+   ============================================ */
+
+.form-group-edit {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-label-edit {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-800);
+}
+
+.form-label-edit i {
+    font-size: 1rem;
+    color: var(--univalle-red);
+}
+
+.required {
+    color: var(--color-error);
+    font-weight: var(--font-weight-bold);
+}
+
+.optional {
+    color: var(--gray-500);
+    font-weight: var(--font-weight-normal);
+    font-size: 0.8125rem;
+}
+
+/* ============================================
+   INPUTS
+   ============================================ */
+
+.input-edit {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    color: var(--gray-900);
+    background: white;
+    transition: all 0.2s ease;
+}
+
+.input-edit:focus {
+    outline: none;
+    border-color: var(--univalle-red);
+    box-shadow: 0 0 0 3px var(--univalle-red-subtle);
+}
+
+.input-edit::placeholder {
+    color: var(--gray-400);
+}
+
+/* Input con grupo de contraseña */
+.input-password-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-password-group .input-edit {
+    padding-right: 3rem;
+}
+
+.btn-toggle-password {
+    position: absolute;
+    right: var(--space-3);
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-toggle-password:hover {
+    color: var(--univalle-red);
+}
+
+.btn-toggle-password i {
+    font-size: 1.125rem;
+}
+
+/* ============================================
+   AYUDA DE FORMULARIO
+   ============================================ */
+
+.form-help {
+    font-size: 0.8125rem;
+    color: var(--gray-600);
+    line-height: 1.4;
+}
+
+/* ============================================
+   BOTONES DE ACCIÓN
+   ============================================ */
+
+.edit-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: flex-end;
+    padding: var(--space-4) 0;
+}
+
+.btn-guardar-edit,
+.btn-cancelar-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-guardar-edit i,
+.btn-cancelar-edit i {
+    font-size: 1.125rem;
+}
+
+.btn-guardar-edit {
+    background: var(--univalle-red);
+    color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-guardar-edit:hover {
+    background: var(--univalle-red-dark);
+    box-shadow: var(--shadow-red);
+    transform: translateY(-1px);
+}
+
+.btn-cancelar-edit {
+    background: white;
+    color: var(--gray-700);
+    border: 2px solid var(--gray-300);
+}
+
+.btn-cancelar-edit:hover {
+    background: var(--gray-50);
+    border-color: var(--gray-400);
+}
+
+/* ============================================
+   ESTADOS DE VALIDACIÓN
+   ============================================ */
+
+.input-edit.is-valid {
+    border-color: var(--color-success);
+}
+
+.input-edit.is-valid:focus {
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.input-edit.is-invalid {
+    border-color: var(--color-error);
+}
+
+.input-edit.is-invalid:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.invalid-feedback {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.8125rem;
+    color: var(--color-error);
+    margin-top: var(--space-1);
+}
+
+.invalid-feedback i {
+    font-size: 0.875rem;
+}
+
+.valid-feedback {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: 0.8125rem;
+    color: var(--color-success);
+    margin-top: var(--space-1);
+}
+
+.valid-feedback i {
+    font-size: 0.875rem;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (min-width: 768px) {
+    .perfil-editar-container {
+        max-width: 800px;
+    }
+
+    .edit-section-body {
+        padding: var(--space-6);
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (<576px)
+   ============================================ */
+@media (max-width: 576px) {
+    .perfil-editar-container {
+        gap: var(--space-4);
+    }
+
+    .edit-section-header {
+        padding: var(--space-3) var(--space-4);
+    }
+
+    .edit-section-header i {
+        font-size: 1.125rem;
+    }
+
+    .edit-section-header h2 {
+        font-size: 1rem;
+    }
+
+    .edit-section-body {
+        padding: var(--space-4);
+        gap: var(--space-4);
+    }
+
+    .form-label-edit {
+        font-size: 0.875rem;
+    }
+
+    .input-edit {
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.875rem;
+    }
+
+    .readonly-field {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .readonly-badge {
+        align-self: flex-start;
+    }
+
+    .edit-actions {
+        flex-direction: column-reverse;
+        gap: var(--space-3);
+    }
+
+    .btn-guardar-edit,
+    .btn-cancelar-edit {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-3) var(--space-4);
+        font-size: 0.875rem;
+    }
+
+    .security-info {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE PEQUEÑO (<400px)
+   ============================================ */
+@media (max-width: 400px) {
+    .edit-section-header {
+        padding: var(--space-2) var(--space-3);
+    }
+
+    .edit-section-body {
+        padding: var(--space-3);
+        gap: var(--space-3);
+    }
+
+    .form-group-edit {
+        gap: var(--space-1);
+    }
+
+    .input-edit {
+        font-size: 0.8125rem;
+    }
+
+    .form-help {
+        font-size: 0.75rem;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.edit-section {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.edit-section:nth-child(1) { animation-delay: 0.05s; }
+.edit-section:nth-child(2) { animation-delay: 0.1s; }
+.edit-section:nth-child(3) { animation-delay: 0.15s; }
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+
+.btn-guardar-edit:focus,
+.btn-cancelar-edit:focus,
+.btn-toggle-password:focus,
+.input-edit:focus {
+    outline: 2px solid var(--univalle-red);
+    outline-offset: 2px;
+}

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Reporte de Llaves";
+}
+
+<h2 class="admin-header">🔑 Reporte de Llaves</h2>
+<p class="text-muted">Filtra y visualiza los préstamos de llaves por rango de fechas.</p>
+
+<!-- 🔍 Filtro de fechas -->
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <label for="desde" class="form-label fw-semibold">Desde:</label>
+        <input type="date" id="desde" name="desde" class="form-control" value="@ViewBag.Desde" />
+    </div>
+    <div class="col-md-3">
+        <label for="hasta" class="form-label fw-semibold">Hasta:</label>
+        <input type="date" id="hasta" name="hasta" class="form-control" value="@ViewBag.Hasta" />
+    </div>
+    <div class="col-md-3 align-self-end">
+        <button type="submit" class="btn btn-admin w-100">Filtrar</button>
+    </div>
+    <div class="col-md-3 align-self-end">
+        <a href="/Admin/ReporteLlaves" class="btn btn-secondary w-100">Limpiar Filtro</a>
+    </div>
+    <div class="mb-3 text-end">
+        <a class="btn btn-danger" href="@Url.Action("DescargarReporteLlaves", "Admin", new { desde = ViewBag.Desde, hasta = ViewBag.Hasta })">
+            <i class="bi bi-file-earmark-pdf-fill"></i> Descargar PDF
+        </a>
+    </div>
+
+</form>
+
+<!-- 🗂 Tabla de reportes -->
+<table class="table table-bordered table-striped mt-4 text-center align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Docente</th>
+            <th>Aula</th>
+            <th>Edificio</th>
+            <th>Inicio</th>
+            <th>Fin Programado</th>
+            <th>Devolución Real</th>
+            <th>Estado</th>
+            <th>Retraso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="8" class="text-muted py-4">No hay registros en el rango seleccionado</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                var retraso = item.Retraso ? "Sí" : "No";
+                var color = item.Retraso ? "text-danger fw-bold" : "text-success fw-bold";
+
+                <tr>
+                    <td>@item.Docente</td>
+                    <td>@item.Aula</td>
+                    <td>@item.Edificio</td>
+                    <td>@item.FechaInicio.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.FechaFinProgramada.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@(item.FechaFinReal != null ? item.FechaFinReal.ToString("dd/MM/yyyy HH:mm") : "—")</td>
+                    <td>@item.Estado</td>
+                    <td class="@color">@retraso</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

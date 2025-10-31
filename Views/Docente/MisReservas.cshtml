@@ -1,0 +1,132 @@
+﻿@model IEnumerable<GestionLlaves.Models.ViewModels.ReservaCardVM>
+@{
+    ViewData["Title"] = "Mis Reservas";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/mis-reservas.css" asp-append-version="true" />
+
+<div class="container mt-3">
+    <h4 class="text-center text-univalle mb-3">Mis Reservas</h4>
+
+    <!-- 🔹 Botón para crear nueva reserva -->
+    <div class="text-center mb-4">
+        <a href="/Docente/NuevaReserva" class="btn btn-nueva-reserva">
+            <i class="fas fa-plus-circle me-2"></i> Nueva Reserva
+        </a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center mt-4">
+            No tienes reservas registradas.
+        </div>
+    }
+    else
+    {
+        <div class="reservas-grid">
+            @foreach (var r in Model)
+            {
+                string estado = r.Estado?.ToUpper() ?? "PENDIENTE";
+                string claseBadge = estado switch
+                {
+                    "PENDIENTE" => "badge-pendiente",
+                    "APROBADA" or "ACTIVO" => "badge-aprobada",
+                    "RECHAZADA" or "CANCELADA" => "badge-rechazada",
+                    _ => "badge-pendiente"
+                };
+
+                <div class="reserva-card" id="reserva-@r.Id">
+                    <div class="reserva-header">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-circle">
+                                <i class="fas fa-door-open"></i>
+                            </div>
+                            <div class="reserva-info">
+                                <h5>@r.Aula</h5>
+                                <small>
+                                    📅 @r.Inicio.ToString("dd/MM/yyyy") <br />
+                                    ⏰ @r.Inicio.ToString("HH:mm") - @r.Fin.ToString("HH:mm")
+                                </small>
+                            </div>
+                        </div>
+                        <span class="estado-badge @claseBadge" id="estado-@r.Id">@estado</span>
+                    </div>
+
+                    <div class="reserva-body">
+                        <p><i class="fas fa-user"></i> Solicitante: Tú</p>
+                        <p><i class="fas fa-building"></i> Estado: <strong>@estado</strong></p>
+                    </div>
+
+                    <div class="reserva-footer">
+                        @if (estado == "PENDIENTE" || estado == "ACTIVO")
+                        {
+                            <button class="btn btn-cancelar" onclick="cancelarReserva(@r.Id)">
+                                <i class="fas fa-times"></i> Cancelar
+                            </button>
+                        }
+                        else if (estado == "APROBADA")
+                        {
+                            <span class="text-success fw-semibold">✔ Aprobada</span>
+                        }
+                        else if (estado == "RECHAZADA" || estado == "CANCELADA")
+                        {
+                            <span class="text-danger fw-semibold">✖ Cancelada</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        async function cancelarReserva(id) {
+            const confirmar = await Swal.fire({
+                title: "¿Cancelar reserva?",
+                text: "Una vez cancelada no podrás revertir esta acción.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#72103A",
+                cancelButtonColor: "#6c757d",
+                confirmButtonText: "Sí, cancelar",
+                cancelButtonText: "No"
+            });
+
+            if (!confirmar.isConfirmed) return;
+
+            try {
+                const resp = await fetch(`/Docente/CancelarReserva/${id}`, { method: "POST" });
+                const data = await resp.json();
+
+                if (data.ok) {
+                    const card = document.getElementById(`reserva-${id}`);
+                    const badge = document.getElementById(`estado-${id}`);
+
+                    if (badge) {
+                        badge.className = "estado-badge badge-rechazada";
+                        badge.innerText = "CANCELADA";
+                    }
+
+                    card.querySelector(".reserva-footer").innerHTML =
+                        `<span class='text-danger fw-semibold'>✖ Cancelada</span>`;
+
+                    await Swal.fire({
+                        title: "Reserva cancelada",
+                        text: "Tu solicitud fue cancelada correctamente.",
+                        icon: "success",
+                        confirmButtonColor: "#72103A"
+                    });
+                } else {
+                    Swal.fire("Error", data.error || "No se pudo cancelar la reserva.", "error");
+                }
+            } catch (err) {
+                Swal.fire("Error", "No se pudo conectar con el servidor.", "error");
+            }
+        }
+    </script>
+}
+
+

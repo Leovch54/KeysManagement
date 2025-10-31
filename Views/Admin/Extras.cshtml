@@ -1,0 +1,60 @@
+﻿@model IEnumerable<GestionLlaves.Models.Reserva>
+@{
+    ViewData["Title"] = "Extras";
+}
+
+<div class="container mt-4">
+    <h2>Solicitudes Extras</h2>
+    <p>Registrar requerimientos de limpieza, mantenimiento o estudiantes.</p>
+
+    <form asp-action="AgregarExtra" method="post" class="d-flex gap-2 mb-3">
+        <select name="area" class="form-select w-auto" required>
+            <option value="">Área</option>
+            <option value="Limpieza">Limpieza</option>
+            <option value="Mantenimiento">Mantenimiento</option>
+            <option value="Estudiante">Estudiante</option>
+        </select>
+        <input name="nombre" placeholder="Ej: María / Observación" class="form-control w-25" required />
+        <select name="aulaId" class="form-select w-auto" required>
+            <option value="">Aula</option>
+            @foreach (var a in ViewBag.Aulas)
+            {
+                <option value="@a.Id">@a.Codigo - @a.Edificio.Nombre</option>
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
+
+    <table class="table table-striped text-center align-middle">
+        <thead>
+            <tr>
+                <th>Área / Nombre</th>
+                <th>Aula</th>
+                <th>Estado</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var e in Model)
+            {
+                <tr>
+                    <td>@e.Proposito / @e.Justificacion</td>
+                    <td>@e.Aula?.Codigo</td>
+                    <td>
+                        <span class="badge @(e.EstadoReserva == "Pendiente" ? "bg-warning text-dark" : "bg-success")">
+                            @e.EstadoReserva
+                        </span>
+                    </td>
+                    <td>
+                        <form asp-action="CambiarEstadoExtra" method="post">
+                            <input type="hidden" name="id" value="@e.Id" />
+                            <button class="btn btn-sm @(e.EstadoReserva == "Pendiente" ? "btn-outline-success" : "btn-outline-secondary")">
+                                @(e.EstadoReserva == "Pendiente" ? "Marcar Devuelto" : "Marcar Pendiente")
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,485 @@
+:root {
+  /* ===================================
+     COLORES INSTITUCIONALES UNIVALLE
+     =================================== */
+  
+  /* Rojo UNIVALLE - Color Principal */
+  --univalle-red: #72103A;
+  --univalle-red-dark: #6b0e2a;
+  --univalle-red-light: #a6244a;
+  --univalle-red-lighter: #c04060;
+  --univalle-red-subtle: #f3e8ed;
+
+  /* Agregado 
+  --univalle-primary: rgba(114, 16, 58, 1);
+  --univalle-dark: rgba(80, 11, 41, 1);
+  --univalle-light: rgba(140, 20, 70, 1);
+  --univalle-gradient: linear-gradient(135deg, rgba(114, 16, 58, 1) 0%, rgba(140, 20, 70, 1) 100%);
+  --text-white: #ffffff;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.15);
+  */
+  
+  /* Dorado UNIVALLE - Color Secundario */
+  --univalle-gold: #d4af37;
+  --univalle-gold-dark: #b8941f;
+  --univalle-gold-light: #e8d067;
+  --univalle-gold-subtle: #fbf8e8;
+
+  /* ===================================
+     ESCALA DE GRISES MODERNA
+     =================================== */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* ===================================
+     COLORES DE ESTADO (FEEDBACK)
+     =================================== */
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-info: #3b82f6;
+  --color-info-light: #dbeafe;
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+  --color-purple: #a855f7;
+  --color-purple-light: #f3e8ff;
+  --color-pink: #ec4899;
+  --color-pink-light: #fce7f3;
+
+  /* ===================================
+     SISTEMA DE ESPACIADO (Grid 8px)
+     =================================== */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+
+  /* ===================================
+     SOMBRAS MODERNAS
+     =================================== */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-red: 0 8px 20px rgba(139, 21, 56, 0.15);
+  --shadow-gold: 0 8px 20px rgba(212, 175, 55, 0.15);
+  --shadow-fab: 0 6px 16px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+
+  /* ===================================
+     GRADIENTES INSTITUCIONALES
+     =================================== */
+  --gradient-header: linear-gradient(135deg, #8b1538 0%, #6b0e2a 100%);
+  --gradient-primary: linear-gradient(135deg, #8b1538 0%, #a6244a 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+
+  /* ===================================
+     RADIOS DE BORDES
+     =================================== */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+  --radius-full: 9999px; /* circular */
+
+  /* ===================================
+     TIPOGRAFÍA
+     =================================== */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ===================================
+     MOBILE - NAVEGACIÓN Y LAYOUT
+     =================================== */
+  --header-height: 60px;
+  --bottom-nav-height: 65px;
+  --fab-size: 56px;
+  --fab-elevation: 8px;
+  
+  /* Safe areas para iOS/Android */
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+
+  /* Z-index layers */
+  --z-header: 1000;
+  --z-bottom-nav: 1000;
+  --z-fab: 1001;
+  --z-modal: 1050;
+  --z-overlay: 999;
+
+  /* ===================================
+     BACKGROUND - CAMPUS OVERLAY
+     =================================== */
+  --overlay-opacity: 0.85;
+  --overlay-color: rgba(139, 21, 56, var(--overlay-opacity));
+}
+
+/* ============================================
+   DARK MODE (RESERVADO PARA USO FUTURO)
+   ============================================ */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827;
+    --foreground: #f9fafb;
+    --card-bg: #1f2937;
+  }
+}
+*/
+
+/* ============================================
+   SOBRESCRITURA DE BOOTSTRAP CON COLORES UNIVALLE
+   ============================================ */
+
+/* Botones Primarios - Rojo UNIVALLE */
+.btn-primary {
+  background-color: var(--univalle-red) !important;
+  border-color: var(--univalle-red) !important;
+  color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--univalle-red-dark) !important;
+  border-color: var(--univalle-red-dark) !important;
+  box-shadow: var(--shadow-red);
+}
+
+.btn-primary:active {
+  background-color: var(--univalle-red-dark) !important;
+  border-color: var(--univalle-red-dark) !important;
+}
+
+/* Botones Secundarios - Dorado UNIVALLE */
+.btn-secondary {
+  background-color: var(--univalle-gold) !important;
+  border-color: var(--univalle-gold) !important;
+  color: var(--gray-900) !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--univalle-gold-dark) !important;
+  border-color: var(--univalle-gold-dark) !important;
+  box-shadow: var(--shadow-gold);
+}
+
+/* Enlaces */
+a {
+  color: var(--univalle-red);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--univalle-red-dark);
+  text-decoration: underline;
+}
+
+/* Badges con colores institucionales */
+.badge-univalle-red {
+  background-color: var(--univalle-red);
+  color: white;
+}
+
+.badge-univalle-gold {
+  background-color: var(--univalle-gold);
+  color: var(--gray-900);
+}
+
+/* ============================================
+   TARJETAS MODERNAS
+   ============================================ */
+.card-univalle {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.card-univalle:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-univalle-header {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================
+   FORMULARIOS MEJORADOS
+   ============================================ */
+.form-control:focus {
+  border-color: var(--univalle-red-light);
+  box-shadow: 0 0 0 0.2rem rgba(139, 21, 56, 0.25);
+}
+
+.form-label {
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.form-control {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-300);
+  padding: var(--space-3) var(--space-4);
+}
+
+/* Estados de validación */
+.is-valid,
+.was-validated .form-control:valid {
+  border-color: var(--color-success);
+}
+
+.is-invalid,
+.was-validated .form-control:invalid {
+  border-color: var(--color-error);
+}
+
+/* ============================================
+   ALERTAS PERSONALIZADAS
+   ============================================ */
+.alert-univalle-info {
+  background-color: var(--color-info-light);
+  border-color: var(--color-info);
+  color: var(--color-info);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.alert-univalle-success {
+  background-color: var(--color-success-light);
+  border-color: var(--color-success);
+  color: var(--color-success);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.alert-univalle-warning {
+  background-color: var(--color-warning-light);
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.alert-univalle-error {
+  background-color: var(--color-error-light);
+  border-color: var(--color-error);
+  color: var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+/* ============================================
+   TABLAS MEJORADAS
+   ============================================ */
+.table-univalle {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.table-univalle thead {
+  background: var(--gradient-header);
+  color: white;
+}
+
+.table-univalle thead th {
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-4);
+  border: none;
+}
+
+.table-univalle tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table-univalle tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+.table-univalle tbody td {
+  padding: var(--space-3) var(--space-4);
+  vertical-align: middle;
+}
+
+/* ============================================
+   BADGES DE ESTADO
+   ============================================ */
+.badge-estado-activo {
+  background-color: var(--color-success);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-estado-pendiente {
+  background-color: var(--color-warning);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-estado-rechazado {
+  background-color: var(--color-error);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-estado-inactivo {
+  background-color: var(--gray-400);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-estado-disponible {
+  background-color: var(--color-success);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.75rem;
+}
+
+.badge-estado-ocupado {
+  background-color: var(--color-pink);
+  color: white;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.75rem;
+}
+
+/* ============================================
+   UTILIDADES PERSONALIZADAS
+   ============================================ */
+.text-univalle-red {
+  color: var(--univalle-red) !important;
+}
+
+.text-univalle-gold {
+  color: var(--univalle-gold) !important;
+}
+
+.bg-univalle-red {
+  background-color: var(--univalle-red) !important;
+}
+
+.bg-univalle-gold {
+  background-color: var(--univalle-gold) !important;
+}
+
+.bg-gradient-univalle {
+  background: var(--gradient-header) !important;
+}
+
+/* Espaciado personalizado */
+.p-custom-1 { padding: var(--space-1); }
+.p-custom-2 { padding: var(--space-2); }
+.p-custom-3 { padding: var(--space-3); }
+.p-custom-4 { padding: var(--space-4); }
+.p-custom-6 { padding: var(--space-6); }
+.p-custom-8 { padding: var(--space-8); }
+
+.m-custom-1 { margin: var(--space-1); }
+.m-custom-2 { margin: var(--space-2); }
+.m-custom-3 { margin: var(--space-3); }
+.m-custom-4 { margin: var(--space-4); }
+.m-custom-6 { margin: var(--space-6); }
+.m-custom-8 { margin: var(--space-8); }
+
+/* Safe areas para móvil */
+.safe-top {
+  padding-top: var(--safe-area-top);
+}
+
+.safe-bottom {
+  padding-bottom: var(--safe-area-bottom);
+}
+
+.safe-left {
+  padding-left: var(--safe-area-left);
+}
+
+.safe-right {
+  padding-right: var(--safe-area-right);
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE FIRST
+   ============================================ */
+@media (max-width: 768px) {
+  .card-univalle {
+    margin-bottom: var(--space-4);
+  }
+}
+
+/* ============================================
+   ANIMACIONES SUTILES
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ============================================
+   FOOTER INSTITUCIONAL (RESERVADO)
+   ============================================ */
+/*
+.footer-univalle {
+  background: var(--gray-900);
+  color: var(--gray-300);
+  padding: var(--space-8) 0 var(--space-4) 0;
+  margin-top: var(--space-16);
+}
+
+.footer-univalle a {
+  color: var(--univalle-gold-light);
+}
+
+.footer-univalle a:hover {
+  color: var(--univalle-gold);
+}
+*/

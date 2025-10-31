@@ -1,0 +1,241 @@
+/* ============================================
+   CARD PRINCIPAL DEL PERFIL
+   ============================================ */
+.card-perfil-principal {
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* ============================================
+   AVATAR SECTION
+   ============================================ */
+.perfil-avatar-section {
+    margin-bottom: var(--space-5);
+    position: relative;
+}
+
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-univalle-lg {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--univalle-red) 0%, var(--univalle-red-dark) 100%);
+    box-shadow: 0 8px 20px rgba(139, 21, 56, 0.3);
+    border: 4px solid white;
+}
+
+.btn-editar-avatar {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: var(--univalle-gold);
+    border: 3px solid white;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.btn-editar-avatar:hover {
+    background: var(--univalle-gold-dark);
+    transform: scale(1.1);
+}
+
+.btn-editar-avatar i {
+    font-size: 1rem;
+}
+
+/* ============================================
+   INFORMACIÓN DEL PERFIL
+   ============================================ */
+.perfil-info-section {
+    width: 100%;
+    margin-bottom: var(--space-6);
+}
+
+.perfil-nombre {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-4);
+}
+
+.perfil-info-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    margin-bottom: var(--space-2);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    color: var(--gray-700);
+}
+
+.perfil-info-item i {
+    font-size: 1.125rem;
+    color: var(--univalle-red);
+    flex-shrink: 0;
+}
+
+.perfil-info-item span {
+    flex: 1;
+    text-align: left;
+}
+
+.btn-editar-perfil {
+    margin-top: var(--space-4);
+}
+
+/* ============================================
+   SECCIONES DEL PERFIL
+   ============================================ */
+.perfil-section {
+    margin-bottom: var(--space-6);
+}
+
+.perfil-section:last-child {
+    margin-bottom: var(--space-10);
+}
+
+/* ============================================
+   BOTÓN CERRAR SESIÓN
+   ============================================ */
+.btn-cerrar-sesion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    width: 100%;
+    padding: var(--space-4);
+    background: white;
+    border: 2px solid var(--color-error);
+    border-radius: var(--radius-lg);
+    color: var(--color-error);
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cerrar-sesion:hover {
+    background: var(--color-error);
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-cerrar-sesion i {
+    font-size: 1.25rem;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET Y DESKTOP
+   ============================================ */
+@media (min-width: 768px) {
+    .card-perfil-principal {
+        padding: var(--space-10);
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (<415px)
+   ============================================ */
+@media (max-width: 415px) {
+    .card-perfil-principal {
+        padding: var(--space-6);
+    }
+
+    .avatar-univalle-lg {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .btn-editar-avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .btn-editar-avatar i {
+        font-size: 0.875rem;
+    }
+
+    .perfil-nombre {
+        font-size: 1.25rem;
+    }
+
+    .perfil-info-item {
+        font-size: 0.875rem;
+        padding: var(--space-2);
+    }
+
+    .perfil-info-item i {
+        font-size: 1rem;
+    }
+
+    .stat-card {
+        padding: var(--space-3);
+    }
+
+    .btn-cerrar-sesion {
+        padding: var(--space-3);
+        font-size: 0.9375rem;
+    }
+
+    .btn-cerrar-sesion i {
+        font-size: 1.125rem;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card-perfil-principal {
+    animation: fadeInScale 0.4s ease-out;
+}
+
+.perfil-section {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+.perfil-section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.perfil-section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.perfil-section:nth-child(4) {
+    animation-delay: 0.3s;
+}

@@ -1,0 +1,41 @@
+﻿.estado-card {
+    background: #fff;
+    border-radius: 15px;
+    max-width: 480px;
+    width: 100%;
+}
+
+.icon-container {
+    font-size: 3rem;
+    color: #7A0026;
+}
+
+.icon-glow {
+    text-shadow: 0 0 8px rgba(122, 0, 38, 0.5);
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-item i {
+    font-size: 1.8rem;
+    color: #7A0026;
+}
+
+.stat-item span {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.btn-danger {
+    background-color: #7A0026;
+    border: none;
+    border-radius: 10px;
+}
+
+    .btn-danger:hover {
+        background-color: #A30035;
+    }

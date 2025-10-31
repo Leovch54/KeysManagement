@@ -1,0 +1,65 @@
+﻿@model IEnumerable<GestionLlaves.Models.Prestamo>
+
+@{
+    ViewData["Title"] = "Solicitudes de Llaves";
+}
+
+<h2 class="admin-header">📋 Solicitudes de Llaves</h2>
+<p class="text-muted">Solicitudes registradas por docentes (tabla préstamo)</p>
+
+<table class="table table-bordered text-center align-middle mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>Docente</th>
+            <th>Aula</th>
+            <th>Edificio</th>
+            <th>Fecha Solicitud</th>
+            <th>Hora Fin Programada</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr><td colspan="7" class="text-muted py-4">No hay solicitudes</td></tr>
+        }
+        else
+        {
+            foreach (var s in Model)
+            {
+                <tr>
+                    <td>@($"{s.Persona?.Nombres} {s.Persona?.PrimerApellido}")</td>
+                    <td>@s.Aula?.Codigo</td>
+                    <td>@s.Aula?.Edificio?.Nombre</td>
+                    <td>@s.FechaInicio.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@s.FechaFinProgramada.ToString("HH:mm")</td>
+                    <td>
+                        <span class="badge bg-@(s.EstadoPrestamo == "ACTIVO" ? "warning text-dark" : s.EstadoPrestamo == "APROBADO" ? "success" : "danger")">
+                            @s.EstadoPrestamo
+                        </span>
+                    </td>
+                    <td>
+                        @if (s.EstadoPrestamo == "ACTIVO")
+                        {
+                            <form asp-action="CambiarEstadoSolicitud" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@s.Id" />
+                                <input type="hidden" name="estado" value="APROBADO" />
+                                <button type="submit" class="btn btn-success btn-sm">Aceptar</button>
+                            </form>
+                            <form asp-action="CambiarEstadoSolicitud" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@s.Id" />
+                                <input type="hidden" name="estado" value="RECHAZADO" />
+                                <button type="submit" class="btn btn-danger btn-sm">Rechazar</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <small>@s.UltimaMod?.ToString("dd/MM HH:mm")</small>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

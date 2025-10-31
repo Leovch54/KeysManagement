@@ -1,0 +1,82 @@
+﻿@model GestionLlaves.Models.ViewModels.EstadoViewModel
+@{
+    ViewData["Title"] = "Mi Estado";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/estado.css" asp-append-version="true" />
+
+<div class="estado-wrapper d-flex justify-content-center align-items-center min-vh-100">
+    <div class="estado-card shadow-lg text-center p-4">
+        <h2 class="fw-bold mb-3" style="color:#7A0026;">Estado Actual del Préstamo</h2>
+
+        <div class="icon-container mb-3">
+            <i class="bi bi-clock-history icon-glow"></i>
+        </div>
+
+        @if (Model.MateriaNombre != "Sin préstamo activo")
+        {
+            <div class="info-section text-start mb-3">
+                <p><strong>🏫 Aula:</strong> <span>@Model.AulaNombre</span></p>
+                <p><strong>📘 Materia:</strong> <span>@Model.MateriaNombre</span></p>
+                <p><strong>🕒 Inicio:</strong> <span>@Model.HoraInicio.ToString("HH:mm")</span></p>
+                <p><strong>🕕 Fin:</strong> <span>@Model.HoraFin.ToString("HH:mm")</span></p>
+            </div>
+
+            <div class="progress-container mb-3">
+                <div class="progress" style="height: 22px; border-radius:12px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                         role="progressbar"
+                         style="width:@Model.PorcentajeTranscurrido%">
+                        @Model.PorcentajeTranscurrido.ToString("0")%
+                    </div>
+                </div>
+            </div>
+
+            <h5 class="fw-semibold mt-3 mb-1">Tiempo restante</h5>
+            <div id="contador" class="contador fs-4 fw-bold text-dark">
+                @Model.TiempoRestante.ToString(@"hh\:mm\:ss")
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info mt-4" role="alert">
+                No tienes préstamos activos actualmente.
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let tiempoRestante = Math.floor(@Model.TiempoRestante.TotalSeconds);
+        const contador = document.getElementById('contador');
+        const progressBar = document.querySelector('.progress-bar');
+        const totalInicial = tiempoRestante;
+
+        if (tiempoRestante > 0) {
+            const intervalo = setInterval(() => {
+                if (tiempoRestante > 0) {
+                    tiempoRestante--;
+                    const h = Math.floor(tiempoRestante / 3600);
+                    const m = Math.floor((tiempoRestante % 3600) / 60);
+                    const s = tiempoRestante % 60;
+                    contador.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+
+                    const porcentaje = (tiempoRestante / totalInicial) * 100;
+                    progressBar.style.width = porcentaje + "%";
+                    progressBar.classList.remove('bg-success', 'bg-warning', 'bg-danger');
+                    if (porcentaje > 60) progressBar.classList.add('bg-success');
+                    else if (porcentaje > 30) progressBar.classList.add('bg-warning');
+                    else progressBar.classList.add('bg-danger');
+                } else {
+                    contador.textContent = "00:00:00";
+                    progressBar.style.width = "0%";
+                    progressBar.classList.add('bg-danger');
+                    clearInterval(intervalo);
+                    alert("⏰ Tiempo finalizado. Por favor, devuelva la llave.");
+                }
+            }, 1000);
+        }
+    </script>
+}
