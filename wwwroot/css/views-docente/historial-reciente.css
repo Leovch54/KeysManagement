@@ -1,0 +1,303 @@
+/* ============================================
+   CONTENEDOR GENERAL DEL HISTORIAL
+   ============================================ */
+.historial-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-4);
+}
+
+/* ============================================
+   GRUPO DE FECHA
+   ============================================ */
+.fecha-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   HEADER DE FECHA
+   ============================================ */
+.fecha-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
+}
+
+.fecha-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-md);
+    background: #DAE2FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fecha-icon i {
+    font-size: 1rem;
+    color: #5446F7;
+}
+
+.fecha-header span {
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-900);
+}
+
+/* ============================================
+   DIVISOR
+   ============================================ */
+.divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin-top: 0px;
+    margin-bottom: var(--space-4);
+}
+
+/* ============================================
+   CARD DE PRÉSTAMO
+   ============================================ */
+.prestamo-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background: #F6F9FB;
+    border: 3px solid #F0F3F3;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--space-3);
+    transition: all 0.2s ease;
+}
+
+.prestamo-card:last-child {
+    margin-bottom: 0;
+}
+
+.prestamo-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   ICONOS DE ESTADO
+   ============================================ */
+.icon-estado {
+    font-size: 1.125rem;
+    flex-shrink: 0;
+}
+
+.icon-azul {
+    color: var(--color-info);
+}
+
+.icon-verde {
+    color: var(--color-success);
+}
+
+.icon-amarillo {
+    color: var(--color-warning);
+}
+
+/* ============================================
+   CONTENIDO DEL PRÉSTAMO
+   ============================================ */
+.prestamo-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 0;
+}
+
+.prestamo-texto {
+    font-size: 0.9375rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-900);
+    line-height: 1.4;
+}
+
+.prestamo-horario {
+    font-size: 0.8125rem;
+    color: var(--gray-600);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+
+/* ============================================
+   BADGES DE ESTADO
+   ============================================ */
+.badge-historial {
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-semibold);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.badge-azul {
+    background: var(--color-info-light);
+    color: #1e40af;
+}
+
+.badge-verde {
+    background: var(--color-success-light);
+    color: #065f46;
+}
+
+.badge-amarillo {
+    background: var(--color-warning-light);
+    color: #92400e;
+}
+
+/* ============================================
+   BOTÓN VER MÁS
+   ============================================ */
+.btn-ver-mas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-3) var(--space-6);
+    margin-top: var(--space-2);
+    background: white;
+    color: var(--univalle-red);
+    border: 1.5px solid var(--univalle-red);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-weight-medium);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-ver-mas:hover {
+    background: var(--gray-50);
+    border-color: var(--gray-400);
+}
+
+.btn-ver-mas i {
+    font-size: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (<415px)
+   ============================================ */
+@media (max-width: 415px) {
+    .historial-container {
+        gap: var(--space-5);
+    }
+
+    .fecha-header {
+        gap: var(--space-2);
+    }
+
+    .fecha-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .fecha-icon i {
+        font-size: 0.9375rem;
+    }
+
+    .fecha-header span {
+        font-size: 0.875rem;
+    }
+
+    .prestamo-card {
+        padding: var(--space-3);
+        gap: var(--space-2);
+    }
+
+    .icon-estado {
+        font-size: 1rem;
+    }
+
+    .prestamo-texto {
+        font-size: 0.875rem;
+    }
+
+    .prestamo-horario {
+        font-size: 0.75rem;
+    }
+
+    .badge-historial {
+        font-size: 0.6875rem;
+        padding: 2px var(--space-2);
+    }
+
+    .btn-ver-mas {
+        padding: var(--space-3) var(--space-5);
+        font-size: 0.875rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE PEQUEÑO (<375px)
+   ============================================ */
+@media (max-width: 375px) {
+    .prestamo-card {
+        flex-wrap: wrap;
+    }
+
+    .badge-historial {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        margin-top: var(--space-2);
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fecha-grupo {
+    animation: fadeInUp 0.4s ease-out forwards;
+    opacity: 0;
+}
+
+.fecha-grupo:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.fecha-grupo:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.fecha-grupo:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.fecha-grupo:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.fecha-grupo:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.fecha-grupo:nth-child(6) {
+    animation-delay: 0.3s;
+}

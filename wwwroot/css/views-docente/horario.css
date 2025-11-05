@@ -1,0 +1,551 @@
+/* ============================================
+   NAVEGACIÓN DE FECHA - STICKY
+   ============================================ */
+.date-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  background: var(--univalle-red);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.date-nav-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: white;
+  color: var(--univalle-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.date-nav-btn:hover {
+  background: var(--gray-100);
+  transform: scale(1.05);
+}
+
+.date-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.date-display {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.date-display h2 {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-semibold);
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.date-display p {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* ============================================
+   LISTA DE HORARIOS
+   ============================================ */
+.horario-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* ============================================
+   CARD DE HORARIO - DISEÑO HORIZONTAL (>400px)
+   ============================================ */
+.horario-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+  overflow: hidden;
+}
+
+.horario-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Columna izquierda: tiempo y punto */
+.horario-header-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.horario-time {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.horario-time i {
+  font-size: 0.875rem;
+}
+
+.horario-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Contenido principal del horario */
+.horario-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.horario-materia {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* Badge del icono de materia - RENOMBRADO */
+.icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.icon-badge i {
+  font-size: 1rem;
+  color: var(--univalle-red);
+}
+
+.horario-materia h3 {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.horario-ubicacion {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+}
+
+.horario-ubicacion i {
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.horario-descripcion {
+  font-size: 0.8125rem;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: var(--font-weight-medium);
+}
+
+/* Badge pendiente */
+.badge-univalle {
+  font-size: 0.75rem;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.badge-pendiente {
+  background: #FFF9BA;
+  color: #733410;
+  border: 1px solid #FEE55F;
+}
+
+/* ============================================
+   ESTADOS DE HORARIO - COLORES
+   ============================================ */
+
+/* Verde - Clase confirmada */
+.horario-verde {
+  background-color: #EFFEF3;
+  border-left: 4px solid var(--color-success);
+}
+
+.horario-verde .horario-dot {
+  background-color: var(--color-success);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.horario-verde .horario-time {
+  color: #065f46;
+}
+
+.horario-verde .horario-time i {
+  color: var(--color-success);
+}
+
+.horario-verde .icon-badge {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.horario-verde .icon-badge i {
+  color: var(--color-success);
+}
+
+.horario-verde .horario-materia h3 {
+  color: #065f46;
+}
+
+.horario-verde .horario-descripcion {
+  color: #059669;
+}
+
+/* Azul - Próxima clase */
+.horario-azul {
+  background-color: #EFF6FF;
+  border-left: 4px solid var(--color-info);
+}
+
+.horario-azul .horario-dot {
+  background-color: var(--color-info);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.horario-azul .horario-time {
+  color: #1e40af;
+}
+
+.horario-azul .horario-time i {
+  color: var(--color-info);
+}
+
+.horario-azul .icon-badge {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.horario-azul .icon-badge i {
+  color: var(--color-info);
+}
+
+.horario-azul .horario-materia h3 {
+  color: #1e40af;
+}
+
+.horario-azul .horario-descripcion {
+  color: #2563eb;
+}
+
+/* Amarillo - Reserva pendiente */
+.horario-amarillo {
+  background-color: #FFFBEB;
+  border-left: 4px solid var(--color-warning);
+}
+
+.horario-amarillo .horario-dot {
+  background-color: var(--color-warning);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+}
+
+.horario-amarillo .horario-time {
+  color: #92400e;
+}
+
+.horario-amarillo .horario-time i {
+  color: var(--color-warning);
+}
+
+.horario-amarillo .icon-badge {
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.horario-amarillo .icon-badge i {
+  color: var(--color-warning);
+}
+
+.horario-amarillo .horario-materia h3 {
+  color: #92400e;
+}
+
+.horario-amarillo .horario-descripcion {
+  color: #d97706;
+}
+
+/* Rojo - Conflicto */
+.horario-rojo {
+  background-color: #FEF2F2;
+  border-left: 4px solid var(--color-error);
+}
+
+.horario-rojo .horario-dot {
+  background-color: var(--color-error);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+
+.horario-rojo .horario-time {
+  color: #991b1b;
+}
+
+.horario-rojo .horario-time i {
+  color: var(--color-error);
+}
+
+.horario-rojo .icon-badge {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.horario-rojo .icon-badge i {
+  color: var(--color-error);
+}
+
+.horario-rojo .horario-materia h3 {
+  color: #991b1b;
+}
+
+.horario-rojo .horario-descripcion {
+  color: #dc2626;
+}
+
+/* Gris - Tiempo libre */
+.horario-gris {
+  background-color: var(--gray-100);
+  border-left: 4px solid var(--gray-400);
+  opacity: 0.85;
+}
+
+.horario-gris .horario-dot {
+  background-color: var(--gray-400);
+  box-shadow: 0 0 0 4px rgba(156, 163, 175, 0.2);
+}
+
+.horario-gris .horario-time {
+  color: var(--gray-700);
+}
+
+.horario-gris .horario-time i {
+  color: var(--gray-500);
+}
+
+.horario-gris .icon-badge {
+  background: rgba(156, 163, 175, 0.1);
+}
+
+.horario-gris .icon-badge i {
+  color: var(--gray-500);
+}
+
+.horario-gris .horario-materia h3 {
+  color: var(--gray-700);
+}
+
+.horario-gris .horario-descripcion {
+  color: var(--gray-600);
+}
+
+/* ============================================
+   LEYENDA DE INDICADORES
+   ============================================ */
+.card-univalle-header {
+  background: white;
+  color: black;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+}
+
+.card-univalle-header i {
+  color: var(--univalle-red);
+  font-size: 1.125rem;
+}
+
+.leyenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+.leyenda-item .status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.status-dot-success {
+  background-color: var(--color-success);
+}
+
+.status-dot-warning {
+  background-color: var(--color-warning);
+}
+
+.status-dot-error {
+  background-color: var(--color-error);
+}
+
+.leyenda-item strong {
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-900);
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (<400px)
+   ============================================ */
+@media (max-width: 400px) {
+  /* Navegación más compacta */
+  .date-navigation {
+    padding: var(--space-3);
+    top: 56px;
+  }
+
+  .date-nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .date-nav-btn i {
+    font-size: 0.75rem;
+  }
+
+  .date-display h2 {
+    font-size: 0.875rem;
+  }
+
+  .date-display p {
+    font-size: 0.75rem;
+  }
+
+  /* Card layout vertical compacto */
+  .horario-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .horario-header-row {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .horario-time {
+    font-size: 0.8125rem;
+  }
+
+  .horario-time i {
+    font-size: 0.75rem;
+  }
+
+  .horario-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .icon-badge {
+    width: 28px;
+    height: 28px;
+  }
+
+  .icon-badge i {
+    font-size: 0.875rem;
+  }
+
+  .horario-materia h3 {
+    font-size: 0.9375rem;
+  }
+
+  .horario-ubicacion {
+    font-size: 0.8125rem;
+  }
+
+  .horario-descripcion {
+    font-size: 0.75rem;
+  }
+
+  .badge-univalle {
+    font-size: 0.6875rem;
+    padding: 2px var(--space-2);
+  }
+
+  /* Leyenda más compacta */
+  .leyenda-list {
+    gap: var(--space-2);
+    padding: var(--space-3);
+  }
+
+  .leyenda-item {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ============================================
+   ANIMACIONES DE ENTRADA
+   ============================================ */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.horario-card {
+  animation: slideInFromLeft 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.horario-card:nth-child(1) { animation-delay: 0.05s; }
+.horario-card:nth-child(2) { animation-delay: 0.1s; }
+.horario-card:nth-child(3) { animation-delay: 0.15s; }
+.horario-card:nth-child(4) { animation-delay: 0.2s; }
+.horario-card:nth-child(5) { animation-delay: 0.25s; }

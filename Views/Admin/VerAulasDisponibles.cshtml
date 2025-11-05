@@ -1,0 +1,128 @@
+﻿@{
+    ViewData["Title"] = "Ver Aulas Disponibles";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var horarios = ViewBag.Horarios as IEnumerable<dynamic> ?? new List<dynamic>();
+    var diaSeleccionado = ViewBag.DiaSeleccionado as string ?? "Lunes";
+    var dias = new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+}
+
+<style>
+    .horario-container {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .horario-title {
+        color: #72103A;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .horario-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 14px;
+    }
+
+        .horario-table th {
+            background-color: #72103A;
+            color: white;
+            padding: 8px;
+        }
+
+        .horario-table td {
+            border: 1px solid #ddd;
+            height: 60px;
+            vertical-align: middle;
+        }
+
+    .celda-libre {
+        background-color: #e8f6e8;
+        color: #206020;
+        font-weight: 600;
+        border-radius: 4px;
+        padding: 2px;
+    }
+
+    .selector-dia {
+        margin-bottom: 20px;
+    }
+</style>
+
+<div class="horario-container mt-3">
+    <h3 class="horario-title">Aulas disponibles — @diaSeleccionado</h3>
+
+    <form method="get" asp-action="VerAulasDisponibles" class="selector-dia">
+        <label for="dia"><strong>Seleccionar día:</strong></label>
+        <select id="dia" name="dia" onchange="this.form.submit()" class="form-select" style="width:200px; display:inline-block; margin-left:10px;">
+            @foreach (var d in dias)
+            {
+                <option value="@d" selected="@(d == diaSeleccionado ? "selected" : null)">@d</option>
+            }
+        </select>
+    </form>
+
+    <table class="horario-table">
+        <thead>
+            <tr>
+                <th>Hora</th>
+                <th>Aula</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var bloques = new[]
+                {
+                        "07:35 - 08:25",
+                        "08:35 - 09:25",
+                        "09:25 - 10:15",
+                        "10:25 - 11:15",
+                        "11:15 - 12:05",
+                        "12:15 - 13:05",
+                        "13:05 - 13:55",
+                        "14:05 - 14:55",
+                        "14:55 - 15:45",
+                        "15:55 - 16:45",
+                        "16:45 - 17:35"
+                        };
+
+                foreach (var bloque in bloques)
+                {
+                    var partes = bloque.Split('-');
+                    var inicio = TimeSpan.Parse(partes[0].Trim());
+                    var fin = TimeSpan.Parse(partes[1].Trim());
+
+                    // Filtrar horarios vacíos de este bloque
+                    var libres = horarios.Where(h =>
+                    ((TimeSpan)h.HoraInicio).ToString(@"hh\:mm") == inicio.ToString(@"hh\:mm") &&
+                    ((TimeSpan)h.HoraFin).ToString(@"hh\:mm") == fin.ToString(@"hh\:mm")
+                    ).ToList();
+
+                    if (libres.Any())
+                    {
+                        foreach (var aula in libres)
+                        {
+                            <tr>
+                                <td>@bloque</td>
+                                <td>@aula.Aula</td>
+                                <td class="celda-libre">Disponible</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@bloque</td>
+                            <td colspan="2">— No hay aulas libres en este horario —</td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>

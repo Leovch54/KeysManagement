@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Panel de Administración";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Dashboard - Panel de Administración</h2>
+    <p class="text-center">Bienvenido, @ViewBag.Email</p>
+
+    <!-- Tarjetas de resumen -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3 clickable-card" onclick="location.href='/Admin/VerUsuarios'">
+                <div class="card-body">
+                    <h5 class="card-title">Usuarios Registrados</h5>
+                    <p class="card-text display-6" id="totalUsuarios">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3 clickable-card" onclick="location.href='/Admin/Llaves'">
+                <div class="card-body">
+                    <h5 class="card-title">Llaves Pendientes</h5>
+                    <p class="card-text display-6" id="llavesPendientes">0</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3 clickable-card" onclick="location.href='/Admin/VerAulasDisponibles'">
+                <div class="card-body">
+                    <h5 class="card-title">Aulas Disponibles</h5>
+                    <p class="card-text display-6" id="aulasDisponiblesCount">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla de aulas disponibles -->
+    <div class="card p-3 mb-3" id="tablaAulasDisponiblesContainer">
+        <h5>Aulas Disponibles Actualmente</h5>
+        <table class="table table-striped mt-2" id="tablaAulasDisponibles">
+            <thead>
+                <tr>
+                    <th>Aula</th>
+                    <th>Edificio</th>
+                    <th>Horario Libre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3" class="text-center">Cargando...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+                // Cargar aulas disponibles
+                async function cargarAulasDisponibles() {
+                    try {
+                        const response = await fetch('/Admin/GetAulasDisponibles');
+                        const data = await response.json();
+
+                        // Actualiza el contador de aulas
+                        document.getElementById('aulasDisponiblesCount').innerText = data.length ?? 0;
+
+                        const tbody = document.querySelector('#tablaAulasDisponibles tbody');
+                        tbody.innerHTML = '';
+
+                        if (data.length > 0) {
+                            data.forEach(aula => {
+                                const tr = document.createElement('tr');
+                                tr.innerHTML = `
+        <td>${aula.codigo ?? aula.Codigo ?? 'Sin código'}</td>
+        <td>${aula.edificio ?? aula.Edificio ?? 'Sin edificio'}</td>
+        <td>${aula.horarioLibre ?? aula.HorarioLibre ?? 'Sin horario'}</td>
+                                `;
+                                tbody.appendChild(tr);
+                            });
+                        } else {
+                            tbody.innerHTML = `<tr><td colspan="3" class="text-center">No hay aulas libres en este momento</td></tr>`;
+                        }
+                    } catch (err) {
+                        console.error('Error al cargar aulas disponibles:', err);
+                    }
+                }
+
+                // Cargar totales de usuarios y llaves pendientes
+                async function cargarTotales() {
+                    try {
+                        const response = await fetch('/Admin/GetDashboardTotals');
+                        const data = await response.json();
+
+                        document.getElementById('totalUsuarios').innerText = data.totalUsuarios ?? 0;
+                        document.getElementById('llavesPendientes').innerText = data.llavesPendientes ?? 0;
+                    } catch (err) {
+                        console.error('Error al cargar totales:', err);
+                    }
+                }
+
+                // Carga inicial y refresco cada 30 segundos
+                cargarAulasDisponibles();
+                cargarTotales();
+                setInterval(cargarAulasDisponibles, 30000);
+                setInterval(cargarTotales, 30000);
+    </script>
+
+    <style>
+        .clickable-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+            .clickable-card:hover {
+                transform: scale(1.05);
+            }
+    </style>
+}

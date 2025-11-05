@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Docentes";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-4">
+    <h2>Lista de Docentes</h2>
+    <table class="table table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in ViewBag.Docentes)
+            {
+                <tr>
+                    <td>@d.Nombres @d.PrimerApellido @d.SegundoApellido</td>
+                    <td>@d.Email</td>
+                    <td>@d.Telefono</td>
+                    <td>@d.Tipo</td>
+                    <td>
+                        <a href="/Admin/VerHorarios?docenteId=@d.Id" class="btn btn-sm btn-info">Ver horarios</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

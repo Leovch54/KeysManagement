@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 2,
+    "Area": "Mantenimiento",
+    "Nombre": "Leo",
+    "Aula": "T-103",
+    "FechaSolicitud": "2025-10-28T16:07:42.0663428-04:00",
+    "FechaDevolucion": "2025-10-28T16:07:52.537893-04:00",
+    "Estado": "Devuelto"
+  },
+  {
+    "Id": 1,
+    "Area": "Estudiante",
+    "Nombre": "Maria",
+    "Aula": "T-102",
+    "FechaSolicitud": "2025-10-28T16:07:11.6119777-04:00",
+    "FechaDevolucion": "2025-10-28T16:07:19.893236-04:00",
+    "Estado": "Devuelto"
+  },
+  {
+    "Id": 3,
+    "Area": "Estudiante",
+    "Nombre": "Leandro",
+    "Aula": "T-102",
+    "FechaSolicitud": "2025-10-27T20:42:17.8777448-04:00",
+    "FechaDevolucion": "2025-10-27T20:42:40.5812512-04:00",
+    "Estado": "Devuelto"
+  },
+  {
+    "Id": 2,
+    "Area": "Estudiante",
+    "Nombre": "Leo ",
+    "Aula": "T-102",
+    "FechaSolicitud": "2025-10-27T01:00:41.7751978-04:00",
+    "FechaDevolucion": "2025-10-27T01:00:50.5377465-04:00",
+    "Estado": "Devuelto"
+  }
+]

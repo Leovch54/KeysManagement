@@ -1,0 +1,215 @@
+﻿@model GestionLlaves.Models.ViewModels.Solicitar.SolicitarLlaveViewModel
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/views-docente/solicitar.css" asp-append-version="true" />
+}
+
+<!-- Header con saludo personalizado -->
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Hola, @Model.NombreDocente</h1>
+        <p>@Model.FechaActual.ToString("dddd, dd 'de' MMMM", new System.Globalization.CultureInfo("es-ES"))</p>
+    </div>
+</div>
+
+<!-- Card de Solicitar - Solo UNO a la vez con diseño de alerta -->
+@if (Model.ItemSolicitar != null)
+{
+    var item = Model.ItemSolicitar;
+    var esReserva = item.Tipo == "RESERVA";
+    var esClase = item.Tipo == "CLASE";
+
+    <div class="alert-reserva">
+        <div class="alert-header-row">
+            <div class="alert-icon">
+                @if (esClase)
+                {
+                    <i class="fa-regular fa-calendar"></i>
+                }
+                else
+                {
+                    <i class="fa-regular fa-circle-check"></i>
+                }
+            </div>
+            <div class="alert-content">
+                <h3>@(esReserva ? "Hay reserva excepcional aprobada AHORA" : "Clase programada AHORA")</h3>
+                <p>@(esReserva ? "Reserva activa aprobada" : "Clase en curso")</p>
+            </div>
+            <div class="badge-approved">@(esReserva ? "Aprobada" : "Activa")</div>
+        </div>
+        <div class="alert-details">
+            <p><strong>@item.Titulo - @item.Subtitulo</strong></p>
+            @* <p><i class="fa-regular fa-clock"></i> @item.HorarioFormateado</p> *@
+            <p><i class="fa-regular fa-clock"></i> Vence en @item.TiempoRestanteFormateado</p>
+        </div>
+        <button class="btn-univalle-primary btn-solicitar"
+                onclick="solicitarLlave(@(item.ReservaId?.ToString() ?? "null"), @(item.HorarioAcademicoId?.ToString() ?? "null"), @item.AulaId, '@item.TipoPrestamo')">
+            [Solicitar Llave]
+        </button>
+    </div>
+}
+else
+{
+    <!-- Mensaje cuando no hay clases ni reservas -->
+    <div class="alert-reserva" style="background: linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%); border-color: #D1D5DB;">
+        <div class="alert-header-row">
+            <div class="alert-icon" style="background: var(--gray-500);">
+                <i class="fa-regular fa-calendar-xmark"></i>
+            </div>
+            <div class="alert-content">
+                <h3 style="color: var(--gray-700);">Sin actividades programadas</h3>
+                <p style="color: var(--gray-600);">No tienes clases ni reservas en este momento</p>
+            </div>
+        </div>
+        <div class="alert-details">
+            <p style="color: var(--gray-600);">Revisa tu horario o programa una reserva excepcional para solicitar llaves.</p>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <!-- Estado Actual de Llaves -->
+    <div class="col-lg-6 mb-4">
+        <div class="card-univalle">
+            <div class="section-header">
+                <div class="section-header-content">
+                    <i class="bi bi-key"></i>
+                    <h2>Estado Actual de Llaves</h2>
+                </div>
+                <p class="section-subtitle">Llaves actualmente en tu posesión</p>
+            </div>
+
+            @if (Model.LlavesActivas.Any())
+            {
+                @foreach (var llave in Model.LlavesActivas)
+                {
+                    var claseCard = llave.EsEnUso ? "en-uso" : "proximo";
+                    <div class="llave-card @claseCard">
+                        <div class="llave-info">
+                            <div>
+                                <h3 class="llave-title">@llave.CodigoAula - @llave.NombreEdificio</h3>
+                                @*if (!string.IsNullOrEmpty(llave.Descripcion))
+                                {
+                                    <p class="clase-aula">@llave.Descripcion</p>
+                                }*@
+                                <p class="llave-time">
+                                    <i class="bi bi-clock"></i>
+                                    @llave.HorarioFormateado
+                                </p>
+                            </div>
+                            <div class="status-indicator @(llave.EsEnUso ? "green" : "orange")"></div>
+                        </div>
+                        <div class="llave-badges">
+                            <span class="badge-status badge-@(llave.EsEnUso ? "en-uso" : "proximo")">
+                                @llave.EstadoTexto
+                            </span>
+                            <span class="badge-status badge-tiempo">
+                                @(llave.EsEnUso ? "Tiempo restante" : "Comienza en"): @llave.TiempoRestanteFormateado
+                            </span>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="text-center py-4">
+                    <i class="bi bi-inbox" style="font-size: 3rem; color: var(--gray-500);"></i>
+                    <p class="text-muted mt-3">No tienes llaves en posesión</p>
+                </div>
+            }
+
+            <a asp-action="MisLlaves" class="action-link" hidden>
+                Ver todos los detalles
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Próximas Clases -->
+    <div class="col-lg-6 mb-4">
+        <div class="card-univalle">
+            <div class="section-header">
+                <div class="section-header-content">
+                    <i class="fa-regular fa-calendar"></i>
+                    <h2>Próximas Clases</h2>
+                </div>
+                <p class="section-subtitle">Resumen rápido de tu agenda académica</p>
+            </div>
+
+            @if (Model.ProximasClases.Any())
+            {
+                @foreach (var clase in Model.ProximasClases)
+                {
+                    <div class="clase-item">
+                        <div class="clase-header">
+                            <div>
+                                <h3 class="clase-nombre">@clase.NombreMateria</h3>
+                                <p class="clase-aula">@clase.CodigoAula</p>
+                            </div>
+                            <span class="badge-dia">@clase.DiaTexto</span>
+                        </div>
+                        <div class="clase-info">
+                            <span><i class="bi bi-clock"></i> @clase.HorarioFormateado</span>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="text-center py-4">
+                    <i class="bi bi-calendar-x" style="font-size: 3rem; color: var(--gray-500);"></i>
+                    <p class="text-muted mt-3">No hay clases próximas programadas</p>
+                </div>
+            }
+
+            <a asp-action="MiHorario" class="action-link">
+                Ver agenda completa
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        async function solicitarLlave(reservaId, horarioId, aulaId, tipo) {
+            // Confirmar la solicitud
+            if (!confirm('¿Estás seguro de solicitar esta llave?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('@Url.Action("SolicitarLlave", "Docente")', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]').value
+                    },
+                    body: JSON.stringify({
+                        reservaId: reservaId,
+                        horarioAcademicoId: horarioId,
+                        aulaId: aulaId,
+                        tipo: tipo
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    alert('¡Llave solicitada exitosamente!');
+                    window.location.href = '@Url.Action("MiEstado", "Estado")';
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error al procesar la solicitud');
+            }
+        }
+    </script>
+}
+
+@* Token antifalsificación para AJAX *@
+<form style="display:none">
+    @Html.AntiForgeryToken()
+</form>

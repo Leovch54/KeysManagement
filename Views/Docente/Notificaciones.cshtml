@@ -1,0 +1,185 @@
+﻿@section Styles {
+    <link rel="stylesheet" href="~/css/views-docente/siu.css" asp-append-version="true" />
+}
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Notificaciones</h1>
+        <p>Centro de recordatorios y alertas del sistema</p>
+    </div>
+</div>
+
+<!-- Tabs de navegación -->
+<div class="estado-tabs" hidden>
+    <button class="tab-button left active" id="tabEstadoActual">Todas (5)</button>
+    <button class="tab-button right" id="tabHistorialReciente">No leidas (3)</button>
+</div>
+
+<!-- Botón Marcar todas como leídas -->
+<div class="action-header" hidden>
+    <button class="btn-marcar-todas">
+        <i class="bi bi-check2-all"></i>
+        Marcar todas como leídas
+    </button>
+</div>
+
+<!-- Lista de Notificaciones -->
+<div class="notificaciones-lista">
+
+    <!-- Notificación 1: NO LEÍDA - Alta prioridad -->
+    <div class="notif-card no-leida">
+        <div class="notif-icon-container alta">
+            <i class="bi bi-exclamation-triangle"></i>
+        </div>
+        <div class="notif-content">
+            <div class="notif-header">
+                <h3 class="notif-title">Recordatorio de devolución</h3>
+                <span class="badge-prioridad alta">Alta</span>
+            </div>
+            <p class="notif-description">
+                Debes devolver la llave del Aula 101 en 15 minutos (10:00 AM)
+            </p>
+            <div class="notif-footer">
+                <div class="notif-meta">
+                    <i class="bi bi-calendar3"></i>
+                    <span>2/9/2025</span>
+                    <i class="bi bi-clock"></i>
+                    <span>09:45</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-notif-leida">
+                        <i class="bi bi-check"></i>
+                        Leída
+                    </button>
+                    <button class="btn-notif-eliminar">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación 2: NO LEÍDA - Media prioridad -->
+    <div class="notif-card no-leida">
+        <div class="notif-icon-container media">
+            <i class="bi bi-check-circle"></i>
+        </div>
+        <div class="notif-content">
+            <div class="notif-header">
+                <h3 class="notif-title">Solicitud aprobada</h3>
+                <span class="badge-prioridad media">Media</span>
+            </div>
+            <p class="notif-description">
+                Tu reserva excepcional para el Auditorio Principal ha sido aprobada para el 10/09/2025 18:00-20:00
+            </p>
+            <div class="notif-footer">
+                <div class="notif-meta">
+                    <i class="bi bi-calendar3"></i>
+                    <span>2/9/2025</span>
+                    <i class="bi bi-clock"></i>
+                    <span>08:30</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-notif-leida">
+                        <i class="bi bi-check"></i>
+                        Leída
+                    </button>
+                    <button class="btn-notif-eliminar">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación 3: LEÍDA - Media prioridad -->
+    <div class="notif-card leida">
+        <div class="notif-icon-container media">
+            <i class="bi bi-book"></i>
+        </div>
+        <div class="notif-content">
+            <div class="notif-header">
+                <h3 class="notif-title">Próxima clase</h3>
+                <span class="badge-prioridad media">Media</span>
+            </div>
+            <p class="notif-description">
+                Tienes clase de Física II en el Lab 203 en 30 minutos (14:00)
+            </p>
+            <div class="notif-footer">
+                <div class="notif-meta">
+                    <i class="bi bi-calendar3"></i>
+                    <span>2/9/2025</span>
+                    <i class="bi bi-clock"></i>
+                    <span>13:30</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-notif-eliminar">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación 4: NO LEÍDA - Alta prioridad -->
+    <div class="notif-card no-leida">
+        <div class="notif-icon-container alta">
+            <i class="bi bi-exclamation-circle"></i>
+        </div>
+        <div class="notif-content">
+            <div class="notif-header">
+                <h3 class="notif-title">Llave no devuelta</h3>
+                <span class="badge-prioridad alta">Alta</span>
+            </div>
+            <p class="notif-description">
+                La llave del Aula 205 debía ser devuelta hace 5 minutos. Por favor, devuélvela lo antes posible.
+            </p>
+            <div class="notif-footer">
+                <div class="notif-meta">
+                    <i class="bi bi-calendar3"></i>
+                    <span>1/9/2025</span>
+                    <i class="bi bi-clock"></i>
+                    <span>16:05</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-notif-leida">
+                        <i class="bi bi-check"></i>
+                        Leída
+                    </button>
+                    <button class="btn-notif-eliminar">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación 5: LEÍDA - Baja prioridad -->
+    <div class="notif-card leida">
+        <div class="notif-icon-container baja">
+            <i class="bi bi-tools"></i>
+        </div>
+        <div class="notif-content">
+            <div class="notif-header">
+                <h3 class="notif-title">Mantenimiento programado</h3>
+                <span class="badge-prioridad baja">Baja</span>
+            </div>
+            <p class="notif-description">
+                El Laboratorio 301 estará en mantenimiento mañana de 08:00 a 12:00
+            </p>
+            <div class="notif-footer">
+                <div class="notif-meta">
+                    <i class="bi bi-calendar3"></i>
+                    <span>1/9/2025</span>
+                    <i class="bi bi-clock"></i>
+                    <span>14:00</span>
+                </div>
+                <div class="notif-actions">
+                    <button class="btn-notif-eliminar">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

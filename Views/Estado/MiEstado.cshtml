@@ -1,0 +1,225 @@
+﻿@model GestionLlaves.Models.ViewModels.EstadoViewModel
+@{
+    ViewData["Title"] = "Mi Estado";
+    Layout = "~/Views/Shared/_LayoutDocente.cshtml";
+    
+    // Calcular estado del badge
+    string badgeEstado = "A tiempo";
+    string badgeClass = "badge-tiempo";
+    
+    if (Model.TiempoRestante.TotalMinutes <= 10)
+    {
+        badgeEstado = "Por vencer";
+        badgeClass = "badge-tiempo badge-warning";
+    }
+    else if (Model.TiempoRestante.TotalMinutes <= 0)
+    {
+        badgeEstado = "Vencido";
+        badgeClass = "badge-tiempo badge-danger";
+    }
+    
+    // Calcular tiempo desde que se tomó la llave
+    var tiempoDesdeInicio = DateTime.Now - Model.HoraInicio;
+    string tiempoTranscurridoTexto = "";
+    
+    if (tiempoDesdeInicio.TotalMinutes < 60)
+    {
+        tiempoTranscurridoTexto = $"hace {Math.Floor(tiempoDesdeInicio.TotalMinutes)} min";
+    }
+    else
+    {
+        tiempoTranscurridoTexto = $"hace {Math.Floor(tiempoDesdeInicio.TotalHours)}h {tiempoDesdeInicio.Minutes}min";
+    }
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/views-docente/estado-actual.css" asp-append-version="true" />
+    <style>
+        .badge-warning {
+            background: #FEF3C7 !important;
+            color: #92400e !important;
+        }
+        .badge-warning::before {
+            background: var(--color-warning) !important;
+        }
+        .badge-danger {
+            background: #FEE2E2 !important;
+            color: #991b1b !important;
+        }
+        .badge-danger::before {
+            background: var(--color-error) !important;
+        }
+        .timer-number.warning {
+            color: var(--color-warning) !important;
+        }
+        .timer-number.danger {
+            color: var(--color-error) !important;
+        }
+        .timer-display i.warning {
+            color: var(--color-warning) !important;
+        }
+        .timer-display i.danger {
+            color: var(--color-error) !important;
+        }
+    </style>
+}
+
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Mi Estado</h1>
+        <p>Estado actual, estadística e historial</p>
+    </div>
+</div>
+
+<!-- Tabs de navegación -->
+<div class="estado-tabs" hidden>
+    <button class="tab-button left active" id="tabEstadoActual">Estado Actual</button>
+    <button class="tab-button right" id="tabHistorialReciente">Historial Reciente</button>
+</div>
+
+@if (Model.MateriaNombre != "Sin préstamo activo")
+{
+    <!-- Card de llave activa -->
+    <div class="card-llave-activa">
+        <div class="llave-header">
+            <div class="llave-icon">
+                <i class="bi bi-key"></i>
+            </div>
+            <div class="llave-info-header">
+                <h2>@Model.AulaNombre - @Model.MateriaNombre</h2>
+                <span class="@badgeClass">
+                    @badgeEstado
+                </span>
+            </div>
+        </div>
+
+        <div class="llave-detalles">
+            <p class="hora-tomada">
+                <i class="bi bi-clock"></i>
+                Tomada: @Model.HoraInicio.ToString("hh:mm tt") (@tiempoTranscurridoTexto)
+            </p>
+        </div>
+
+        <div class="timer-container">
+            <div class="timer-display">
+                <i class="bi bi-stopwatch" id="timer-icon"></i>
+                <span class="timer-number" id="contador">@Model.TiempoRestante.ToString(@"hh\:mm\:ss")</span>
+            </div>
+            <p class="timer-label">Tiempo restante</p>
+        </div>
+
+        <div class="progreso-container">
+            <div class="progreso-info">
+                <span>Tiempo transcurrido</span>
+                <span class="progreso-porcentaje" id="porcentaje-transcurrido">@Model.PorcentajeTranscurrido.ToString("0")%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: @Model.PorcentajeTranscurrido%"></div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <!-- Sin préstamo activo -->
+    <div class="card-llave-activa" style="border-color: var(--gray-300);">
+        <div class="llave-header">
+            <div class="llave-icon" style="background: var(--gray-100);">
+                <i class="bi bi-key" style="color: var(--gray-500);"></i>
+            </div>
+            <div class="llave-info-header">
+                <h2 style="color: var(--gray-700);">Sin préstamo activo</h2>
+            </div>
+        </div>
+
+        <div class="timer-container" style="background: var(--gray-50); border-color: var(--gray-200);">
+            <div class="timer-display">
+                <i class="bi bi-info-circle" style="color: var(--gray-500);"></i>
+            </div>
+            <p class="timer-label" style="color: var(--gray-600);">No tienes llaves en tu posesión actualmente</p>
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-4);">
+            <a asp-action="Solicitar" asp-controller="Docente" class="btn-univalle-primary">
+                <i class="bi bi-key-fill"></i> Solicitar una llave
+            </a>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script>
+        var tienePrestamoActivo = @((Model.MateriaNombre != "Sin préstamo activo").ToString().ToLower());
+
+        // Timer solo si hay préstamo activo
+        if (tienePrestamoActivo) { 
+            let tiempoRestante = Math.floor(@Model.TiempoRestante.TotalSeconds);
+            const contador = document.getElementById('contador');
+            const timerIcon = document.getElementById('timer-icon');
+            const progressFill = document.getElementById('progress-fill');
+            const porcentajeTexto = document.getElementById('porcentaje-transcurrido');
+
+            // Calcular tiempo total del préstamo
+            const horaInicio = new Date('@Model.HoraInicio.ToString("yyyy-MM-ddTHH:mm:ss")');
+            const horaFin = new Date('@Model.HoraFin.ToString("yyyy-MM-ddTHH:mm:ss")');
+            const tiempoTotal = Math.floor((horaFin - horaInicio) / 1000);
+
+            if (tiempoRestante > 0) {
+                const intervalo = setInterval(() => {
+                    if (tiempoRestante > 0) {
+                        tiempoRestante--;
+
+                        // Actualizar contador
+                        const h = Math.floor(tiempoRestante / 3600);
+                        const m = Math.floor((tiempoRestante % 3600) / 60);
+                        const s = tiempoRestante % 60;
+                        contador.textContent = `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+
+                        // Calcular porcentaje transcurrido
+                        const tiempoTranscurrido = tiempoTotal - tiempoRestante;
+                        const porcentajeTranscurrido = Math.floor((tiempoTranscurrido / tiempoTotal) * 100);
+
+                        // Actualizar barra de progreso
+                        progressFill.style.width = porcentajeTranscurrido + "%";
+                        porcentajeTexto.textContent = porcentajeTranscurrido + "%";
+
+                        // Cambiar colores según tiempo restante
+                        const minutosRestantes = tiempoRestante / 60;
+
+                        // Remover clases previas
+                        contador.classList.remove('warning', 'danger');
+                        timerIcon.classList.remove('warning', 'danger');
+
+                        if (minutosRestantes <= 5) {
+                            contador.classList.add('danger');
+                            timerIcon.classList.add('danger');
+                        } else if (minutosRestantes <= 10) {
+                            contador.classList.add('warning');
+                            timerIcon.classList.add('warning');
+                        }
+                    } else {
+                        contador.textContent = "00:00:00";
+                        contador.classList.add('danger');
+                        timerIcon.classList.add('danger');
+                        progressFill.style.width = "100%";
+                        porcentajeTexto.textContent = "100%";
+                        clearInterval(intervalo);
+                        alert("⏰ Tiempo finalizado. Por favor, devuelva la llave.");
+                    }
+                }, 1000);
+            }
+        }
+
+        // Navegación de tabs
+        document.getElementById('tabEstadoActual')?.addEventListener('click', function() {
+            this.classList.add('active');
+            document.getElementById('tabHistorialReciente')?.classList.remove('active');
+        });
+
+        document.getElementById('tabHistorialReciente')?.addEventListener('click', function() {
+            this.classList.add('active');
+            document.getElementById('tabEstadoActual')?.classList.remove('active');
+            window.location.href = '@Url.Action("Historial", "Docente")';
+        });
+    </script>
+}

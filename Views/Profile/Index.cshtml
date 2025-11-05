@@ -1,0 +1,62 @@
+﻿@model GestionLlaves.Models.ViewModels.Profile.ProfileViewModel
+@{
+    ViewData["Title"] = "Mi Perfil";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/views-docente/perfil.css" asp-append-version="true" />
+}
+
+<!-- Header con título -->
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Mi Perfil</h1>
+        <p>Configuración personal y soporte</p>
+    </div>
+</div>
+
+<!-- Card Principal del Perfil -->
+<div class="card-perfil-principal">
+    <div class="perfil-avatar-section">
+        <div class="avatar-container">
+            <div class="avatar-univalle avatar-univalle-lg">
+                @Model.NombreCompleto.Substring(0, 2).ToUpper()
+            </div>
+            <button class="btn-editar-avatar">
+                <i class="bi bi-camera"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="perfil-info-section">
+        <h2 class="perfil-nombre">@Model.NombreCompleto</h2>
+
+        <div class="perfil-info-item">
+            <i class="bi bi-person-circle"></i>
+            <span>@Model.Rol.ToLower()</span>
+        </div>
+        <div class="perfil-info-item">
+            <i class="bi bi-envelope"></i>
+            <span>@Model.Email</span>
+        </div>
+        <div class="perfil-info-item">
+            <i class="bi bi-telephone"></i>
+            <span>@Model.Telefono</span>
+        </div>
+    </div>
+
+    <a asp-action="Edit" class="btn-univalle-primary btn-univalle-block btn-editar-perfil" hidden>
+        <i class="bi bi-pencil"></i>
+        Editar información
+    </a>
+</div>
+
+<!-- Botón de Cerrar Sesión -->
+<div class="perfil-section">
+    <form asp-controller="Account" asp-action="Logout" method="post">
+        <button type="submit" class="btn-cerrar-sesion">
+            <i class="bi bi-box-arrow-right"></i>
+            Cerrar Sesión
+        </button>
+    </form>
+</div>

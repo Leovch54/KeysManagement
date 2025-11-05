@@ -1,0 +1,509 @@
+/* ============================================
+   CARDS DE PASO
+   ============================================ */
+.card-paso {
+  margin-bottom: var(--space-6);
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ============================================
+   HEADER DE PASO (dentro del card)
+   ============================================ */
+.paso-header {
+  background: var(--gradient-header);
+  color: white;
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.paso-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.paso-icon i {
+  font-size: 1.125rem;
+  color: white;
+}
+
+.paso-titulo {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   CONTENIDO DE PASO
+   ============================================ */
+.paso-contenido {
+  padding: var(--space-5);
+}
+
+/* ============================================
+   FORMULARIOS
+   ============================================ */
+.form-group {
+  margin-bottom: var(--space-5);
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-700);
+  margin-bottom: var(--space-2);
+}
+
+.required {
+  color: var(--color-error);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Input con icono (ya definido en components.css, pero reforzamos) */
+.input-group-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-group-icon input {
+  padding-left: 2.75rem;
+}
+
+.input-group-icon .icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-group-icon .icon i {
+  font-size: 1rem;
+}
+
+/* ============================================
+   CARDS DE AULA
+   ============================================ */
+.card-aula {
+  background: white;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card-aula:hover:not(.card-aula-ocupada) {
+  box-shadow: var(--shadow-md);
+  border-color: var(--gray-300);
+}
+
+.card-aula:last-child {
+  margin-bottom: 0;
+}
+
+/* Aula seleccionada */
+.card-aula-seleccionada {
+  border-color: var(--univalle-red);
+  border-width: 3px;
+  box-shadow: var(--shadow-red);
+  background: linear-gradient(145deg, #ffffff 0%, #fef5f7 100%);
+}
+
+/* Aula ocupada */
+.card-aula-ocupada {
+  opacity: 0.6;
+  background: var(--gray-50);
+  border-color: var(--gray-300);
+  pointer-events: none;
+}
+
+/* Badge posicionado en esquina superior derecha */
+.badge-aula {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  z-index: 10;
+}
+
+/* ============================================
+   HEADER DE AULA
+   ============================================ */
+.aula-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--gray-200);
+  align-items: center;
+}
+
+.aula-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, var(--univalle-red) 0%, var(--univalle-red-dark) 100%);
+}
+
+.aula-icon i {
+  font-size: 1.125rem;
+  color: white;
+}
+
+/* Remover iconos diferenciados por tipo - todos usarán el mismo color */
+.icon-laboratorio,
+.icon-aula,
+.icon-laboratorio-comp,
+.icon-auditorio {
+  background: linear-gradient(135deg, var(--univalle-red) 0%, var(--univalle-red-dark) 100%);
+}
+
+.aula-info-principal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.aula-nombre {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-900);
+  margin: 0;
+  line-height: 1.3;
+  padding-right: var(--space-12);
+}
+
+/* ============================================
+   DETALLES DE AULA
+   ============================================ */
+.aula-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.aula-ubicacion,
+.aula-capacidad,
+.aula-recursos {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.aula-ubicacion i,
+.aula-capacidad i,
+.aula-recursos i {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================================
+   BOTONES DE SELECCIÓN DE AULA
+   ============================================ */
+.btn-seleccionar {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background-color: transparent;
+  color: var(--univalle-red);
+  border: 2px solid var(--univalle-red);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-seleccionar:hover:not(:disabled) {
+  background-color: var(--univalle-red-subtle);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-seleccionar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-seleccionada {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--univalle-red);
+  color: white;
+  border: 2px solid var(--univalle-red);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.btn-seleccionada:hover {
+  background-color: var(--univalle-red-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-red);
+}
+
+.btn-seleccionada i {
+  font-size: 1.125rem;
+}
+
+/* ============================================
+   BOTÓN ENVIAR SOLICITUD
+   ============================================ */
+.btn-enviar-solicitud {
+  width: 100%;
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-6);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.btn-enviar-solicitud i {
+  font-size: 1.125rem;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET (≤768px)
+   ============================================ */
+@media (max-width: 768px) {
+  .tab-button {
+    padding: var(--space-2) var(--space-3);
+    font-size: 0.875rem;
+  }
+
+  .paso-header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .paso-titulo {
+    font-size: 0.9375rem;
+  }
+
+  .paso-contenido {
+    padding: var(--space-4);
+  }
+
+  .card-aula {
+    padding: var(--space-3);
+  }
+
+  .aula-nombre {
+    font-size: 0.9375rem;
+  }
+
+  .btn-enviar-solicitud {
+    padding: var(--space-3) var(--space-5);
+  }
+
+  /* Badge se mantiene en la esquina en tablet */
+  .badge-aula {
+    top: var(--space-2);
+    right: var(--space-2);
+  }
+
+  .aula-nombre {
+    padding-right: var(--space-10);
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (≤415px)
+   ============================================ */
+@media (max-width: 415px) {
+  .reservas-tabs {
+    margin-bottom: var(--space-4);
+  }
+
+  .paso-header {
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .paso-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .paso-icon i {
+    font-size: 1rem;
+  }
+
+  .paso-titulo {
+    font-size: 0.875rem;
+  }
+
+  .paso-contenido {
+    padding: var(--space-3);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-4);
+  }
+
+  .form-label {
+    font-size: 0.875rem;
+  }
+
+  /* Badge se mueve abajo del card en móvil */
+  .badge-aula {
+    display: inline-block;
+    margin-bottom: var(--space-3);
+    width: auto;
+    max-width: fit-content;
+  }
+
+  .aula-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .aula-info-principal {
+    width: 100%;
+  }
+
+  .aula-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .aula-icon i {
+    font-size: 1rem;
+  }
+
+  .aula-nombre {
+    font-size: 0.875rem;
+    padding-right: 0;
+  }
+
+  .aula-detalles {
+    font-size: 0.8125rem;
+  }
+
+  .btn-enviar-solicitud {
+    font-size: 0.9375rem;
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-paso {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.card-paso:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.card-paso:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.card-paso:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.card-aula {
+  animation: fadeInUp 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.card-aula:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card-aula:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.card-aula:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.card-aula:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+/* ============================================
+   ESTADOS HOVER MEJORADOS
+   ============================================ */
+.tab-button:not(.active):hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card-aula:not(.card-aula-ocupada):hover .aula-icon {
+  transform: scale(1.08);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-seleccionar:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-seleccionada:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   FOCUS STATES (Accesibilidad)
+   ============================================ */
+.btn-seleccionar:focus,
+.btn-seleccionada:focus,
+.btn-enviar-solicitud:focus {
+  outline: 2px solid var(--univalle-red);
+  outline-offset: 2px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--univalle-red);
+  box-shadow: 0 0 0 3px var(--univalle-red-subtle);
+}

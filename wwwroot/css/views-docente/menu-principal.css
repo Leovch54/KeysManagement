@@ -1,0 +1,290 @@
+/* ============================================
+   MENÚ PRINCIPAL - PÁGINA ESPECÍFICA
+   ============================================ */
+
+.menu-principal-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom));
+}
+
+.main-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: var(--space-8) var(--space-4);
+}
+
+/* ============================================
+   LOGO SECTION
+   ============================================ */
+.logo-section {
+    text-align: center;
+    margin-bottom: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-8);
+}
+
+.logo-img {
+    width: 120px;
+    height: 120px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3),
+        0 0 0 16px rgba(255, 255, 255, 0.15),
+        0 8px 25px rgba(0, 0, 0, 0.8);
+    margin-bottom: var(--space-5);
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    background: white;
+
+
+}
+
+.univalle-title {
+    font-size: 2.5rem;
+    color: white;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    font-family: 'Porter Sans Block', 'Roboto', sans-serif;
+    font-weight: var(--font-weight-bold);
+}
+
+/* ============================================
+   MENU CARD
+   ============================================ */
+.menu-card {
+    background: var(--gray-100);
+    border-radius: var(--radius-xl);
+    padding: var(--space-10) var(--space-8);
+    box-shadow: var(--shadow-xl);
+    max-width: 350px;
+    width: 100%;
+    position: relative;
+}
+
+/* ============================================
+   MENU LIST
+   ============================================ */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* Línea vertical conectora */
+.menu-list::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 2px;
+    bottom: 2px;
+    width: 4px;
+    background: white;
+    border-radius: var(--radius-sm);
+}
+
+.menu-item {
+    position: relative;
+    margin-left: var(--space-8);
+    margin-bottom: var(--space-6);
+}
+
+.menu-item:last-child {
+    margin-bottom: 0;
+}
+
+.menu-item-wrapper {
+    position: relative;
+}
+
+/* Bullet decorativo */
+.menu-item-wrapper::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-full);
+    background: var(--univalle-red);
+    border: 3px solid var(--univalle-red);
+    box-shadow: 0 0 0 4px rgba(139, 21, 56, 0.1);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-5);
+    background: white;
+    border-radius: var(--radius-lg);
+    text-decoration: none !important;
+    color: var(--gray-900);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    margin-left: var(--space-5);
+}
+
+/* ============================================
+   MENU ICON
+   ============================================ */
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-full);
+    background: var(--univalle-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--space-4);
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(139, 21, 56, 0.3);
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.menu-icon i {
+    color: white;
+    font-size: 20px;
+}
+
+/* ============================================
+   MENU CONTENT
+   ============================================ */
+.menu-content {
+    flex: 1;
+}
+
+.menu-title {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--univalle-red);
+    font-family: 'Odor Mean Chey', 'Roboto', sans-serif;
+    margin-bottom: 0;
+}
+
+/* ============================================
+   MENU ARROW
+   ============================================ */
+.menu-arrow-container {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(139, 21, 56, 0.2);
+    border: 2px solid rgba(139, 21, 56, 0.1);
+    transition: all 0.3s ease;
+    margin-right: calc(var(--space-8) * -1);
+}
+
+.menu-arrow {
+    color: var(--univalle-red);
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+/* ============================================
+   HOVER EFFECTS
+   ============================================ */
+.menu-item-wrapper:hover::before {
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 0 0 6px rgba(139, 21, 56, 0.15);
+}
+
+.menu-link:hover .menu-arrow-container {
+    background: var(--univalle-red);
+    border-color: var(--univalle-red);
+    box-shadow: 0 4px 15px rgba(139, 21, 56, 0.4);
+}
+
+.menu-link:hover .menu-arrow {
+    color: white;
+    transform: translateX(3px);
+}
+
+.menu-link:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--univalle-red);
+}
+
+.menu-link:hover .menu-icon {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(139, 21, 56, 0.4);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 400px) {
+    .main-container {
+        padding: var(--space-6) var(--space-3);
+    }
+
+    .menu-card {
+        padding: var(--space-8) var(--space-6);
+    }
+
+    .menu-title {
+        font-size: 1.325rem;
+    }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-container {
+        padding: var(--space-4) var(--space-3);
+    }
+
+    .logo-section {
+        margin-bottom: var(--space-4);
+    }
+
+    .logo-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .univalle-title {
+        font-size: 1.5rem;
+    }
+
+    .menu-item {
+        margin-bottom: var(--space-3);
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-card {
+        max-width: 500px;
+    }
+
+    .bottom-nav {
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .menu-card {
+        max-width: 480px;
+    }
+}

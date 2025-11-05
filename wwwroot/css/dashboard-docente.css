@@ -1,0 +1,121 @@
+﻿/* =============================
+   DASHBOARD DOCENTE
+   ============================= */
+:root {
+    --univalle-primary: #72103A;
+    --univalle-dark: #500B29;
+    --univalle-light: #8C1446;
+    --univalle-gradient: linear-gradient(135deg, #72103A 0%, #8C1446 100%);
+}
+
+/* ---------- LOGO Y TÍTULO ---------- */
+.logo-docente {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.titulo-univalle {
+    font-weight: 700;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* ---------- CONTENEDOR DEL MENÚ ---------- */
+.menu-docente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-container {
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    padding: 25px 25px 15px 25px;
+    max-width: 340px;
+    width: 100%;
+}
+
+/* ---------- LÍNEA CENTRAL VERTICAL ---------- */
+.menu-line {
+    position: absolute;
+    left: 35px;
+    top: 15%;
+    bottom: 15%;
+    width: 2.5px;
+    background: var(--univalle-primary);
+    opacity: 0.6;
+    border-radius: 2px;
+}
+
+/* ---------- ITEMS ---------- */
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    color: var(--univalle-dark);
+    text-decoration: none;
+    border-radius: 18px;
+    margin: 14px 0;
+    padding: 10px 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    position: relative;
+}
+
+    .menu-item:hover {
+        transform: scale(1.03);
+        background: var(--univalle-gradient);
+        color: white;
+    }
+
+/* ---------- ICONOS Y TEXTO ---------- */
+.menu-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-icon {
+    font-size: 20px;
+    color: var(--univalle-primary);
+    transition: 0.2s;
+}
+
+.menu-item:hover .menu-icon {
+    color: white;
+}
+
+/* ---------- FLECHA ---------- */
+.menu-arrow {
+    color: var(--univalle-primary);
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu-item:hover .menu-arrow {
+    color: white;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+    .menu-container {
+        margin-top: 10px;
+        max-width: 90%;
+    }
+
+    .menu-item span {
+        font-size: 15px;
+    }
+
+    .menu-icon {
+        font-size: 18px;
+    }
+}

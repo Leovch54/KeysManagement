@@ -1,0 +1,55 @@
+﻿@using GestionLlaves.Models;
+@{
+    ViewData["Title"] = "Reportes de Extras";
+    var reportes = ViewBag.Reportes as List<Reportes> ?? new List<Reportes>();
+}
+
+<h2 class="admin-header">📋 Reportes de Solicitudes Extras</h2>
+
+<p>Historial de solicitudes registradas (limpieza, mantenimiento o estudiantes), con fechas de solicitud y devolución.</p>
+
+<table class="table table-striped table-bordered mt-4">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Área</th>
+            <th>Nombre</th>
+            <th>Aula</th>
+            <th>Fecha de Solicitud</th>
+            <th>Fecha de Devolución</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (reportes.Count == 0)
+        {
+            <tr>
+                <td colspan="7" class="text-center text-muted">No hay registros de reportes aún.</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in reportes)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Area</td>
+                    <td>@item.Nombre</td>
+                    <td>@item.Aula</td>
+                    <td>@item.FechaSolicitud.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@(item.FechaDevolucion.HasValue? item.FechaDevolucion.Value.ToString("dd/MM/yyyy HH:mm") : "-")</td>
+                    <td>
+                        @if (item.Estado == "Devuelto")
+                        {
+                            <span class="badge bg-success">Devuelto</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Pendiente</span>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

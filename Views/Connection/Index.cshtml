@@ -1,0 +1,206 @@
+﻿@{
+    ViewData["Title"] = "Connection - Prueba de Conexión";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Sistema de Gestión de Llaves</h1>
+        <p class="lead">Prueba de conexión a la base de datos</p>
+    </div>
+
+    <!-- Card de Estado de Conexión -->
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-database"></i> Estado de la Base de Datos
+                    </h3>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.TestStatus != null)
+                    {
+                        <div class="alert @(ViewBag.TestStatus.ToString().Contains("ERROR") ? "alert-danger" : "alert-success")" role="alert">
+                            <h4 class="alert-heading">@ViewBag.TestStatus</h4>
+                        </div>
+
+                        @if (ViewBag.ErrorMessage != null)
+                        {
+                            <div class="alert alert-danger">
+                                <h5>❌ Mensaje de Error:</h5>
+                                <p class="mb-0">@ViewBag.ErrorMessage</p>
+                                @if (ViewBag.ErrorDetails != null)
+                                {
+                                    <hr>
+                                    <p class="mb-0"><strong>Detalles:</strong> @ViewBag.ErrorDetails</p>
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <!-- Información de Conexión -->
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card border-success">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <i class="bi bi-check-circle text-success"></i> Estado del Contexto
+                                            </h5>
+                                            <p class="card-text">@ViewBag.ContextStatus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card border-success">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <i class="bi bi-wifi text-success"></i> Estado de Conexión
+                                            </h5>
+                                            <p class="card-text">@ViewBag.ConnectionStatus</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Información de Base de Datos -->
+                            <div class="card bg-light mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-server"></i> Información de la Base de Datos
+                                    </h5>
+                                    <p class="mb-0">
+                                        <strong>Nombre:</strong>
+                                        <span class="badge bg-info text-dark fs-6">@ViewBag.DatabaseName</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Conteo de Registros -->
+                            <h5 class="mb-3">
+                                <i class="bi bi-table"></i> Registros en las Tablas
+                            </h5>
+                            <div class="row text-center">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card border-primary">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-primary">Edificios</h6>
+                                            <p class="display-6 mb-0">@ViewBag.EdificiosCount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card border-primary">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-primary">Materias</h6>
+                                            <p class="display-6 mb-0">@ViewBag.MateriasCount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card border-primary">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-primary">Aulas</h6>
+                                            <p class="display-6 mb-0">@ViewBag.AulasCount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card border-success">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Personas</h6>
+                                            <p class="display-6 mb-0">@ViewBag.PersonasCount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card border-success">
+                                        <div class="card-body">
+                                            <h6 class="card-title text-success">Usuarios</h6>
+                                            <p class="display-6 mb-0">@ViewBag.UsuariosCount</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="card-footer">
+                    <button id="btnTestConnection" class="btn btn-primary">
+                        <i class="bi bi-arrow-clockwise"></i> Probar Conexión (JSON)
+                    </button>
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">
+                        <i class="bi bi-arrow-clockwise"></i> Recargar Página
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resultado de Prueba JSON -->
+    <div id="jsonResult" class="row justify-content-center mt-4" style="display: none;">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0">Respuesta JSON</h5>
+                </div>
+                <div class="card-body">
+                    <pre id="jsonContent" class="bg-light p-3 rounded"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('btnTestConnection').addEventListener('click', async function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+
+            // Mostrar loading
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Probando...';
+
+            try {
+                const response = await fetch('@Url.Action("TestConnection", "Connection")');
+                const data = await response.json();
+
+                // Mostrar resultado
+                document.getElementById('jsonContent').textContent = JSON.stringify(data, null, 2);
+                document.getElementById('jsonResult').style.display = 'block';
+
+                // Scroll al resultado
+                document.getElementById('jsonResult').scrollIntoView({ behavior: 'smooth' });
+            } catch (error) {
+                document.getElementById('jsonContent').textContent = 'Error: ' + error.message;
+                document.getElementById('jsonResult').style.display = 'block';
+            } finally {
+                // Restaurar botón
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        });
+    </script>
+}
+
+<style>
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-header {
+        border-radius: 10px 10px 0 0 !important;
+    }
+
+    .display-6 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    #jsonContent {
+        max-height: 400px;
+        overflow-y: auto;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+    }
+</style>
