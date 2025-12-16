@@ -1,0 +1,74 @@
+﻿@model IEnumerable<GestionLlaves.Models.Prestamo>
+
+@{
+    ViewData["Title"] = "Reservas en Uso";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="admin-header text-info">📅 Reservas Especiales en Uso</h2>
+<p class="text-muted">Listado de llaves entregadas para reservas especiales (pendientes de devolución)</p>
+
+<div class="row mt-4">
+    @if (!Model.Any())
+    {
+        <div class="text-center text-muted py-5">
+            <i class="bi bi-calendar-x" style="font-size: 3rem;"></i>
+            <p>No hay reservas especiales en curso.</p>
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            // Cálculos de tiempo
+            var minutosTarde = (DateTime.Now - item.FechaFinProgramada).TotalMinutes;
+            var estaTarde = minutosTarde > 0;
+
+            <div class="col-md-4 mb-4">
+                <div class="card border-2 shadow-sm @(estaTarde ? "border-danger" : "border-info")">
+                    <div class="card-header @(estaTarde ? "bg-danger text-white" : "bg-info text-dark") fw-bold">
+                        <i class="bi bi-calendar-event"></i> @item.Aula?.Codigo
+                    </div>
+                    <div class="card-body text-center">
+
+                        <h5 class="card-title text-primary mb-3">
+                            "@item.Reserva.Proposito"
+                        </h5>
+
+                        <p class="mb-1"><strong>Docente:</strong></p>
+                        <p>@($"{item.Persona?.Nombres} {item.Persona?.PrimerApellido}")</p>
+
+                        <p class="mb-1"><strong>Edificio:</strong></p>
+                        <p>@item.Aula?.Edificio?.Nombre</p>
+
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <small class="text-muted fw-bold">Inicio</small><br>
+                                @item.FechaInicio.ToString("HH:mm")
+                            </div>
+                            <div class="col-6">
+                                <small class="text-muted fw-bold">Fin Prog.</small><br>
+                                @item.FechaFinProgramada.ToString("HH:mm")
+                            </div>
+                        </div>
+
+                        <p class="mt-3 fw-bold @(estaTarde ? "text-danger" : "text-success")">
+                            @(estaTarde ?
+                                                $"⏰ {Math.Round(minutosTarde / 60, 1)}h de retraso" :
+                                                $"🕓 Faltan {Math.Round(-minutosTarde / 60, 1)}h")
+                </p>
+
+                        <hr>
+
+                        <form asp-action="MarcarDevuelto" method="post">
+                            <input type="hidden" name="id" value="@item.Id" />
+                            <button type="submit" class="btn btn-outline-success btn-sm fw-bold w-100">
+                                <i class="bi bi-check-circle-fill"></i> Recibir Llave
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

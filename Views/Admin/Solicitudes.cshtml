@@ -1,0 +1,76 @@
+﻿@model IEnumerable<GestionLlaves.Models.ViewModels.AdminSolicitudViewModel>
+
+@{
+    ViewData["Title"] = "Solicitudes Pendientes";
+}
+
+<h2 class="admin-header">📋 Solicitudes Pendientes (Reservas y Préstamos)</h2>
+<p class="text-muted">Aprueba o rechaza las solicitudes realizadas por los docentes.</p>
+
+<table class="table table-bordered text-center align-middle mt-4 table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Tipo</th>
+            <th>Docente</th>
+            <th>Aula / Edificio</th>
+            <th>Detalle / Propósito</th>
+            <th>Fecha Inicio / Fin</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr><td colspan="7" class="text-muted py-4">No hay solicitudes pendientes.</td></tr>
+        }
+        else
+        {
+            foreach (var s in Model)
+            {
+                <tr>
+                    <td>
+                        @* Badge diferente según el tipo *@
+                        <span class="badge bg-@(s.TipoSolicitud == "RESERVA" ? "info text-dark" : "primary")">
+                            @s.TipoSolicitud
+                        </span>
+                    </td>
+                    <td class="fw-bold">@s.DocenteNombre</td>
+                    <td>
+                        <div class="fw-bold">@s.AulaCodigo</div>
+                        <small class="text-muted">@s.EdificioNombre</small>
+                    </td>
+                    <td>@s.Detalle</td>
+                    <td>
+                        <div>INICIO: @s.FechaInicio.ToString("dd/MM HH:mm")</div>
+                        <div>FIN: @s.FechaFin.ToString("dd/MM HH:mm")</div>
+                    </td>
+                    <td>
+                        <span class="badge bg-warning text-dark">
+                            @s.Estado
+                        </span>
+                    </td>
+                    <td>
+                        @* Formulario ACEPTAR *@
+                        <form asp-action="CambiarEstadoSolicitud" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@s.Id" />
+                            <input type="hidden" name="estado" value="APROBADO" />
+                            @* ¡IMPORTANTE! Enviamos el tipo de solicitud *@
+                            <input type="hidden" name="tipoSolicitud" value="@s.TipoSolicitud" />
+                            <button type="submit" class="btn btn-success btn-sm" title="Aprobar Solicitud"> Let-check</button>
+                        </form>
+
+                        @* Formulario RECHAZAR *@
+                        <form asp-action="CambiarEstadoSolicitud" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@s.Id" />
+                            <input type="hidden" name="estado" value="RECHAZADO" />
+                            @* ¡IMPORTANTE! Enviamos el tipo de solicitud *@
+                            <input type="hidden" name="tipoSolicitud" value="@s.TipoSolicitud" />
+                            <button type="submit" class="btn btn-danger btn-sm" title="Rechazar Solicitud">✕</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

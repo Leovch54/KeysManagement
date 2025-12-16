@@ -1,0 +1,418 @@
+﻿@model GestionLlaves.Models.ViewModels.ReservaNuevaVM
+@{
+    ViewData["Title"] = "Nueva Reserva";
+}
+
+<link rel="stylesheet" href="~/css/views-docente/nueva-reserva.css" asp-append-version="true" />
+
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Gestión de Reservas</h1>
+        <p>Solicitudes fuera del horario académico</p>
+    </div>
+</div>
+
+<!-- Tabs de navegación -->
+<div class="estado-tabs">
+    <a class="tab-button left active" asp-action="NuevaReserva">Nueva Reserva</a>
+    <a class="tab-button right" asp-action="MisReservas">Mis Reservas</a>
+</div>
+
+<form id="formReserva" onsubmit="return false;">
+
+    <!-- ============================================
+         PASO 1: FECHA Y HORA
+         ============================================ -->
+    <div class="card-univalle card-paso">
+        <div class="paso-header">
+            <div class="paso-icon">
+                <i class="bi bi-clock"></i>
+            </div>
+            <span class="paso-titulo">Paso 1: Fecha y Hora</span>
+        </div>
+
+        <div class="paso-contenido">
+            <!-- Fecha -->
+            <div class="form-group">
+                <label for="fecha" class="form-label">Fecha</label>
+                <div class="input-group-icon">
+                    <div class="icon">
+                        <i class="bi bi-calendar-event"></i>
+                    </div>
+                    <input type="date"
+                           id="fecha"
+                           name="Fecha"
+                           class="input-univalle"
+                           required>
+                </div>
+            </div>
+
+            <!-- Hora Inicio -->
+            <div class="form-group">
+                <label for="horaInicio" class="form-label">Hora inicio</label>
+                <div class="input-group-icon">
+                    @*                     <div class="icon">
+                        <i class="bi bi-clock"></i>
+                    </div> *@
+                    <select class="form-select input-univalle"
+                            id="horaInicio"
+                            name="horaInicio"
+                            required>
+                        <option value="">-- Seleccionar hora --</option>
+                        @foreach (var hora in ViewBag.HorariosDisponibles as List<SelectListItem>)
+                        {
+                            <option value="@hora.Value">@hora.Text</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <!-- Hora Fin -->
+            <div class="form-group">
+                <label for="horaFin" class="form-label">Hora fin</label>
+                <div class="input-group-icon">
+                    @*                     <div class="icon">
+                        <i class="bi bi-clock"></i>
+                    </div> *@
+                    <select class="form-select input-univalle"
+                            id="horaFin"
+                            name="horaFin"
+                            required>
+                        <option value="">-- Seleccionar hora --</option>
+                        @foreach (var hora in ViewBag.HorariosDisponibles as List<SelectListItem>)
+                        {
+                            <option value="@hora.Value">@hora.Text</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PASO 2: AULAS DISPONIBLES (Dinámico)
+         ============================================ -->
+    <div class="card-univalle card-paso" id="pasoAulas" style="display: none;">
+        <div class="paso-header">
+            <div class="paso-icon">
+                <i class="bi bi-door-open"></i>
+            </div>
+            <span class="paso-titulo">Paso 2: Aulas Disponibles</span>
+        </div>
+
+        <div class="paso-contenido" id="aulasContainer">
+            <p class="text-center text-muted">Selecciona fecha y horario para ver las aulas disponibles.</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PASO 3: DETALLES DE LA SOLICITUD
+         ============================================ -->
+    <div class="card-univalle card-paso" id="pasoDetalles" style="display: none;">
+        <div class="paso-header">
+            <div class="paso-icon">
+                <i class="bi bi-file-text"></i>
+            </div>
+            <span class="paso-titulo">Paso 3: Detalles de la Solicitud</span>
+        </div>
+
+        <div class="paso-contenido">
+            <div class="form-group">
+                <label for="proposito" class="form-label">
+                    Propósito de la reserva <span class="required">*</span>
+                </label>
+                <input type="text"
+                       id="proposito"
+                       name="Proposito"
+                       class="input-univalle"
+                       placeholder="Ej: Defensa de Tesis, Clase de Recuperación..."
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="justificacion" class="form-label">
+                    Justificación detallada <span class="required">*</span>
+                </label>
+                <textarea id="justificacion"
+                          name="Justificacion"
+                          class="textarea-univalle"
+                          rows="5"
+                          placeholder="Explica el motivo específico de la reserva excepcional..."
+                          required></textarea>
+            </div>
+
+            <button type="button"
+                    id="btnMandar"
+                    class="btn-univalle-primary btn-univalle-block"
+                    disabled>
+                <i class="bi bi-send"></i> Enviar Solicitud
+            </button>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fechaInput = document.getElementById('fecha');
+            const horaInicio = document.getElementById('horaInicio');
+            const horaFin = document.getElementById('horaFin');
+            const aulasContainer = document.getElementById('aulasContainer');
+            const pasoAulas = document.getElementById('pasoAulas');
+            const pasoDetalles = document.getElementById('pasoDetalles');
+            const btnMandar = document.getElementById('btnMandar');
+
+            let aulaSeleccionada = null;
+            let aulasOriginales = [];
+            let procesando = false;
+
+            // === Cargar aulas ===
+            async function cargarAulas() {
+                const fecha = fechaInput.value;
+                const inicio = horaInicio.value;   // ← Usar horaInicio
+                const fin = horaFin.value;
+
+                if (!fecha || !inicio || !fin) {
+                    pasoAulas.style.display = 'none';
+                    pasoDetalles.style.display = 'none';
+                    btnMandar.disabled = true;
+                    return;
+                }
+
+                // Mostrar paso de aulas
+                pasoAulas.style.display = 'block';
+                aulasContainer.innerHTML = `<p class="text-center text-muted"><i class="bi bi-hourglass-split"></i> Cargando aulas disponibles...</p>`;
+
+                try {
+                    const res = await fetch(`/Docente/AulasDisponibles?fecha=${fecha}&horaInicio=${inicio}&horaFin=${fin}`);
+                    if (!res.ok) throw new Error('Error al cargar aulas');
+                    const aulas = await res.json();
+                    aulasOriginales = aulas;
+                    renderAulas(aulas);
+                } catch (error) {
+                    console.error('Error:', error);
+                    aulasContainer.innerHTML = `
+                        <div class="alert-univalle alert-univalle-error">
+                            <div class="alert-univalle-icon">
+                                <i class="bi bi-exclamation-triangle"></i>
+                            </div>
+                            <div class="alert-univalle-content">
+                                <div class="alert-univalle-title">Error al cargar aulas</div>
+                                <div class="alert-univalle-description">Por favor, intenta nuevamente.</div>
+                            </div>
+                        </div>`;
+                }
+            }
+
+            // === Renderizar aulas ===
+            function renderAulas(aulas) {
+                if (!aulas.length) {
+                    aulasContainer.innerHTML = `
+                        <div class="alert-univalle alert-univalle-warning">
+                            <div class="alert-univalle-icon">
+                                <i class="bi bi-info-circle"></i>
+                            </div>
+                            <div class="alert-univalle-content">
+                                <div class="alert-univalle-title">No hay aulas disponibles</div>
+                                <div class="alert-univalle-description">Para el horario seleccionado no encontramos aulas libres.</div>
+                            </div>
+                        </div>`;
+                    btnMandar.disabled = true;
+                    pasoDetalles.style.display = 'none';
+                    return;
+                }
+
+                const html = aulas.map(a => `
+                    <div class="card-aula" data-id="${a.id}" data-nombre="${a.nombre}">
+                        <span class="badge-univalle badge-disponible badge-aula">Disponible</span>
+                        <div class="aula-header">
+                            <div class="aula-icon">
+                                <i class="bi bi-door-open"></i>
+                            </div>
+                            <div class="aula-info-principal">
+                                <h3 class="aula-nombre">${a.nombre}</h3>
+                            </div>
+                        </div>
+
+                        <div class="aula-detalles">
+                            <div class="aula-ubicacion">
+                                <i class="bi bi-building"></i>
+                                <span>${a.edificio || 'Edificio Principal'}</span>
+                            </div>
+
+                            <div class="aula-capacidad">
+                                <i class="bi bi-people"></i>
+                                <span>Capacidad: ${a.capacidad} personas</span>
+                            </div>
+
+                            <div class="aula-recursos">
+                                <i class="bi bi-tools"></i>
+                                <span>Recursos: ${a.recursos || 'Equipamiento básico'}</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-seleccionar">
+                            Seleccionar
+                        </button>
+                    </div>`).join('');
+
+                aulasContainer.innerHTML = html;
+
+                // Asignar eventos
+                document.querySelectorAll('.btn-seleccionar').forEach(btn =>
+                    btn.addEventListener('click', () => seleccionarAula(btn))
+                );
+            }
+
+            // === Seleccionar aula ===
+            function seleccionarAula(btn) {
+                const card = btn.closest('.card-aula');
+                const id = card.dataset.id;
+                const nombre = card.dataset.nombre;
+
+                if (aulaSeleccionada && aulaSeleccionada.id === id) {
+                    // Cancelar selección
+                    aulaSeleccionada = null;
+                    renderAulas(aulasOriginales);
+                    btnMandar.disabled = true;
+                    pasoDetalles.style.display = 'none';
+                    return;
+                }
+
+                aulaSeleccionada = { id: parseInt(id), nombre };
+
+                // Ocultar las demás aulas con animación
+                document.querySelectorAll('.card-aula').forEach(c => {
+                    if (c !== card) {
+                        c.style.transition = 'all 0.3s ease';
+                        c.style.opacity = '0';
+                        c.style.transform = 'scale(0.95)';
+                        setTimeout(() => c.remove(), 300);
+                    }
+                });
+
+                // Marcar como seleccionada
+                card.classList.add('card-aula-seleccionada');
+                card.querySelector('.badge-aula').textContent = 'Seleccionada';
+                card.querySelector('.badge-aula').classList.remove('badge-disponible');
+                card.querySelector('.badge-aula').classList.add('badge-en-uso');
+
+                btn.innerHTML = '<i class="bi bi-check-circle"></i> Seleccionada';
+                btn.classList.remove('btn-seleccionar');
+                btn.classList.add('btn-seleccionada');
+
+                // Mostrar paso de detalles
+                pasoDetalles.style.display = 'block';
+                btnMandar.disabled = false;
+
+                // Permitir cancelar
+                btn.addEventListener('click', () => {
+                    aulaSeleccionada = null;
+                    renderAulas(aulasOriginales);
+                    btnMandar.disabled = true;
+                    pasoDetalles.style.display = 'none';
+                }, { once: true });
+
+                // Scroll suave al siguiente paso
+                setTimeout(() => {
+                    pasoDetalles.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 400);
+            }
+
+            // === Enviar reserva ===
+            btnMandar.addEventListener('click', async () => {
+                if (!aulaSeleccionada || procesando) return;
+
+                const proposito = document.getElementById('proposito').value.trim();
+                const justificacion = document.getElementById('justificacion').value.trim();
+
+                if (!proposito || !justificacion) {
+                    alert('⚠️ Por favor completa el propósito y la justificación.');
+                    return;
+                }
+
+                const confirmar = confirm(`¿Confirmar reserva de ${aulaSeleccionada.nombre}?\n\n` +
+                    `📅 Fecha: ${fechaInput.value}\n` +
+                    `🕐 Hora: ${horaInicio.value} - ${horaFin.value}\n\n` +
+                    `📋 Propósito: ${proposito}\n` +
+                    `📝 Justificación: ${justificacion.substring(0, 50)}...`);
+
+                if (!confirmar) return;
+
+                procesando = true;
+                btnMandar.disabled = true;
+                btnMandar.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando...';
+
+                try {
+                    const datos = {
+                        AulaId: parseInt(aulaSeleccionada.id),
+                        Fecha: fechaInput.value,
+                        HoraInicio: horaInicio.value,
+                        HoraFin: horaFin.value,
+                        Proposito: proposito,
+                        Justificacion: justificacion
+                    };
+
+                    const resp = await fetch('/Docente/NuevaReserva', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(datos)
+                    });
+
+                    const result = await resp.json();
+
+                    if (result.ok) {
+                        // Mostrar éxito y redirigir
+                        btnMandar.innerHTML = '<i class="bi bi-check-circle"></i> ¡Solicitud enviada!';
+                        btnMandar.classList.remove('btn-univalle-primary');
+                        btnMandar.classList.add('btn-univalle-success');
+                        setTimeout(() => {
+                            window.location.href = result.redirect || '/Docente/MisReservas';
+                        }, 1500);
+                    } else {
+                        alert(`❌ ${result.error || 'Error al enviar la solicitud'}`);
+                        btnMandar.disabled = false;
+                        btnMandar.innerHTML = '<i class="bi bi-send"></i> Enviar Solicitud';
+                        procesando = false;
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('❌ Error de conexión. Por favor, intenta nuevamente.');
+                    btnMandar.disabled = false;
+                    btnMandar.innerHTML = '<i class="bi bi-send"></i> Enviar Solicitud';
+                    procesando = false;
+                }
+            });
+
+            // === Cargar aulas cuando cambian campos ===
+            [fechaInput, horaInicio, horaFin].forEach(input => {
+                input.addEventListener('change', () => {
+                    aulaSeleccionada = null;
+                    pasoDetalles.style.display = 'none';
+                    cargarAulas();
+                });
+            });
+
+            // === Establecer fecha mínima (hoy) ===
+            const hoy = new Date().toISOString().split('T')[0];
+            fechaInput.setAttribute('min', hoy);
+
+                    // Validar que hora fin sea mayor que hora inicio
+            horaFin.addEventListener('change', function() {
+                if (horaInicio.value && horaFin.value) {
+                    const inicio = horaInicio.value.split(':');
+                    const fin = horaFin.value.split(':');
+
+                    const minutosInicio = parseInt(inicio[0]) * 60 + parseInt(inicio[1]);
+                    const minutosFin = parseInt(fin[0]) * 60 + parseInt(fin[1]);
+
+                    if (minutosFin <= minutosInicio) {
+                        alert('La hora de fin debe ser posterior a la hora de inicio');
+                        horaFin.value = '';
+                    }
+                }
+            });
+        });
+    </script>
+}

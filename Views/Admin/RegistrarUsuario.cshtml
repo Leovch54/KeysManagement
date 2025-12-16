@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Registrar Usuario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container mt-3">
+    <h2 class="admin-header text-center mb-4" style="color:#72103A;">
+        <i class="bi bi-person-plus-fill me-2"></i> Registrar Nuevo Usuario
+    </h2>
+
+    @if (ViewBag.Mensaje != null)
+    {
+        <div id="alertaMensaje" class="alert @(ViewBag.Mensaje.StartsWith("✅") ? "alert-success" : (ViewBag.Mensaje.StartsWith("❌") ? "alert-danger" : "alert-warning")) text-center fw-bold">
+            @ViewBag.Mensaje
+        </div>
+    }
+
+    <form id="formRegistro" asp-action="RegistrarUsuario" asp-controller="Admin" method="post" class="shadow-lg p-5 rounded-5" style="background-color:#fff;">
+        <p class="text-end text-danger small fw-bold">(*) Campos obligatorios</p>
+        
+        <h4 class="mb-4 pb-2 border-bottom text-secondary"><i class="bi bi-person-circle me-2"></i> Datos Personales</h4>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Nombres <span class="text-danger">*</span></label>
+                <input type="text" name="nombres" class="form-control border-dark" value="@ViewBag.Nombres" placeholder="Nombre(s) completo(s)" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" title="Solo letras y espacios" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Apellido Paterno <span class="text-danger">*</span></label>
+                <input type="text" name="primerApellido" class="form-control border-dark" value="@ViewBag.PrimerApellido" placeholder="Apellido paterno" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$" title="Solo letras y espacios" />
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Apellido Materno</label>
+                <input type="text" name="segundoApellido" class="form-control border-dark" value="@ViewBag.SegundoApellido" placeholder="Apellido materno (opcional)" pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$" title="Solo letras y espacios" />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Teléfono <span class="text-danger">*</span></label>
+                <input type="tel" name="telefono" class="form-control border-dark" value="@ViewBag.Telefono" placeholder="Número de contacto (Ej: 70012345)" required pattern="[0-9]{7,15}" title="Solo números" />
+            </div>
+        </div>
+        
+        <h4 class="mb-4 pb-2 border-bottom text-secondary"><i class="bi bi-gear-fill me-2"></i> Datos de Acceso</h4>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Correo Electrónico <span class="text-danger">*</span></label>
+                <input type="email" name="email" class="form-control border-dark" value="@ViewBag.Email" placeholder="ejemplo@univalle.edu" required />
+            </div>
+            
+            <div class="col-md-3">
+                <label class="form-label fw-semibold">Tipo de Persona</label>
+                <input type="text" class="form-control bg-light border-dark" value="DOCENTE" disabled />
+            </div>
+            
+            <div class="col-md-3">
+                <label class="form-label fw-semibold">Rol <span class="text-danger">*</span></label>
+                <select name="rol" class="form-select border-dark" required>
+                    <option value="DOCENTE" @@((ViewBag.Rol as string) == "DOCENTE" ? "selected" : null)>Docente</option>
+                    <option value="ADMIN" @@((ViewBag.Rol as string) == "ADMIN" ? "selected" : null)>Administrador</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-admin px-5 py-2 fw-bold">
+                <i class="bi bi-person-check-fill me-2"></i> Registrar Usuario
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        // === Formatear automáticamente los nombres/apellidos al salir del campo ===
+        document.querySelectorAll('input[name="nombres"], input[name="primerApellido"], input[name="segundoApellido"]').forEach(input => {
+            input.addEventListener('blur', () => {
+                let texto = input.value.trim().replace(/\s+/g, ' ');
+                
+                const regexLetrasEspacios = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/;
+                
+                if (regexLetrasEspacios.test(texto)) {
+                    input.value = texto.split(' ')
+                        .map(p => p.length > 0 ? p.charAt(0).toUpperCase() + p.slice(1).toLowerCase() : '')
+                        .join(' ');
+                }
+            });
+        });
+
+        // === Quitar espacios extra del correo y teléfono ===
+        document.querySelectorAll('input[name="email"], input[name="telefono"]').forEach(input => {
+            input.addEventListener('blur', () => input.value = input.value.trim());
+        });
+
+        // === Limpiar el formulario si se creó el usuario (ViewBag.Limpiar = true) ===
+        const limpiar = '@(ViewBag.Limpiar ?? "false")'.toLowerCase() === 'true';
+        if (limpiar) {
+            document.getElementById('formRegistro').reset();
+            document.querySelector('select[name="rol"]').selectedIndex = 0; 
+            
+            setTimeout(() => {
+                const alerta = document.getElementById('alertaMensaje');
+                if (alerta) alerta.remove();
+            }, 7000); 
+        }
+    </script>
+}

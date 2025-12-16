@@ -1,0 +1,361 @@
+/* Header con saludo personalizado */
+.header-greeting {
+  color: white;
+  margin-bottom: var(--space-5);
+  text-align: right;
+}
+
+.greeting-text h1 {
+  font-size: 1.6rem;
+  font-weight: var(--font-weight-medium);
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.greeting-text p {
+  font-size: 0.95rem;
+  color: white;
+  margin: var(--space-1) 0 0 0;
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================
+   ALERT DE RESERVA EXCEPCIONAL APROBADA
+   ============================================ */
+.alert-reserva {
+  background: linear-gradient(135deg, #EFF6FF 0%, #F0F7FF 100%);
+  border: 2px solid #C5DAFD;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+}
+
+.alert-header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.alert-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-info);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.alert-icon i {
+  font-size: 1.35rem;
+  color: white;
+}
+
+.alert-content {
+  flex: 1;
+  text-align: left;
+}
+
+.alert-content h3 {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-semibold);
+  color: #1736B0;
+  margin: 0 0 var(--space-1) 0;
+}
+
+.alert-content p {
+  font-size: 0.9rem;
+  color: #2560FA;
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+}
+
+.badge-approved {
+  background: #D6E7FE;
+  color: #233AB2;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start !important;
+}
+
+.alert-details {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.alert-details p {
+  margin: var(--space-1) 0;
+  font-size: 0.95rem;
+  color: var(--gray-900);
+  text-align: left;
+}
+
+.alert-details strong {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Botón solicitar dentro del alert */
+.alert-reserva .btn-solicitar {
+  width: 100%;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   CARDS DE ESTADO DE LLAVES
+   ============================================ */
+.llave-card {
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.llave-card.en-uso {
+  background: #EFFEF3;
+  border-color: #C3F8D6;
+}
+
+.llave-card.proximo {
+  background: #FFF6EB;
+  border-color: #FED3A2;
+}
+
+.llave-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-2);
+}
+
+.llave-title {
+  font-size: 1.05rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-900);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.llave-time {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.llave-time i {
+  font-size: 0.85rem;
+}
+
+/* Status indicators (puntos de color) */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.status-indicator.green {
+  background-color: var(--color-success);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.status-indicator.orange {
+  background-color: var(--color-warning);
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+}
+
+/* Badges de estado en llaves */
+.llave-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.badge-status {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: var(--font-weight-bold);
+  display: inline-block;
+}
+
+.badge-en-uso {
+  background: #D7FBE2;
+  color: #106232;
+}
+
+.badge-proximo {
+  background: #FEE8CE;
+  color: #9F3912;
+}
+
+.badge-tiempo {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+/* ============================================
+   PRÓXIMAS CLASES
+   ============================================ */
+.clase-item {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--gray-200);
+  transition: background 0.2s ease;
+}
+
+.clase-item:last-child {
+  border-bottom: none;
+}
+
+.clase-item:hover {
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+}
+
+.clase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-2);
+}
+
+.clase-nombre {
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--gray-900);
+  margin: 0 0 var(--space-1) 0;
+}
+
+.clase-aula {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.clase-info {
+  display: flex;
+  gap: var(--space-4);
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  align-items: center;
+}
+
+.clase-info i {
+  font-size: 0.85rem;
+}
+
+.badge-dia {
+  background: var(--univalle-red);
+  color: white;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+/* ============================================
+   SECTION HEADERS
+   ============================================ */
+.section-header {
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--gray-200);
+  background: none;
+  display: block;
+  border-radius: 0px;
+}
+
+.section-header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.section-header i {
+  font-size: 1.5rem;
+  color: var(--gray-700);
+}
+
+.section-header h2 {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* ============================================
+   ACTION LINKS
+   ============================================ */
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--univalle-red);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: 0.95rem;
+  margin-top: var(--space-4);
+  transition: all 0.2s ease;
+}
+
+.action-link:hover {
+  color: var(--univalle-red-dark);
+  gap: var(--space-3);
+  text-decoration: none;
+}
+
+.action-link i {
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+  .alert-reserva {
+    padding: var(--space-6);
+  }
+
+  .alert-content h3 {
+    font-size: 1rem;
+  }
+
+  .llave-card {
+    padding: var(--space-3);
+  }
+
+  .section-header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .status-indicator {
+    align-self: flex-start;
+  }
+
+  .badge-status {
+    font-size: 0.75rem;
+  }
+}

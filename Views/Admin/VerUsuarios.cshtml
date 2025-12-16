@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Gestión de Usuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid my-4">
+    <header class="mb-5 d-flex justify-content-between align-items-center">
+        <h2 class="text-dark"><i class="fas fa-users-cog me-2 text-primary"></i> Usuarios Registrados</h2>
+        <a href="@Url.Action("RegistrarUsuario", "Admin")" class="btn btn-success shadow-sm">
+            <i class="fas fa-user-plus me-1"></i> Nuevo Usuario
+        </a>
+    </header>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body p-3">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text bg-light"><i class="fas fa-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Buscar por nombre, correo, o rol..." onkeyup="filtrarTabla()">
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end mt-2 mt-md-0">
+                    <span class="text-muted">Total de usuarios: <strong id="totalUsuarios">@ViewBag.Usuarios.Count</strong></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0" id="tablaUsuarios">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            
+                            <th>Nombre Completo</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.Usuarios != null && ViewBag.Usuarios.Count > 0)
+                        {
+                            @foreach (var u in ViewBag.Usuarios)
+                            {
+                                // Determinar la clase para resaltar la fila según el Rol
+                                string rowClass = u.Rol == "Administrador" ? "table-warning" : "";
+
+                                <tr class="@rowClass">
+                                    
+                                    <td>@u.Nombres @u.PrimerApellido</td>
+                                    <td>@u.Email</td>
+                                    <td>
+                                        <span class="badge @(u.Rol == "Administrador" ? "bg-primary" : "bg-secondary")">@u.Rol</span>
+                                    </td>                              
+                                    <td class="text-center">
+                                        <div class="btn-group" role="group">                                    
+                                            <form asp-action="EliminarUsuario" asp-controller="Admin" method="post" class="d-inline"
+                                                  onsubmit="return confirmarEliminacion('@u.Nombres @u.PrimerApellido')">
+                                                <input type="hidden" name="usuarioId" value="@u.Id" />
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Eliminar">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="6" class="text-center py-4 text-muted">
+                                    <i class="fas fa-box-open me-2"></i> No hay usuarios registrados en el sistema.
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Función de filtrado mejorada para mayor eficiencia
+        function filtrarTabla() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase().trim();
+            const table = document.getElementById("tablaUsuarios");
+            const tbody = table.getElementsByTagName("tbody")[0];
+            const rows = tbody.getElementsByTagName("tr");
+
+            let visibleCount = 0;
+
+            for (let i = 0; i < rows.length; i++) {
+                const row = rows[i];
+                // Ignorar la fila de "No hay usuarios" si está presente
+                if (row.cells.length < 5) continue;
+
+                // Columnas a buscar: Nombre (0), Email (1), Rol (2), Tipo (3)
+                const tdNombre = row.cells[1].textContent.toUpperCase();
+                const tdEmail = row.cells[2].textContent.toUpperCase();
+                const tdRol = row.cells[3].textContent.toUpperCase();
+
+                if (tdNombre.includes(filter) ||
+                    tdEmail.includes(filter) ||
+                    tdRol.includes(filter)) {
+
+                    row.style.display = "";
+                    visibleCount++;
+                } else {
+                    row.style.display = "none";
+                }
+            }
+
+            // Actualizar el contador de usuarios visibles
+            document.getElementById('totalUsuarios').textContent = visibleCount;
+
+        }
+
+        // Función de confirmación para eliminar
+        function confirmarEliminacion(nombre) {
+            return confirm(`¿Estás seguro de que deseas eliminar al usuario "${nombre}"? Esta acción es irreversible.`);
+        }
+    </script>
+}

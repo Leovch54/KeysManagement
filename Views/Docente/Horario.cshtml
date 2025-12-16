@@ -1,0 +1,241 @@
+﻿@model List<GestionLlaves.Models.ViewModels.HorarioItemVM>
+@{
+    ViewData["Title"] = "Mi Horario";
+
+    // Calcular hora actual y determinar estados
+    var ahora = DateTime.Now.TimeOfDay;
+    var horariosOrdenados = Model.OrderBy(h => h.Inicio).ToList();
+
+    // Encontrar clase en curso
+    var claseEnCurso = horariosOrdenados.FirstOrDefault(h => h.EnCurso);
+
+    // Encontrar próxima clase (siguiente después de la hora actual)
+    var proximaClase = horariosOrdenados
+        .Where(h => h.Inicio > ahora && !h.EnCurso)
+        .OrderBy(h => h.Inicio)
+        .FirstOrDefault();
+
+    // Detectar conflictos (clases que se superponen)
+    var conflictos = new HashSet<int>();
+    for (int i = 0; i < horariosOrdenados.Count - 1; i++)
+    {
+        var actual = horariosOrdenados[i];
+        var siguiente = horariosOrdenados[i + 1];
+        if (actual.Fin > siguiente.Inicio)
+        {
+            conflictos.Add(i);
+            conflictos.Add(i + 1);
+        }
+    }
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/views-docente/horario.css" asp-append-version="true" />
+}
+
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Mi Horario</h1>
+        <p>Horarios de clase y próximas reservas</p>
+    </div>
+</div>
+
+<!-- Navegación de fecha -->
+<div class="date-navigation">
+    <button class="date-nav-btn" onclick="cambiarDia(-1)" hidden>
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="date-display">
+        <h2>@(ViewData["FechaLabel"] ?? DateTime.Now.ToString("dddd, dd 'de' MMMM 'de' yyyy", new System.Globalization.CultureInfo("es-ES")))</h2>
+        <p>@(DateTime.Now.Date == DateTime.Today ? "Hoy" : "")</p>
+    </div>
+    <button class="date-nav-btn" onclick="cambiarDia(1)" hidden>
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+
+<!-- Lista de horarios -->
+<div class="horario-lista">
+    @if (!Model.Any())
+    {
+        <div class="horario-card horario-gris">
+            <div class="horario-header-row">
+                <div class="horario-time">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>Todo el día</span>
+                </div>
+                <div class="horario-dot"></div>
+            </div>
+            <div class="horario-info">
+                <div class="horario-materia">
+                    <div class="icon-badge">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>Sin actividades programadas</h3>
+                </div>
+                <p class="horario-descripcion">No tienes clases ni reservas para este día</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        @for (int i = 0; i < horariosOrdenados.Count; i++)
+        {
+            var horario = horariosOrdenados[i];
+
+            // Determinar el estado y clase CSS
+            string estadoClase = "horario-verde"; // Por defecto: clase confirmada
+            string descripcion = "Clase regular - Lista para solicitar";
+            string iconoClase = "fas fa-book";
+
+            // Lógica de estados
+            if (conflictos.Contains(i))
+            {
+                estadoClase = "horario-rojo";
+                descripcion = "Conflicto de horario detectado";
+                iconoClase = "fas fa-exclamation-triangle";
+            }
+            else if (horario.EnCurso || horario == claseEnCurso)
+            {
+                estadoClase = "horario-verde";
+                descripcion = "Clase en curso - Activa ahora";
+                iconoClase = "fas fa-chalkboard-teacher";
+            }
+            else if (horario == proximaClase)
+            {
+                estadoClase = "horario-azul";
+                var minutosHasta = (horario.Inicio - ahora).TotalMinutes;
+                if (minutosHasta <= 30)
+                {
+                    descripcion = $"Próxima clase (en {Math.Round(minutosHasta)} minutos)";
+                }
+                else if (minutosHasta <= 120)
+                {
+                    descripcion = $"Próxima clase (en {Math.Round(minutosHasta / 60, 1)} horas)";
+                }
+                else
+                {
+                    descripcion = "Próxima clase programada";
+                }
+                iconoClase = "fas fa-clock";
+            }
+            else if (horario.Inicio < ahora)
+            {
+                estadoClase = "horario-gris";
+                descripcion = "Clase finalizada";
+                iconoClase = "fas fa-check-circle";
+            }
+
+            // Asignar iconos temáticos según el nombre de la materia
+            if (horario.Materia.Contains("Matemática", StringComparison.OrdinalIgnoreCase) ||
+            horario.Materia.Contains("Cálculo", StringComparison.OrdinalIgnoreCase))
+            {
+                iconoClase = "fas fa-calculator";
+            }
+            else if (horario.Materia.Contains("Física", StringComparison.OrdinalIgnoreCase))
+            {
+                iconoClase = "fas fa-flask";
+            }
+            else if (horario.Materia.Contains("Química", StringComparison.OrdinalIgnoreCase))
+            {
+                iconoClase = "fas fa-atom";
+            }
+            else if (horario.Materia.Contains("Programación", StringComparison.OrdinalIgnoreCase) ||
+            horario.Materia.Contains("Informática", StringComparison.OrdinalIgnoreCase) ||
+            horario.Materia.Contains("Sistemas", StringComparison.OrdinalIgnoreCase))
+            {
+                iconoClase = "fas fa-laptop-code";
+            }
+            else if (horario.Materia.Contains("Laboratorio", StringComparison.OrdinalIgnoreCase) ||
+            horario.Materia.Contains("Lab", StringComparison.OrdinalIgnoreCase))
+            {
+                iconoClase = "fas fa-microscope";
+            }
+            else 
+            {
+
+                iconoClase = "fas fa-chalkboard-teacher";
+            }
+
+            <div class="horario-card @estadoClase">
+                <div class="horario-header-row">
+                    <div class="horario-time">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>@horario.Inicio.ToString(@"hh\:mm") - @horario.Fin.ToString(@"hh\:mm")</span>
+                    </div>
+                    <div class="horario-dot"></div>
+                </div>
+
+                <div class="horario-info">
+                    <div class="horario-materia">
+                        <div class="icon-badge">
+                            <i class="@iconoClase"></i>
+                        </div>
+                        <h3>@horario.Materia</h3>
+                        @if (horario.EnCurso)
+                        {
+                            <span class="badge-univalle badge-pendiente" style="background: #D7FBE2; color: #106232; border-color: #10B981;">En Curso</span>
+                        }
+                    </div>
+
+                    <div class="horario-ubicacion">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>@horario.Aula</span>
+                    </div>
+
+                    <p class="horario-descripcion">@descripcion</p>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+<!-- Card de leyenda -->
+<div class="card-univalle" style="margin-top: var(--space-6);">
+    <div class="card-univalle-header">
+        <i class="bi bi-info-circle"></i>
+        <span>Indicadores Visuales</span>
+    </div>
+    <div class="leyenda-list">
+        <div class="leyenda-item">
+            <div class="status-dot status-dot-success"></div>
+            <span><strong>Verde:</strong> Clase/reserva confirmada y lista para solicitar</span>
+        </div>
+        <div class="leyenda-item">
+            <div class="status-dot" style="background-color: var(--color-info);"></div>
+            <span><strong>Azul:</strong> Clase próxima (logística 2 horas)</span>
+        </div>
+        <div class="leyenda-item">
+            <div class="status-dot status-dot-warning"></div>
+            <span><strong>Amarillo:</strong> Reserva pendiente</span>
+        </div>
+        <div class="leyenda-item">
+            <div class="status-dot status-dot-error"></div>
+            <span><strong>Rojo:</strong> Conflicto o problema</span>
+        </div>
+        <div class="leyenda-item">
+            <div class="status-dot" style="background-color: var(--gray-400);"></div>
+            <span><strong>Gris:</strong> Clase finalizada o tiempo libre</span>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function cambiarDia(dias) {
+            // Esta función se puede implementar en el backend
+            // Por ahora, recarga la página con un parámetro de fecha
+            const urlParams = new URLSearchParams(window.location.search);
+            let fechaActual = urlParams.get('fecha');
+
+            if (!fechaActual) {
+                fechaActual = new Date().toISOString().split('T')[0];
+            }
+
+            const fecha = new Date(fechaActual);
+            fecha.setDate(fecha.getDate() + dias);
+
+            window.location.href = `@Url.Action("MiHorario", "Docente")?fecha=${fecha.toISOString().split('T')[0]}`;
+        }
+    </script>
+}

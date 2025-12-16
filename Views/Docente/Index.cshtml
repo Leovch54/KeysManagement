@@ -1,0 +1,180 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Menu - Princiapl";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#8B1538">
+    <title>Menú Principal - UNIVALLE</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/porter-sans-block" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/odor-mean-chey" rel="stylesheet">
+
+    <!-- Estilos personalizados UNIVALLE -->
+    <link rel="stylesheet" href="~/css/core/variables.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/core/base.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/core/components.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/views-docente/menu-principal.css" asp-append-version="true">
+</head>
+
+<body class="has-campus-bg menu-principal-page">
+
+    <div class="main-container">
+        <!-- Logo Section -->
+        <div class="logo-section">
+            <img src="~/images/Logo.jpg" alt="Universidad del Valle - Bolivia" class="logo-img">
+            <h1 class="univalle-title">UNIVALLE</h1>
+        </div>
+
+        <!-- Menu Card -->
+        <div class="menu-card">
+            <ul class="menu-list">
+                <!-- Menu Item 1: Solicitar -->
+                <li class="menu-item">
+                    <div class="menu-item-wrapper">
+                        <a asp-action="Solicitar" asp-controller="Docente" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-title">Solicitar</div>
+                            </div>
+                            <div class="menu-arrow-container">
+                                <i class="fas fa-chevron-right menu-arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Menu Item 2: Reserva -->
+                <li class="menu-item">
+                    <div class="menu-item-wrapper">
+                        <a asp-action="NuevaReserva" asp-controller="Docente" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fas fa-plus-circle"></i>
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-title">Reserva</div>
+                            </div>
+                            <div class="menu-arrow-container">
+                                <i class="fas fa-chevron-right menu-arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Menu Item 3: Agenda/Horario -->
+                <li class="menu-item">
+                    <div class="menu-item-wrapper">
+                        <a asp-action="Horario" asp-controller="Docente" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-title">Agenda</div>
+                            </div>
+                            <div class="menu-arrow-container">
+                                <i class="fas fa-chevron-right menu-arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Menu Item 4: Mi Estado -->
+                <li class="menu-item">
+                    <div class="menu-item-wrapper">
+                        <a asp-controller="Estado" asp-action="MiEstado" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-title">Mi Estado</div>
+                            </div>
+                            <div class="menu-arrow-container">
+                                <i class="fas fa-chevron-right menu-arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Menu Item 5: Avisos -->
+                <li class="menu-item">
+                    <div class="menu-item-wrapper">
+                        <a asp-action="Index" asp-controller="Notificacion" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-title">Avisos</div>
+                            </div>
+                            <div class="menu-arrow-container">
+                                <i class="fas fa-chevron-right menu-arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+
+                <!-- Menu Item 6: Perfil -->
+                <li class="menu-item">
+                    <div class="menu-item-wrapper">
+                        <a asp-controller="Profile" asp-action="Index" class="menu-link">
+                            <div class="menu-icon">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-title">Perfil</div>
+                            </div>
+                            <div class="menu-arrow-container">
+                                <i class="fas fa-chevron-right menu-arrow"></i>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <form asp-controller="Account" asp-action="Logout" method="post">
+            <button type="submit" class="logout-button">
+                <i class="bi bi-box-arrow-right"></i>
+                Cerrar Sesión
+            </button>
+        </form>
+
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navItems = document.querySelectorAll('.nav-item:not(.nav-item-center)');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

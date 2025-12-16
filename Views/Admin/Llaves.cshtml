@@ -1,0 +1,50 @@
+﻿@model IEnumerable<GestionLlaves.Models.Prestamo>
+@{
+    ViewData["Title"] = "Llaves en uso";
+}
+
+<h2 class="admin-header">🔑 Llaves en uso</h2>
+<p class="text-muted">Listado de préstamos activos (pendientes de devolución)</p>
+
+<div class="row mt-4">
+    @if (!Model.Any())
+    {
+        <div class="text-center text-muted py-5">
+            <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+            <p>No hay llaves activas.</p>
+        </div>
+    }
+    else
+    {
+        foreach (var l in Model)
+        {
+            var minutosTarde = (DateTime.Now - l.FechaFinProgramada).TotalMinutes;
+            var estaTarde = minutosTarde > 0;
+
+            <div class="col-md-3 mb-4">
+                <div class="card border-2 @(estaTarde ? "border-danger" : "border-success")">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-danger">
+                            <i class="bi bi-key-fill"></i> Llave @(estaTarde ? "no devuelta" : "en uso")
+                        </h5>
+                        <p><strong>Docente:</strong> @($"{l.Persona?.Nombres} {l.Persona?.PrimerApellido}")</p>
+                        <p><strong>Aula:</strong> @l.Aula?.Codigo (@l.Aula?.Edificio?.Nombre)</p>
+                        <p><strong>Inicio:</strong> @l.FechaInicio.ToString("HH:mm")</p>
+                        <p><strong>Fin:</strong> @l.FechaFinProgramada.ToString("HH:mm")</p>
+                        <p>
+                            @(estaTarde ?
+                                                $"⏰ {Math.Round(minutosTarde / 60, 1)}h tarde" :
+                                                $"🕓 Faltan {Math.Round(-minutosTarde / 60, 1)}h")
+                </p>
+                <form asp-action="MarcarDevuelto" method="post">
+                    <input type="hidden" name="id" value="@l.Id" />
+                    <button type="submit" class="btn btn-admin btn-sm">
+                        <i class="bi bi-check-circle"></i> Marcar como Devuelto
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+        }
+    }
+</div>

@@ -1,0 +1,427 @@
+/* ============================================
+   CARD DE LLAVE ACTIVA
+   ============================================ */
+.card-llave-activa {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    border: 3px solid #B8FFB8;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-6);
+}
+
+.llave-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.llave-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--univalle-red-subtle);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.llave-icon i {
+    font-size: 1.5rem;
+    color: var(--univalle-red);
+}
+
+.llave-info-header {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.llave-info-header h2 {
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.badge-tiempo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: var(--radius-md);
+    font-size: 0.8125rem;
+    font-weight: var(--font-weight-medium);
+    width: fit-content;
+}
+
+.badge-tiempo::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--color-success);
+    border-radius: var(--radius-full);
+}
+
+.llave-detalles {
+    margin-bottom: var(--space-5);
+}
+
+.hora-tomada {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 0.9375rem;
+    color: var(--gray-600);
+    margin: 0;
+}
+
+.hora-tomada i {
+    color: var(--gray-500);
+    font-size: 1rem;
+}
+
+/* ============================================
+   TIMER
+   ============================================ */
+.timer-container {
+    background: #F7F9F8;
+    border: 2px solid #E7E8ED;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+    margin-bottom: var(--space-5);
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+}
+
+.timer-display i {
+    font-size: 2rem;
+    color: #039D36;
+}
+
+.timer-number {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: #039D36;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-label {
+    font-size: 1rem;
+    color: var(--gray-600);
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+}
+
+/* ============================================
+   BARRA DE PROGRESO
+   ============================================ */
+.progreso-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.progreso-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--gray-700);
+    font-weight: var(--font-weight-medium);
+}
+
+.progreso-porcentaje {
+    color: var(--univalle-red);
+    font-weight: var(--font-weight-semibold);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--univalle-red) 0%, var(--univalle-red-dark) 100%);
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+}
+
+/* ============================================
+   CARD DE ESTADÍSTICAS
+   ============================================ */
+.card-estadisticas {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+}
+
+.estadisticas-header {
+    background: linear-gradient(135deg, var(--univalle-red) 0%, var(--univalle-red-dark) 100%);
+    color: white;
+    padding: var(--space-4) var(--space-5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.header-left i {
+    font-size: 1.25rem;
+}
+
+.estadisticas-header h3 {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+    color: white !important;
+}
+
+.mes-actual {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    opacity: 0.95;
+}
+
+.estadisticas-body {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* ============================================
+   SECCIONES DE ESTADÍSTICAS
+   ============================================ */
+.seccion-actividad,
+.seccion-rendimiento {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.seccion-rendimiento {
+    background: linear-gradient(145deg, #f0fdf4 0%, #dcfce7 100%);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid #bbf7d0;
+}
+
+.seccion-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding-bottom: var(--space-3);
+    border-bottom: 2px solid var(--gray-200);
+}
+
+.seccion-rendimiento .seccion-title {
+    border-bottom-color: #86efac;
+}
+
+.seccion-title i {
+    font-size: 1.125rem;
+    color: var(--univalle-red);
+}
+
+.seccion-rendimiento .seccion-title i {
+    color: var(--color-success);
+}
+
+.seccion-title h4 {
+    font-size: 1rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* ============================================
+   ITEMS DE ESTADÍSTICAS
+   ============================================ */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.stat-label {
+    font-size: 0.9375rem;
+    color: var(--gray-700);
+    font-weight: var(--font-weight-normal);
+}
+
+.stat-value {
+    font-size: 1rem;
+    color: var(--gray-900);
+    font-weight: var(--font-weight-semibold);
+}
+
+.stat-success {
+    color: var(--color-success) !important;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (<415px)
+   ============================================ */
+@media (max-width: 415px) {
+    .tab-button {
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.875rem;
+    }
+
+    .card-llave-activa {
+        padding: var(--space-4);
+    }
+
+    .llave-header {
+        gap: var(--space-3);
+    }
+
+    .llave-icon i {
+        font-size: 1.25rem;
+    }
+
+    .llave-info-header {
+        flex-direction: column;
+    }
+
+    .llave-info-header h2 {
+        font-size: 1.0625rem;
+    }
+
+    .badge-tiempo {
+        font-size: 0.75rem;
+        padding: 2px var(--space-2);
+    }
+
+    .hora-tomada {
+        font-size: 0.875rem;
+    }
+
+    .timer-container {
+        padding: var(--space-4);
+    }
+
+    .timer-display i {
+        font-size: 1.5rem;
+    }
+
+    .timer-number {
+        font-size: 2.5rem;
+    }
+
+    .timer-label {
+        font-size: 0.9375rem;
+    }
+
+    .estadisticas-header {
+        padding: var(--space-3) var(--space-4);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-2);
+    }
+
+    .header-left {
+        gap: var(--space-2);
+    }
+
+    .header-left i {
+        font-size: 1.125rem;
+    }
+
+    .estadisticas-header h3 {
+        font-size: 1rem;
+    }
+
+    .mes-actual {
+        font-size: 0.8125rem;
+    }
+
+    .estadisticas-body {
+        padding: var(--space-4);
+        gap: var(--space-5);
+    }
+
+    .seccion-rendimiento {
+        padding: var(--space-3);
+    }
+
+    .seccion-title {
+        gap: var(--space-2);
+    }
+
+    .seccion-title i {
+        font-size: 1rem;
+    }
+
+    .seccion-title h4 {
+        font-size: 0.9375rem;
+    }
+
+    .stat-item {
+        padding: var(--space-2) 0;
+    }
+
+    .stat-label {
+        font-size: 0.875rem;
+    }
+
+    .stat-value {
+        font-size: 0.9375rem;
+    }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-llave-activa,
+.card-estadisticas {
+    animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.card-estadisticas {
+    animation-delay: 0.1s;
+}

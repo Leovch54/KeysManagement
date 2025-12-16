@@ -1,0 +1,20 @@
+﻿@{
+    var rol = Context.Session.GetString("UsuarioRol");
+
+    if (string.IsNullOrEmpty(rol))
+    {
+        Layout = "_Layout"; // Para login/páginas públicas
+    }
+    else if (rol == "ADMIN")
+    {
+        Layout = "_LayoutAdmin";
+    }
+    else if (rol == "DOCENTE")
+    {
+        Layout = "_LayoutDocente";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}

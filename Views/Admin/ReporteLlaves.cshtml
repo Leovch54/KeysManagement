@@ -1,0 +1,81 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Reporte de Llaves";
+}
+
+<h2 class="admin-header">🔑 Reporte de Llaves</h2>
+<p class="text-muted">Filtra y visualiza los préstamos de llaves por rango de fechas, docente y aula.</p>
+
+<form method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <label for="desde" class="form-label fw-semibold">Desde:</label>
+        <input type="date" id="desde" name="desde" class="form-control" value="@ViewBag.Desde" />
+    </div>
+    <div class="col-md-3">
+        <label for="hasta" class="form-label fw-semibold">Hasta:</label>
+        <input type="date" id="hasta" name="hasta" class="form-control" value="@ViewBag.Hasta" />
+    </div>
+    <div class="col-md-3">
+        <label for="docente" class="form-label fw-semibold">Docente:</label>
+        <input type="text" id="docente" name="docente" class="form-control" placeholder="Nombre del Docente" value="@ViewBag.Docente" />
+    </div>
+
+
+    <div class="col-md-3">
+        <label for="aula" class="form-label fw-semibold">Aula:</label>
+        <input type="text" id="aula" name="aula" class="form-control" placeholder="Código de Aula (ej. A201)" value="@ViewBag.Aula" />
+    </div>
+
+    <div class="col-12 align-self-end d-flex gap-2">
+        <button type="submit" class="btn btn-admin flex-grow-1">Filtrar</button>
+        <a href="/Admin/ReporteLlaves" class="btn btn-secondary">Limpiar</a>
+    </div>
+
+    <div class="mb-3 text-end">
+        <a class="btn btn-danger"
+           href="@Url.Action("DescargarReporteLlaves", "Admin", new { desde = ViewBag.Desde, hasta = ViewBag.Hasta, docente = ViewBag.Docente, aula = ViewBag.Aula })">
+            <i class="bi bi-file-earmark-pdf-fill"></i> Descargar PDF
+        </a>
+    </div>
+
+</form>
+
+<table class="table table-bordered table-striped mt-4 text-center align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Docente</th>
+            <th>Aula</th>
+            <th>Edificio</th>
+            <th>Inicio</th>
+            <th>Fin Programado</th>
+            <th>Devolución Real</th>
+            <th>Retraso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="7" class="text-muted py-4">No hay registros en el rango seleccionado</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                var retraso = item.Retraso ? "Sí" : "No";
+                var color = item.Retraso ? "text-danger fw-bold" : "text-success fw-bold";
+
+                <tr>
+                    <td>@item.Docente</td>
+                    <td>@item.Aula</td>
+                    <td>@item.Edificio</td>
+                    <td>@item.FechaInicio.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.FechaFinProgramada.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@(item.FechaFinReal != null ? item.FechaFinReal.ToString("dd/MM/yyyy HH:mm") : "—")</td>
+                    <td class="@color">@retraso</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

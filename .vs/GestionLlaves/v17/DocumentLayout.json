@@ -1,0 +1,438 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\notificacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\notificacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\shared\\_layoutlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\shared\\_layoutlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\docente\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\wwwroot\\images\\logo.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\images\\logo.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\controllers\\docentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\docentecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\docente\\nuevareserva.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\nuevareserva.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\admin\\reservas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\reservas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\admin\\llaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\llaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\admin\\reportellaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\reportellaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\admin\\solicitudes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\solicitudes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\models\\viewmodels\\adminsolicitudviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:models\\viewmodels\\adminsolicitudviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\admin\\verhorarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\admin\\verhorarios.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\controllers\\estadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:controllers\\estadocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\docente\\solicitar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\solicitar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\profile\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\wwwroot\\css\\views-docente\\perfil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\views-docente\\perfil.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\views\\docente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:views\\docente\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|c:\\users\\biytesmith\\downloads\\actualizado\\actualizado\\keysmanagement-sprint4 (1)\\keysmanagement-sprint4\\wwwroot\\css\\views-docente\\menu-principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A0BE29D2-E85F-4A01-9EC5-FBC5432D62D4}|GestionLlaves.csproj|solutionrelative:wwwroot\\css\\views-docente\\menu-principal.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 278,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Llaves.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\Llaves.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Llaves.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\Llaves.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Llaves.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAuwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T02:59:31.2Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Notificacion\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Notificacion\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Notificacion\\Index.cshtml",
+              "RelativeToolTip": "Views\\Notificacion\\Index.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T17:13:52.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T04:13:42.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Dashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T04:12:09.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Reservas.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\Reservas.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Reservas.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\Reservas.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Reservas.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T02:54:24.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "VerHorarios.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\VerHorarios.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\VerHorarios.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\VerHorarios.cshtml",
+              "RelativeToolTip": "Views\\Admin\\VerHorarios.cshtml",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T02:12:16.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EstadoController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\EstadoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EstadoController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\EstadoController.cs",
+              "RelativeToolTip": "Controllers\\EstadoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T02:00:16.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Solicitudes.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\Solicitudes.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Solicitudes.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\Solicitudes.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Solicitudes.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAkwEsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T00:17:30.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJ8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T02:59:49.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T18:59:37.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LayoutLogin.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Shared\\_LayoutLogin.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutLogin.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Shared\\_LayoutLogin.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutLogin.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T04:13:49.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAGgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T04:06:41.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAJ0CAAAAAAAAAAAmwAEDAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T23:48:11.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Logo.jpg -  [Espa\u00F1ol (Espa\u00F1a, alfabetizaci\u00F3n internacional)] - Bitmap [910x910, 24 bits, JPG]",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\images\\Logo.jpg",
+              "RelativeDocumentMoniker": "wwwroot\\images\\Logo.jpg",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\images\\Logo.jpg -  [Espa\u00F1ol (Espa\u00F1a, alfabetizaci\u00F3n internacional)] - Bitmap [910x910, 24 bits, JPG]",
+              "RelativeToolTip": "wwwroot\\images\\Logo.jpg -  [Espa\u00F1ol (Espa\u00F1a, alfabetizaci\u00F3n internacional)] - Bitmap [910x910, 24 bits, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-11-27T04:11:28.829Z",
+              "EditorCaption": " -  [Espa\u00F1ol (Espa\u00F1a, alfabetizaci\u00F3n internacional)] - Bitmap [910x910, 24 bits, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DocenteController.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\DocenteController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocenteController.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Controllers\\DocenteController.cs",
+              "RelativeToolTip": "Controllers\\DocenteController.cs",
+              "ViewState": "AgIAAFEDAAAAAAAAAAAmwOACAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T00:07:08.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NuevaReserva.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\NuevaReserva.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\NuevaReserva.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\NuevaReserva.cshtml",
+              "RelativeToolTip": "Views\\Docente\\NuevaReserva.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-25T18:55:28.124Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminSolicitudViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Models\\ViewModels\\AdminSolicitudViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\AdminSolicitudViewModel.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Models\\ViewModels\\AdminSolicitudViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\AdminSolicitudViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T02:42:03.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ReporteLlaves.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\ReporteLlaves.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\ReporteLlaves.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Admin\\ReporteLlaves.cshtml",
+              "RelativeToolTip": "Views\\Admin\\ReporteLlaves.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-27T02:53:57.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-26T23:14:39.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "login.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\css\\login.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\login.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\css\\login.css",
+              "RelativeToolTip": "wwwroot\\css\\login.css",
+              "ViewState": "AgIAANkAAAAAAAAAAAAAwP0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-25T19:08:01.802Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "perfil.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\css\\views-docente\\perfil.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\views-docente\\perfil.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\css\\views-docente\\perfil.css",
+              "RelativeToolTip": "wwwroot\\css\\views-docente\\perfil.css",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-25T19:00:04.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Profile\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Profile\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Profile\\Index.cshtml",
+              "RelativeToolTip": "Views\\Profile\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-25T18:58:05.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:57:44.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Solicitar.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\Solicitar.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Solicitar.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\Solicitar.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Solicitar.cshtml",
+              "ViewState": "AgIAALUAAAAAAAAAAAAcwNcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-25T18:56:25.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "menu-principal.css",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\css\\views-docente\\menu-principal.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\views-docente\\menu-principal.css",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\wwwroot\\css\\views-docente\\menu-principal.css",
+              "RelativeToolTip": "wwwroot\\css\\views-docente\\menu-principal.css",
+              "ViewState": "AgIAABUBAAAAAAAAAAAUwDsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-11-25T18:54:46.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Docente\\Index.cshtml",
+              "ToolTip": "C:\\Users\\BiyteSmith\\Downloads\\actualizado\\actualizado\\KeysManagement-sprint4 (1)\\KeysManagement-sprint4\\Views\\Docente\\Index.cshtml",
+              "RelativeToolTip": "Views\\Docente\\Index.cshtml",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-25T18:54:02.984Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

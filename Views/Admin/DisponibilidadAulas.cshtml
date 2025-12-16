@@ -1,0 +1,202 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using System;
+
+@{
+    ViewData["Title"] = "Disponibilidad de Aulas";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var todosLosHorarios = ViewBag.TodosLosHorarios as IEnumerable<dynamic> ?? new List<dynamic>();
+    var todasLasAulas = ViewBag.TodasLasAulas as IEnumerable<dynamic> ?? new List<dynamic>(); // Lista de Aulas
+    var dias = new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+
+    // Definición de bloques de tiempo (50 minutos)
+    var bloquesTiempo = new[]
+    {
+        // Hora Inicio, Hora Fin
+        Tuple.Create("07:35", "08:25"),
+        Tuple.Create("08:35", "09:25"),
+        Tuple.Create("09:25", "10:15"),
+        Tuple.Create("10:25", "11:15"),
+        Tuple.Create("11:15", "12:05"),
+        Tuple.Create("12:15", "13:05"),
+        Tuple.Create("13:05", "13:55"),
+        Tuple.Create("14:05", "14:55"),
+        Tuple.Create("14:55", "15:45"),
+        Tuple.Create("15:55", "16:45"),
+        Tuple.Create("16:45", "17:35")
+    };
+
+    // Función auxiliar para parsear TimeSpan de manera segura
+    TimeSpan ParseTimeSpan(dynamic timeValue)
+    {
+        if (timeValue is string timeStr)
+        {
+            if (TimeSpan.TryParse(timeStr, out var ts) || TimeSpan.TryParseExact(timeStr, "c", null, out ts))
+            {
+                return ts;
+            }
+            return new TimeSpan(0, 0, 0);
+        }
+        return (TimeSpan)timeValue;
+    }
+
+    // Mapeo de días para acceder a las propiedades booleanas (Lunes, Martes, etc.)
+    string GetDiaPropiedad(string dia)
+    {
+        return dia.Replace("é", "e"); // Miércoles -> Miercoles
+    }
+
+    // Función para verificar si un bloque de tiempo interseca con una clase
+    bool HayInterseccion(TimeSpan bloqueInicio, TimeSpan bloqueFin, dynamic clase)
+    {
+        TimeSpan claseInicio = ParseTimeSpan(clase.HoraInicio);
+        TimeSpan claseFin = ParseTimeSpan(clase.HoraFin);
+
+        // Intersección: La clase inicia antes de que el bloque termine Y la clase termina después de que el bloque inicie
+        return claseInicio < bloqueFin && claseFin > bloqueInicio;
+    }
+}
+
+<style>
+    .horario-container {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .horario-title {
+        color: #72103A;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .disponibilidad-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 13px;
+    }
+
+        .disponibilidad-table th {
+            background-color: #72103A;
+            color: white;
+            padding: 10px 8px;
+        }
+
+        .disponibilidad-table td {
+            border: 1px solid #ddd;
+            vertical-align: top; /* Alinear el contenido al top si hay varias aulas */
+            padding: 5px;
+            min-width: 150px; /* Asegura que la celda tenga espacio para el contenido */
+        }
+
+    .aula-estado {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 8px;
+        margin-bottom: 2px;
+        border-radius: 4px;
+        font-weight: 600;
+        line-height: 1.2;
+    }
+
+    .disponible {
+        background-color: #e6ffe6; /* Verde claro */
+        color: #006400; /* Verde oscuro */
+    }
+
+    .ocupada {
+        background-color: #ffe6e6; /* Rojo claro */
+        color: #8b0000; /* Rojo oscuro */
+    }
+</style>
+
+<div class="horario-container mt-4">
+    <h3 class="horario-title">
+        <i class="fas fa-search me-2"></i> Disposición de Aulas (Disponibilidad)
+    </h3>
+
+    <div class="table-responsive">
+        <table class="disponibilidad-table table-bordered">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-clock"></i> Hora / Día</th>
+                    @foreach (var dia in dias)
+                    {
+                        <th>@dia</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var bloque in bloquesTiempo)
+                {
+                    var hora = $"{bloque.Item1} - {bloque.Item2}";
+                    var horaInicioBloque = TimeSpan.Parse(bloque.Item1);
+                    var horaFinBloque = TimeSpan.Parse(bloque.Item2);
+
+                    <tr>
+                        <td style="font-weight:600; background-color: #f5f5f5; text-align: left;">@hora</td>
+
+                        @foreach (var dia in dias)
+                        {
+                            <td>
+                                @foreach (var aula in todasLasAulas)
+                                {
+                                    // 1. Obtener el nombre del aula (puede variar si es string o un objeto)
+                                    string nombreAula = aula.Codigo; // Asumo que el objeto Aula tiene una propiedad Nombre
+                                                                     // Si solo es un string, simplemente usa: string nombreAula = (string)aula;
+
+                                    // 2. Encontrar si existe una clase en este día/bloque para esta aula
+                                    var claseOcupante = todosLosHorarios.FirstOrDefault(h =>
+                                    {
+                                        bool diaActivo = false;
+                                        try
+                                        {
+                                            // Acceso dinámico a la propiedad del día (ej: h.Lunes, h.Martes)
+                                            diaActivo = (bool)h.GetType().GetProperty(GetDiaPropiedad(dia)).GetValue(h, null);
+                                        }
+                                        catch { /* Manejo de error si la propiedad no existe o no es booleana */ }
+
+                                        // 3. Comprobar si hay intersección de tiempo y si coincide el Aula
+                                        return diaActivo &&
+                                                    HayInterseccion(horaInicioBloque, horaFinBloque, h) &&
+                                                    h.Aula.Codigo == nombreAula; // Asumo h.Aula.Nombre para el objeto Horario
+                                                                                 // Si es un string en Horario, usa: h.Aula == nombreAula;
+                                    });
+
+                                    // 4. Determinar el estado y el mensaje
+                                    var estadoClase = claseOcupante != null ? "ocupada" : "disponible";
+                                    var mensaje = estadoClase == "ocupada"
+                                    ? $"Ocupada: {claseOcupante.Materia} ({claseOcupante.Grupo})"
+                                    : "Disponible";
+
+                                    <div class="aula-estado @estadoClase">
+                                        <span>@nombreAula</span>
+                                        <span class="ms-2" style="font-size:11px;">
+                                            @if (estadoClase == "ocupada")
+                                            {
+                                                <i class="fas fa-times-circle me-1"></i>
+                                                <span title="@mensaje">@claseOcupante.Materia</span>
+                                            }
+                                            else
+                                            {
+                                                <i class="fas fa-check-circle me-1"></i>
+                                                
+                                            }
+                                        </span>
+                                    </div>
+                                }
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

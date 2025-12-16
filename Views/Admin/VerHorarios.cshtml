@@ -1,0 +1,243 @@
+﻿@using System;
+
+@{
+    ViewData["Title"] = "Ver Horario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var docente = ViewBag.Docente;
+    // Aseguramos que los horarios se manejen como una lista para el lookup
+    var horarios = ViewBag.Horarios as IEnumerable<dynamic> ?? new List<dynamic>();
+    var dias = new[] { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+
+    // Definición de bloques de tiempo y sus duraciones (en minutos)
+    var bloquesTiempo = new[]
+    {
+        // Hora Inicio, Hora Fin, Duración (en minutos)
+        Tuple.Create("07:35", "08:25", 50),
+        Tuple.Create("08:35", "09:25", 50),
+        Tuple.Create("09:25", "10:15", 50),
+        Tuple.Create("10:25", "11:15", 50),
+        Tuple.Create("11:15", "12:05", 50),
+        Tuple.Create("12:15", "13:05", 50),
+        Tuple.Create("13:05", "13:55", 50),
+        Tuple.Create("14:05", "14:55", 50),
+        Tuple.Create("14:55", "15:45", 50),
+        Tuple.Create("15:55", "16:45", 50),
+        Tuple.Create("16:45", "17:35", 50)
+    };
+
+    // Objeto de seguimiento para manejar celdas ocultas por rowspan
+    var celdasOcupadas = new Dictionary<string, int>(); // Clave: "Dia-BloqueIndex", Valor: Duración restante
+
+    // Función auxiliar para parsear TimeSpan de manera segura
+    TimeSpan ParseTimeSpan(dynamic timeValue)
+    {
+        if (timeValue is string timeStr)
+        {
+            // Intenta parsear desde varios formatos posibles (c, o estándar)
+            if (TimeSpan.TryParse(timeStr, out var ts) || TimeSpan.TryParseExact(timeStr, "c", null, out ts))
+            {
+                return ts;
+            }
+            return new TimeSpan(0, 0, 0);
+        }
+        return (TimeSpan)timeValue;
+    }
+}
+
+<style>
+    .horario-container {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    .horario-title {
+        color: #72103A;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .horario-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 14px;
+    }
+
+        .horario-table th {
+            background-color: #72103A;
+            color: white;
+            padding: 10px 8px;
+        }
+
+        .horario-table td {
+            border: 1px solid #ddd;
+            height: 60px;
+            vertical-align: middle;
+            transition: background-color 0.2s;
+        }
+
+    .celda-clase {
+        background-color: #f2e6eb; /* Rosa claro */
+        color: #4a0e29;
+        font-weight: 600;
+        cursor: pointer;
+        border: 2px solid #72103A;
+        border-radius: 4px;
+    }
+
+        .celda-clase div, .celda-clase small {
+            line-height: 1.2;
+        }
+
+    .celda-vacia {
+        background-color: #fcfcfc;
+    }
+</style>
+
+<div class="horario-container mt-4">
+    <h3 class="horario-title">
+        <i class="fas fa-calendar-alt me-2"></i> Horario de **@docente.NombreCompleto**
+    </h3>
+    <p class="mb-3">
+        <i class="fas fa-envelope me-1"></i> <strong>Email:</strong> @docente.Email
+    </p>
+
+    <div class="table-responsive">
+        <table class="horario-table table-bordered">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-clock"></i> Hora</th>
+                    @foreach (var dia in dias)
+                    {
+                        <th>@dia</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < bloquesTiempo.Length; i++)
+                {
+                    var bloque = bloquesTiempo[i];
+                    var hora = $"{bloque.Item1} - {bloque.Item2}";
+                    var horaInicioBloque = TimeSpan.Parse(bloque.Item1);
+                    var horaFinBloque = TimeSpan.Parse(bloque.Item2);
+
+                    <tr>
+                        <td style="font-weight:500; background-color: #f5f5f5;">@hora</td>
+
+                        @foreach (var dia in dias)
+                        {
+                            var diaKey = $"{dia}-{i}";
+
+                            // 1. Verificar si esta celda está ocupada por un rowspan anterior
+                            if (celdasOcupadas.ContainsKey(diaKey))
+                            {
+                                celdasOcupadas[diaKey]--;
+                                if (celdasOcupadas[diaKey] <= 0)
+                                {
+                                    celdasOcupadas.Remove(diaKey);
+                                }
+                                continue;
+                            }
+
+                            // 2. Buscar la clase que debe empezar a dibujarse en ESTE bloque
+                            dynamic claseEncontrada = null;
+
+                            // Define el límite inferior de búsqueda (hora de fin del bloque anterior)
+                            TimeSpan horaInicioBlojoAnterior = (i == 0)
+                            ? new TimeSpan(0, 0, 0)
+                            : TimeSpan.Parse(bloquesTiempo[i - 1].Item2);
+
+                            foreach (var h in horarios)
+                            {
+                                bool diaActivo = (dia == "Lunes" && (bool)h.Lunes) ||
+                                (dia == "Martes" && (bool)h.Martes) ||
+                                (dia == "Miércoles" && (bool)h.Miercoles) ||
+                                (dia == "Jueves" && (bool)h.Jueves) ||
+                                (dia == "Viernes" && (bool)h.Viernes) ||
+                                (dia == "Sábado" && (bool)h.Sabado);
+
+                                if (diaActivo)
+                                {
+                                    TimeSpan horaInicioClase = ParseTimeSpan(h.HoraInicio);
+
+                                    // La clase se dibuja en este bloque si:
+                                    // 1. Inicia exactamente en la hora de inicio del bloque (ej. 08:35)
+                                    // 2. Inicia después del bloque anterior pero antes del final del bloque actual (ej. 08:00)
+                                    if (horaInicioClase == horaInicioBloque ||
+                                    (horaInicioClase > horaInicioBlojoAnterior && horaInicioClase <= horaFinBloque))
+                                    {
+                                        claseEncontrada = h;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (claseEncontrada != null)
+                            {
+                                // 3. Calcular el rowspan
+                                TimeSpan horaInicioClase = ParseTimeSpan(claseEncontrada.HoraInicio);
+                                TimeSpan horaFinClase = ParseTimeSpan(claseEncontrada.HoraFin);
+
+                                // Si la clase no empieza exactamente en este bloque, usamos la hora de inicio del bloque como base para el cálculo del rowspan
+                                TimeSpan horaBase = (horaInicioClase < horaInicioBloque && horaInicioClase > horaInicioBlojoAnterior)
+                                ? horaInicioBloque : horaInicioClase;
+
+                                var duracionTotal = horaFinClase - horaBase;
+                                var duracionMinutos = (int)Math.Ceiling(duracionTotal.TotalMinutes);
+
+                                int rowspanCount = 1;
+                                int minutosRestantes = duracionMinutos - bloque.Item3;
+
+                                for (int j = i + 1; j < bloquesTiempo.Length; j++)
+                                {
+                                    if (minutosRestantes <= 0) break;
+
+                                    var proximoBloque = bloquesTiempo[j];
+                                    rowspanCount++;
+                                    minutosRestantes -= proximoBloque.Item3;
+
+                                    celdasOcupadas[$"{dia}-{j}"] = rowspanCount - 1;
+                                }
+
+                                // 4. Renderizar la celda con rowspan y el contenido
+                                <td class="celda-clase" rowspan="@rowspanCount" title="@claseEncontrada.Periodo">
+                                    <div>**@claseEncontrada.Materia**</div>
+                                    <small class="d-block text-muted">
+                                        <i class="fas fa-door-open"></i> @claseEncontrada.Aula (@claseEncontrada.Grupo)
+                                    </small>
+                                    <small class="d-block mt-1" style="font-weight:400;">
+                                        @{
+                                            // Corrección: Forzar la conversión a TimeSpan antes de llamar a ToString() con formato
+                                            TimeSpan inicio = ParseTimeSpan(claseEncontrada.HoraInicio);
+                                            TimeSpan fin = ParseTimeSpan(claseEncontrada.HoraFin);
+                                        }
+                                        @inicio.ToString("hh\\:mm") - @fin.ToString("hh\\:mm")
+                                    </small>
+                                </td>
+                            }
+                            else
+                            {
+                                // 5. Renderizar celda vacía
+                                <td class="celda-vacia"></td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Muestra el periodo académico al hacer clic
+        document.querySelectorAll('.celda-clase').forEach(function(cell) {
+            cell.addEventListener('click', function() {
+                alert('Periodo Académico: ' + this.getAttribute('title'));
+            });
+        });
+    });
+</script>

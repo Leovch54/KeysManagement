@@ -1,0 +1,732 @@
+/* Header vistas */
+.header-greeting {
+  color: white;
+  margin-bottom: var(--space-5);
+  text-align: left;
+}
+
+.greeting-text h1 {
+  font-size: 1.60rem;
+  font-weight: var(--font-weight-medium);
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.greeting-text p {
+  font-size: 0.85rem;
+  color: white;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ============================================
+   CARDS - Contenedores Blancos
+   ============================================ */
+.card-univalle {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  transition: all 0.3s ease;
+}
+
+.card-univalle:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.card-univalle-header {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  font-weight: var(--font-weight-semibold);
+  margin: calc(var(--space-4) * -1);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.card-univalle-header svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card-univalle-title {
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--gray-600);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Card sin padding (para listas) */
+.card-univalle-list {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+/* Botón Primario - Rojo UNIVALLE */
+.btn-univalle-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--univalle-red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-univalle-primary:hover {
+  background-color: var(--univalle-red-dark);
+  box-shadow: var(--shadow-red);
+  transform: translateY(-1px);
+}
+
+.btn-univalle-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-univalle-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Botón Secundario - Outline */
+.btn-univalle-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: transparent;
+  color: var(--univalle-red);
+  border: 1px solid var(--univalle-red);
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-univalle-secondary:hover {
+  background-color: var(--univalle-red-subtle);
+}
+
+/* Botón Destructivo */
+.btn-univalle-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-error);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-univalle-danger:hover {
+  background-color: #dc2626;
+}
+
+/* Botón grande (full width) */
+.btn-univalle-block {
+  width: 100%;
+  display: flex;
+}
+
+/* ============================================
+   BADGES DE ESTADO
+   ============================================ */
+.badge-univalle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Estados específicos */
+.badge-aprobada,
+.badge-en-uso,
+.badge-a-tiempo,
+.badge-disponible {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.badge-pendiente,
+.badge-proximo,
+.badge-tarde {
+  background-color: var(--color-warning);
+  color: white;
+}
+
+.badge-rechazada,
+.badge-vencido,
+.badge-alta {
+  background-color: var(--color-error);
+  color: white;
+}
+
+.badge-info,
+.badge-media {
+  background-color: var(--color-info);
+  color: white;
+}
+
+.badge-ocupada {
+  background-color: var(--color-pink);
+  color: white;
+}
+
+.badge-inactivo {
+  background-color: var(--gray-400);
+  color: white;
+}
+
+/* ============================================
+   INPUTS Y FORMULARIOS
+   ============================================ */
+.input-group-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-group-icon input {
+  padding-left: 2.75rem;
+}
+
+.input-group-icon .icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  pointer-events: none;
+}
+
+.input-group-icon .icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Input estilo UNIVALLE */
+.input-univalle {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background-color: var(--gray-50);
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+}
+
+.input-univalle:focus {
+  outline: none;
+  border-color: var(--univalle-red);
+  background-color: white;
+  box-shadow: 0 0 0 3px var(--univalle-red-subtle);
+}
+
+.input-univalle::placeholder {
+  color: var(--gray-400);
+}
+
+/* Textarea */
+.textarea-univalle {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background-color: var(--gray-50);
+  font-size: 0.9375rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.2s ease;
+}
+
+.textarea-univalle:focus {
+  outline: none;
+  border-color: var(--univalle-red);
+  background-color: white;
+  box-shadow: 0 0 0 3px var(--univalle-red-subtle);
+}
+
+/* ============================================
+   TABS
+   ============================================ */
+.tabs-univalle {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  background: transparent;
+  padding: 0;
+}
+
+.tab-univalle {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.tab-univalle:hover {
+  opacity: 0.9;
+}
+
+.tab-univalle.active {
+  background: white;
+  color: var(--univalle-red);
+  opacity: 1;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================
+   ALERTS / BANNERS
+   ============================================ */
+.alert-univalle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+}
+
+.alert-univalle-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.alert-univalle-content {
+  flex: 1;
+}
+
+.alert-univalle-title {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.alert-univalle-description {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Tipos de alertas */
+.alert-univalle-success {
+  background-color: var(--color-success-light);
+  color: #065f46;
+  border-left: 4px solid var(--color-success);
+}
+
+.alert-univalle-info {
+  background-color: var(--color-info-light);
+  color: #1e40af;
+  border-left: 4px solid var(--color-info);
+}
+
+.alert-univalle-warning {
+  background-color: var(--color-warning-light);
+  color: #92400e;
+  border-left: 4px solid var(--color-warning);
+}
+
+.alert-univalle-error {
+  background-color: var(--color-error-light);
+  color: #991b1b;
+  border-left: 4px solid var(--color-error);
+}
+
+/* ============================================
+   HEADERS DE SECCIÓN
+   ============================================ */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--gradient-header);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+}
+
+.section-header svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Headers de sección coloreados */
+.section-header-warning {
+  background: var(--color-warning);
+}
+
+.section-header-success {
+  background: var(--color-success);
+}
+
+.section-header-error {
+  background: var(--color-error);
+}
+
+/* ============================================
+   LISTAS CON ÍCONOS Y ESTADO
+   ============================================ */
+.list-item-univalle {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  transition: all 0.2s ease;
+}
+
+.list-item-univalle:hover {
+  background: var(--gray-100);
+}
+
+.list-item-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-item-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.list-item-icon.purple {
+  background-color: var(--color-purple-light);
+  color: var(--color-purple);
+}
+
+.list-item-icon.pink {
+  background-color: var(--color-pink-light);
+  color: var(--color-pink);
+}
+
+.list-item-icon.gray {
+  background-color: var(--gray-200);
+  color: var(--gray-600);
+}
+
+.list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-item-title {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.list-item-subtitle {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.list-item-subtitle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.list-item-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: 0.875rem;
+}
+
+/* Punto de estado */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  display: inline-block;
+}
+
+.status-dot-success {
+  background-color: var(--color-success);
+}
+
+.status-dot-warning {
+  background-color: var(--color-warning);
+}
+
+.status-dot-error {
+  background-color: var(--color-error);
+}
+
+/* ============================================
+   AVATAR
+   ============================================ */
+.avatar-univalle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--univalle-gold);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  font-size: 0.875rem;
+}
+
+.avatar-univalle-lg {
+  width: 60px;
+  height: 60px;
+  font-size: 1.25rem;
+}
+
+.avatar-univalle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   BOTONES DE MENÚ PRINCIPAL
+   ============================================ */
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-4);
+  background: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.menu-button:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(4px);
+}
+
+.menu-button-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--univalle-red);
+  flex-shrink: 0;
+}
+
+.menu-button-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--univalle-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.menu-button-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.menu-button-text {
+  flex: 1;
+  font-weight: var(--font-weight-bold);
+  color: var(--univalle-red);
+  font-size: 1.125rem;
+}
+
+.menu-button-arrow {
+  width: 20px;
+  height: 20px;
+  color: var(--gray-400);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   TIEMPO RESTANTE
+   ============================================ */
+.time-remaining {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.time-remaining-success {
+  color: var(--color-success);
+}
+
+.time-remaining-warning {
+  color: var(--color-warning);
+}
+
+/* ============================================
+   RECURSOS DE AULA
+   ============================================ */
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.resource-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-purple);
+}
+
+/* ============================================
+   TABS DE NAVEGACIÓN
+   ============================================ */
+.estado-tabs {
+  display: flex;
+  gap: 0 !important;
+  margin-bottom: var(--space-6);
+  background: var(--univalle-red);
+  padding: 0 !important;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-button {
+    flex: 1;
+    padding: var(--space-2) var(--space-3);
+    border: none;
+    background: transparent;
+    color: white;
+    font-weight: var(--font-weight-medium);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+.tab-button:hover {
+  background: var(--univalle-red-dark);
+}
+
+.tab-button.active {
+  background: linear-gradient(to right, #D9D9D9 0%, #ACACAC 50%, #919191 100%);
+  color: var(--univalle-red);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tab-button.right {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.tab-button.left {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+
+/* ============================================
+   CARD SELECCIONADO
+   ============================================ */
+.card-seleccionado {
+  border: 3px solid var(--univalle-red);
+  box-shadow: var(--shadow-red);
+}
+
+/* ============================================
+   RESPONSIVE - MÓVIL
+   ============================================ */
+@media (max-width: 768px) {
+
+  .btn-univalle-primary,
+  .btn-univalle-secondary,
+  .btn-univalle-danger {
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.875rem;
+  }
+
+  .menu-button {
+    padding: var(--space-3);
+  }
+
+  .menu-button-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-button-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .menu-button-text {
+    font-size: 1rem;
+  }
+}

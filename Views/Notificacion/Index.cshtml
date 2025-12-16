@@ -1,0 +1,185 @@
+﻿@model List<GestionLlaves.Models.Notificacion>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/views-docente/siu.css" asp-append-version="true" />
+}
+
+<div class="header-greeting">
+    <div class="greeting-text">
+        <h1>Notificaciones</h1>
+        <p>Centro de recordatorios y alertas del sistema</p>
+    </div>
+</div>
+
+<!-- Tabs de navegación -->
+<div class="estado-tabs" hidden>
+    <button class="tab-button left active" id="tabEstadoActual">Todas (@Model.Count)</button>
+    <button class="tab-button right" id="tabHistorialReciente">No leídas (@Model.Count(n => !n.Leida))</button>
+</div>
+
+<!-- Botón Marcar todas como leídas -->
+<div class="action-header" hidden>
+    <button class="btn-marcar-todas">
+        <i class="bi bi-check2-all"></i>
+        Marcar todas como leídas
+    </button>
+</div>
+
+<!-- Lista de Notificaciones -->
+<div class="notificaciones-lista">
+    @if (Model == null || !Model.Any())
+    {
+        <div class="empty-state">
+            <i class="bi bi-bell-slash empty-state-icon"></i>
+            <h3 class="empty-state-title">No hay notificaciones</h3>
+            <p class="empty-state-description">Cuando recibas notificaciones, aparecerán aquí</p>
+        </div>
+    }
+    else
+    {
+        @foreach (var notif in Model)
+        {
+            <div class="notif-card @(notif.Leida ? "leida" : "no-leida")">
+                <div class="notif-icon-container @notif.Prioridad.ToLower()">
+                    @switch (notif.Tipo)
+                    {
+                        case "RECORDATORIO_DEVOLUCION":
+                            <i class="bi bi-exclamation-triangle"></i>
+                            break;
+                        case "SOLICITUD_APROBADA":
+                            <i class="bi bi-check-circle"></i>
+                            break;
+                        case "SOLICITUD_RECHAZADA":
+                            <i class="bi bi-x-circle"></i>
+                            break;
+                        case "PROXIMA_CLASE":
+                            <i class="bi bi-book"></i>
+                            break;
+                        case "LLAVE_NO_DEVUELTA":
+                            <i class="bi bi-exclamation-circle"></i>
+                            break;
+                        case "RESERVA_CANCELADA":
+                            <i class="bi bi-calendar-x"></i>
+                            break;
+                        case "CAMBIO_HORARIO":
+                            <i class="bi bi-clock-history"></i>
+                            break;
+                        default:
+                            <i class="bi bi-bell"></i>
+                            break;
+                    }
+                </div>
+
+                <div class="notif-content">
+                    <div class="notif-header">
+                        <h3 class="notif-title">@GetTituloNotificacion(notif.Tipo)</h3>
+                        <span class="badge-prioridad @notif.Prioridad.ToLower()">@notif.Prioridad</span>
+                    </div>
+
+                    <p class="notif-description">
+                        @notif.Mensaje
+                    </p>
+
+                    <div class="notif-footer">
+                        <div class="notif-meta">
+                            <i class="bi bi-calendar3"></i>
+                            <span>@notif.FechaCreacion.ToString("dd/MM/yyyy")</span>
+                            <i class="bi bi-clock"></i>
+                            <span>@notif.FechaCreacion.ToString("HH:mm")</span>
+                        </div>
+
+                        <div class="notif-actions">
+                            @if (!notif.Leida)
+                            {
+                                <button class="btn-notif-leida" onclick="marcarLeida(@notif.Id)">
+                                    <i class="bi bi-check"></i>
+                                    Leída
+                                </button>
+                            }
+                            <button class="btn-notif-eliminar" onclick="eliminarNotificacion(@notif.Id)">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@section Scripts {
+    <script>
+        function marcarLeida(id) {
+            if (!confirm('¿Marcar esta notificación como leída?')) return;
+
+            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+            fetch(`/Notificacion/MarcarLeida/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    location.reload();
+                } else {
+                    alert(data.error || 'Error al marcar como leída');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al procesar la solicitud');
+            });
+        }
+
+        function eliminarNotificacion(id) {
+            if (!confirm('¿Eliminar esta notificación permanentemente?')) return;
+
+            const token = document.querySelector('input[name="__RequestVerificationToken"]')?.value;
+
+            fetch(`/Notificacion/Eliminar/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'RequestVerificationToken': token
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    location.reload();
+                } else {
+                    alert(data.error || 'Error al eliminar');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al procesar la solicitud');
+            });
+        }
+    </script>
+}
+
+@functions {
+    string GetTituloNotificacion(string tipo)
+    {
+        return tipo switch
+        {
+            "RECORDATORIO_DEVOLUCION" => "Recordatorio de devolución",
+            "SOLICITUD_APROBADA" => "Solicitud aprobada",
+            "SOLICITUD_RECHAZADA" => "Solicitud rechazada",
+            "PROXIMA_CLASE" => "Próxima clase",
+            "LLAVE_NO_DEVUELTA" => "Llave no devuelta",
+            "RESERVA_CANCELADA" => "Reserva cancelada",
+            "CAMBIO_HORARIO" => "Cambio de horario",
+            _ => "Notificación"
+        };
+    }
+}
+
+<form method="post" style="display:none;">
+    @Html.AntiForgeryToken()
+</form>

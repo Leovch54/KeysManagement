@@ -1,0 +1,50 @@
+﻿@model IEnumerable<dynamic>
+@{
+    ViewData["Title"] = "Llaves Sin Devolver";
+}
+
+<h2 class="admin-header">🔒 Llaves Sin Devolver</h2>
+<p class="text-muted">Lista de docentes que aún no devolvieron sus llaves.</p>
+
+<table class="table table-bordered table-striped mt-4 text-center align-middle">
+    <thead class="table-dark">
+        <tr>
+            <th>Docente</th>
+            <th>Aula</th>
+            <th>Edificio</th>
+            <th>Hora de Entrega</th>
+            <th>Hora Límite</th>
+            <th>Estado</th>
+            <th>Retraso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="7" class="text-muted py-4">No hay llaves activas pendientes de devolución</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                var estado = item.EnRetraso ? "Fuera de tiempo" : "En curso";
+                var color = item.EnRetraso ? "text-danger fw-bold" : "text-success fw-bold";
+                var retrasoTexto = item.EnRetraso
+                ? $"{Math.Round(item.HorasRetraso, 1)} h tarde"
+                : "Aún dentro del horario";
+
+                <tr>
+                    <td>@item.Docente</td>
+                    <td>@item.Aula</td>
+                    <td>@item.Edificio</td>
+                    <td>@item.FechaInicio.ToString("dd/MM HH:mm")</td>
+                    <td>@item.FechaFinProgramada.ToString("dd/MM HH:mm")</td>
+                    <td class="@color">@estado</td>
+                    <td>@retrasoTexto</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

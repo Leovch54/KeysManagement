@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sistema de Gestión de Llaves</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts - Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Estilos personalizados UNIVALLE -->
+    <link rel="stylesheet" href="~/css/core/variables.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/core/base.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/core/components.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/css/layouts/layout-docente.css " asp-append-version="true">
+
+    <!-- CSS adicional por vista -->
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="has-campus-bg">
+
+    <header class="header-univalle">
+        <div class="header-univalle-left">
+            <!-- Botón Back -->
+            <a class="header-back-btn" onclick="history.back()">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+
+            <!-- Título UNIVALLE -->
+            <h1 class="header-univalle-title">UNIVALLE</h1>
+        </div>
+
+        <div class="header-univalle-right">
+            <!-- Logo UNIVALLE -->
+            <div class="header-logo">
+                <img src="~/images/Logo.jpg" alt="UNIVALLE Logo" />
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="page-container">
+        <div class="page-content" id="page-content">
+            @RenderBody() 
+        </div>
+    </main>
+
+    <!-- BOTTOM NAVIGATION BAR -->
+    <nav class="bottom-nav">
+        <!-- Item 1: Menu - Principal -->
+        <a asp-action="Index" asp-controller="Docente" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+
+        <!-- Item 2: Horario/Agenda -->
+        <a asp-action="Horario" asp-controller="Docente" class="nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Agenda</span>
+        </a>
+
+        <!-- FAB Central -->
+        <a asp-action="NuevaReserva" asp-controller="Docente" class="nav-item nav-item-center">
+            <div class="fab-button">
+                <i class="fas fa-plus"></i>
+            </div>
+        </a>
+
+        <!-- Item 3: Llaves -->
+        <a asp-action="Solicitar" asp-controller="Docente" class="nav-item">
+            <i class="fas fa-key"></i>
+            <span>Mis Llaves</span>
+        </a>
+
+        <!-- Item 4: Perfil -->
+        <a asp-controller="Profile" asp-controller="Profile" asp-action="Index" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navItems = document.querySelectorAll('.nav-item:not(.nav-item-center)');
+
+            // Navegación activa
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
